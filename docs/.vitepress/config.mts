@@ -16,7 +16,7 @@ export default defineConfig({
       {
         text: 'Examples',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
+          { text: 'Markdown Examples', link: '/google.md' },
           { text: 'Runtime API Examples', link: '/api-examples' }
         ]
       }
