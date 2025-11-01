@@ -10,6 +10,7 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
+    siteTitle: false,
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Daily homework', link: '/daily-homework' },

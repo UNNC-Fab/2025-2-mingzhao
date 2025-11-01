@@ -1,0 +1,19 @@
+:root {
+  --vp-home-hero-name-font-size: 72px;
+  --vp-home-hero-name-line-height: 1.1;
+  --vp-home-hero-name-letter-spacing: -0.02em;
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-name-font-size: 96px;
+  }
+}
+
+.VPHomeHero {
+  text-align: center;
+}
+
+.VPHomeHero .name {
+  font-weight: 900;
+}
