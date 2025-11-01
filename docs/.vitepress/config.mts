@@ -16,6 +16,9 @@ export default defineConfig({
       { text: 'Daily homework', link: '/daily-homework' },
       { text: 'Finalwork', link: '/finalwork' }
     ],
+      search: {
+      provider: 'local',
+    },
     sidebar: [
       {
         text: 'Contents',
