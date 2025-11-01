@@ -16,7 +16,7 @@ As we continue to create our repository, we need to set our **visibility** to **
 Be sure to include a **README file** in the repository, as this is where we can provide a comprehensive **project description**.
 
   
-✅ *Complete creation.*
+ *Complete creation.*
 
 ---
 
@@ -34,13 +34,13 @@ After inviting, you can **view the list of invited members** in the repository s
 Once members are invited, go to **Settings** to configure project permissions and collaboration options.
 
   
-✅ *Complete the setup.*
+ *Complete the setup.*
 
   
-📸 *Upload pictures here.*
+ *Upload pictures here.*
 
   
-🖼️ *View and manage images here.*
+ *View and manage images here.*
 
 ---
 
