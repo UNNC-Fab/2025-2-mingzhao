@@ -4,10 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'My Awesome Project',
   description: 'A VitePress Site',
-
-  // IMPORTANT: set base to your exact repo name (case-sensitive)
-  // e.g. '/2025-2-MINGZHAO/' if your repo is 2025-2-MINGZHAO
-  base: '/2025-2-MINGZHAO/',
+  base: '/2025-2-mingzhao/',
 
   cleanUrls: true,
 
