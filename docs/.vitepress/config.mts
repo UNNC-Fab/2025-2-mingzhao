@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'My Awesome Project',
   description: 'A VitePress Site',
+  
   base: '/2025-2-mingzhao/',
 
   cleanUrls: true,
@@ -11,23 +12,36 @@ export default defineConfig({
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     siteTitle: false,
+
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Daily homework', link: '/daily-homework' },
-      { text: 'Finalwork', link: '/finalwork' }
+      { text: 'Daily homework', link: '/daily-homework/' },
+      { text: 'Finalwork', link: '/finalwork/' }
     ],
-      search: {
-      provider: 'local',
+
+    search: {
+      provider: 'local'
     },
-    sidebar: [
-      {
-        text: 'Contents',
-        items: [
-          { text: 'Daily homework', link: '/daily-homework' },
-          { text: 'Finalwork', link: '/finalwork' }
-        ]
-      }
-    ],
+
+    sidebar: {
+      '/daily-homework/': [
+        {
+          text: 'Daily homework',
+          items: [
+            { text: 'Project Management', link: '/daily-homework/project-management' },
+            { text: 'Arduino', link: '/daily-homework/arduino' }
+          ]
+        }
+      ],
+      '/finalwork/': [
+        {
+          text: 'Finalwork',
+          items: [
+            { text: 'Psychological sand table', link: '/finalwork/psychological-sand-table' }
+          ]
+        }
+      ]
+    },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
