@@ -7,10 +7,11 @@ export default defineConfig({
   base: '/2025-2-mingzhao/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/1pm/test' }
-    ],
+  nav: [
+    { text: 'Home', link: '/' },
+    { text: 'Daily homework', link: '/daily-homework' },
+    { text: 'Finalworik', link: '/finalworik' }
+  ],
 
     sidebar: [
       {
