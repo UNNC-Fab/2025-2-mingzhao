@@ -15,8 +15,8 @@ export default defineConfig({
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Daily homework', link: '/daily-homework/' },
-      { text: 'Finalwork', link: '/finalwork/' }
+      { text: 'Daily homework', link: '/daily-homework/project-management' },
+      { text: 'Finalwork', link: '//finalwork/psychological-sand-table' }
     ],
 
     search: {
