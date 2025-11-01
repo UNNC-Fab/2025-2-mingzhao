@@ -1,4 +1,13 @@
-# Small homework in class
+---
+title: Small homework in class
+outline: false
+prev: false
+next: false
+---
 
-- [GPL 3.0](/small-homework-in-class/gpl-3-0)
-- [Google's development language](/small-homework-in-class/google-development-language)
+<script setup>
+import { withBase } from 'vitepress'
+if (typeof window !== 'undefined') {
+  window.location.href = withBase('/small-homework-in-class/gpl-3-0')
+}
+</script>
