@@ -10,10 +10,5 @@
   }
 }
 
-.VPHomeHero {
-  text-align: center;
-}
-
-.VPHomeHero .name {
-  font-weight: 900;
-}
+.VPHomeHero { text-align: center; }
+.VPHomeHero .name { font-weight: 900; }
