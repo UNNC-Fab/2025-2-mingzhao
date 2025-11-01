@@ -1,28 +1,19 @@
 import { defineConfig } from 'vitepress'
 
-// https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "My Awesome Project",
-  description: "A VitePress Site",
-  base: '/2025-2-mingzhao/',
+  title: 'My Awesome Project',
+  description: 'A VitePress Site',
+  
+  base: '/2025-2-MINGZHAO/',
+
+  cleanUrls: true,
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
-  nav: [
-    { text: 'Home', link: '/' },
-    { text: 'Daily homework', link: '/daily-homework' },
-    { text: 'Finalworik', link: '/finalworik' }
-  ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/google.md' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Daily homework', link: '/daily-homework' },
+      { text: 'Finalwork', link: '/finalwork' }
     ],
-
+    sidebar: false,
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ]
