@@ -20,12 +20,12 @@ outline: false
   padding: 0;
 }
 
-/* ultra-large title */
+/* slightly smaller hero title (compared to previous version) */
 .VPHomeHero .name {
-  font-size: 140px;
+  font-size: 110px;           /* mobile size */
   line-height: 1;
   font-weight: 900;
-  margin-bottom: 50px; /* distance below title */
+  margin-bottom: 50px;        /* spacing below title */
 
   /* neon gradient */
   background: linear-gradient(90deg,#4facfe,#00f2fe,#a78bfa,#f472b6,#f59e0b,#4facfe);
@@ -46,14 +46,14 @@ outline: false
   100% { background-position:   0% 50%; text-shadow:0 0 20px rgba(79,172,254,0.4); }
 }
 
-/* scale up for desktop */
+/* desktop: smaller than before, still impressive */
 @media (min-width: 960px) {
-  .VPHomeHero .name { font-size: 300px; }
+  .VPHomeHero .name { font-size: 240px; }
 }
 
 /* subtitle styling */
 .VPHomeHero .text {
-  font-size: 38px;
+  font-size: 34px;            /* mobile */
   line-height: 1.4;
   font-weight: 500;
   opacity: 0.95;
@@ -61,7 +61,7 @@ outline: false
   letter-spacing: 1px;
 }
 @media (min-width: 960px) {
-  .VPHomeHero .text { font-size: 50px; }
+  .VPHomeHero .text { font-size: 46px; }
 }
 
 /* safety for reduced-motion users */
