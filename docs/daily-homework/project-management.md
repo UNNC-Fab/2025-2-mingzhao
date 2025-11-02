@@ -127,7 +127,10 @@ outline: false
 </style>
 
 
+---
+
 ## **5.2 docs/api-examples.md (Sample page)**
+
 ```md
 ---
 outline: deep
@@ -170,6 +173,7 @@ Check out the documentation for the full list of runtime APIs.
 ---
 
 ## **5.3 docs/.vitepress/config.mts (Site Configuration)**
+
 ```md
 import { defineConfig } from 'vitepress'
 
@@ -228,8 +232,10 @@ export default defineConfig({
 })
 
 
+---
 
 ## **5.4 .github/workflows/deploy.yml (GitHub Pages Auto Deployment)**
+
 ```md
 name: Deploy VitePress site to Pages
 
