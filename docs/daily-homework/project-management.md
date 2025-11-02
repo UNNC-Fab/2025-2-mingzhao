@@ -125,7 +125,7 @@ outline: false
   .VPHomeHero .name { animation: none; }
 }
 </style>
-
+``` 
 
 ---
 
@@ -168,7 +168,7 @@ Page Frontmatter
 <pre>{{ frontmatter }}</pre>
 More
 Check out the documentation for the full list of runtime APIs.
-
+``` 
 
 ---
 
@@ -230,7 +230,7 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
   }
 })
-
+``` 
 
 ---
 
