@@ -48,7 +48,7 @@ outline: false
 
 /* desktop: smaller than before, still impressive */
 @media (min-width: 960px) {
-  .VPHomeHero .name { font-size: 240px; }
+  .VPHomeHero .name { font-size: 180px; }
 }
 
 /* subtitle styling */
