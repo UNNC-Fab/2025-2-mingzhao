@@ -64,7 +64,7 @@ Then you can **view it on your GitHub webpage**.
 Here is the **code for the home page** .
 
 ---
-### **5.1 docs/index.md（Home page）**
+5.1 docs/index.md（Home page）
 
 
 ---
@@ -140,7 +140,7 @@ outline: false
 </style>
 
 
-### **5.2 docs/api-examples.md（Sample page）**
+5.2 docs/api-examples.md（Sample page）
 
 
 ---
@@ -181,14 +181,11 @@ Page Frontmatter
 <pre>{{ frontmatter }}</pre>
 More
 
-Check out the documentation for the full list of runtime APIs
-.
 
 
 ---
 
-### **5.3 `docs/.vitepress/config.mts`**
-
+### **5.3 `docs/.vitepress/config.mts`（站点配置）**
 
 ```ts
 import { defineConfig } from 'vitepress'
@@ -248,7 +245,7 @@ export default defineConfig({
   }
 })
 
-### **5.4 .github/workflows/deploy.yml（GitHub Pages ）**
+5.4 .github/workflows/deploy.yml（GitHub Pages Automatic deployment）
 
 
 name: Deploy VitePress site to Pages
