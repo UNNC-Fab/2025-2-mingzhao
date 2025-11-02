@@ -2,43 +2,49 @@
 layout: home
 hero:
   name: My project
+  text: UNNC-Fab/2025-2-xi mingzhao
 sidebar: false
 aside: false
 outline: false
 ---
+
 <style>
+/* Force center + make the hero block wider and centered */
+.VPHomeHero { text-align: center; }
+.VPHomeHero .container { max-width: 1200px; margin: 0 auto; }
+
+/* Bigger hero title */
 :root {
-  --vp-home-hero-name-font-size: 84px;
+  --vp-home-hero-name-font-size: 96px;   /* mobile base */
   --vp-home-hero-name-line-height: 1.05;
   --vp-home-hero-name-letter-spacing: -0.02em;
 }
 @media (min-width: 960px) {
-  :root { --vp-home-hero-name-font-size: 120px; }
+  :root { --vp-home-hero-name-font-size: 160px; }  /* desktop mega size */
 }
-.VPHomeHero { text-align: center; }
+
+/* Make title bolder and a bit glow (optional, looks nicer) */
 .VPHomeHero .name {
   font-weight: 900;
-  background: linear-gradient(120deg, #7dd3fc, #a78bfa, #f472b6, #f59e0b, #7dd3fc);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
   text-shadow:
-    0 2px 10px rgba(167,139,250,0.25),
-    0 6px 30px rgba(244,114,182,0.20);
-  animation: heroGradientShift 8s ease-in-out infinite;
+    0 2px 10px rgba(0,0,0,0.08),
+    0 10px 40px rgba(0,0,0,0.06);
 }
-.VPHomeHero .name:hover {
-  filter: brightness(1.06);
-  transform: translateZ(0) scale(1.02);
-  transition: transform 300ms ease, filter 300ms ease;
+
+/* Subtitle (the "text" line) styling: larger + softer color */
+.VPHomeHero .text {
+  font-size: 22px;
+  line-height: 1.4;
+  opacity: 0.9;
+  margin-top: 12px;
 }
-@keyframes heroGradientShift {
-  0%   { background-position:   0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position:   0% 50%; }
+@media (min-width: 960px) {
+  .VPHomeHero .text { font-size: 28px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .VPHomeHero .name { animation: none; }
+
+/* Double-ensure center alignment even if other CSS interferes */
+.VPHomeHero .main, .VPHomeHero .container, .VPHomeHero .name, .VPHomeHero .text {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 </style>
