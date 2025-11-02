@@ -61,12 +61,13 @@ Then you can **view it on your GitHub webpage**.
 
 ## **5. Home Page Code**
 
-Here is the **code for the home page** .
+Here is the code for the home page, including the VitePress home file, sample page, site configuration, and GitHub Actions deployment.
 
 ---
-5.1 docs/index.md（Home page）
 
+## **5.1 docs/index.md (Home page)**
 
+```md
 ---
 layout: home
 hero:
@@ -138,11 +139,6 @@ outline: false
   .VPHomeHero .name { animation: none; }
 }
 </style>
-
-
-5.2 docs/api-examples.md（Sample page）
-
-
 ---
 outline: deep
 ---
@@ -153,10 +149,9 @@ This page demonstrates usage of some of the runtime APIs provided by VitePress.
 
 The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
 
-```md
+````md
 <script setup>
 import { useData } from 'vitepress'
-
 const { theme, page, frontmatter } = useData()
 </script>
 
@@ -171,21 +166,10 @@ const { theme, page, frontmatter } = useData()
 ### Page Frontmatter
 <pre>{{ frontmatter }}</pre>
 
-<script setup> import { useData } from 'vitepress' const { site, theme, page, frontmatter } = useData() </script>
-Results
-Theme Data
-<pre>{{ theme }}</pre>
-Page Data
-<pre>{{ page }}</pre>
-Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-More
-
-
 
 ---
 
-### **5.3 `docs/.vitepress/config.mts`（站点配置）**
+## **5.3 docs/.vitepress/config.mts (Site Configuration)**
 
 ```ts
 import { defineConfig } from 'vitepress'
@@ -194,9 +178,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'My Awesome Project',
   description: 'A VitePress Site',
-
   base: '/2025-2-mingzhao/',
-
   cleanUrls: true,
 
   themeConfig: {
@@ -244,10 +226,6 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
   }
 })
-
-5.4 .github/workflows/deploy.yml（GitHub Pages Automatic deployment）
-
-
 name: Deploy VitePress site to Pages
 
 on:
