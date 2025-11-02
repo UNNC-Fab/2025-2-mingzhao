@@ -125,7 +125,10 @@ outline: false
   .VPHomeHero .name { animation: none; }
 }
 </style>
-5.2 docs/api-examples.md (Sample page)
+
+
+## **5.2 docs/api-examples.md (Sample page)**
+```md
 ---
 outline: deep
 ---
@@ -167,8 +170,7 @@ Check out the documentation for the full list of runtime APIs.
 ---
 
 ## **5.3 docs/.vitepress/config.mts (Site Configuration)**
-
-```ts
+```md
 import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
@@ -224,7 +226,11 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
   }
 })
-5.4 .github/workflows/deploy.yml (GitHub Pages Auto Deployment)
+
+
+
+## **5.4 .github/workflows/deploy.yml (GitHub Pages Auto Deployment)**
+```md
 name: Deploy VitePress site to Pages
 
 on:
