@@ -61,7 +61,7 @@ Then you can **view it on your GitHub webpage**.
 
 ## **5. Home Page Code**
 
-Here is the code for the home page, including the VitePress home file, sample page, site configuration, and GitHub Actions deployment.
+Here is the **code for the home page**, including the VitePress home file, sample page, site configuration, and GitHub Actions deployment.
 
 ---
 
@@ -79,7 +79,6 @@ outline: false
 ---
 
 <style>
-/* make hero area fill viewport and center everything */
 .VPHomeHero {
   display: flex;
   flex-direction: column;
@@ -89,41 +88,30 @@ outline: false
   height: 100vh;
   padding: 0;
 }
-
-/* slightly smaller hero title (compared to previous version) */
 .VPHomeHero .name {
-  font-size: 110px;           /* mobile size */
+  font-size: 110px;
   line-height: 1;
   font-weight: 900;
-  margin-bottom: 50px;        /* spacing below title */
-
-  /* neon gradient */
+  margin-bottom: 50px;
   background: linear-gradient(90deg,#4facfe,#00f2fe,#a78bfa,#f472b6,#f59e0b,#4facfe);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-
-  /* glow + animation */
   text-shadow: 0 0 20px rgba(79,172,254,0.4),
                0 0 40px rgba(244,114,182,0.25);
   animation: glowShift 6s ease-in-out infinite;
 }
-
 @keyframes glowShift {
-  0%   { background-position:   0% 50%; text-shadow:0 0 20px rgba(79,172,254,0.4); }
+  0%   { background-position: 0% 50%; text-shadow:0 0 20px rgba(79,172,254,0.4); }
   50%  { background-position: 100% 50%; text-shadow:0 0 40px rgba(244,114,182,0.4); }
-  100% { background-position:   0% 50%; text-shadow:0 0 20px rgba(79,172,254,0.4); }
+  100% { background-position: 0% 50%; text-shadow:0 0 20px rgba(79,172,254,0.4); }
 }
-
-/* desktop: smaller than before, still impressive */
 @media (min-width: 960px) {
   .VPHomeHero .name { font-size: 160px; }
 }
-
-/* subtitle styling */
 .VPHomeHero .text {
-  font-size: 34px;            /* mobile */
+  font-size: 34px;
   line-height: 1.4;
   font-weight: 500;
   opacity: 0.95;
@@ -133,12 +121,11 @@ outline: false
 @media (min-width: 960px) {
   .VPHomeHero .text { font-size: 46px; }
 }
-
-/* safety for reduced-motion users */
 @media (prefers-reduced-motion: reduce) {
   .VPHomeHero .name { animation: none; }
 }
 </style>
+5.2 docs/api-examples.md (Sample page)
 ---
 outline: deep
 ---
@@ -165,6 +152,16 @@ const { theme, page, frontmatter } = useData()
 
 ### Page Frontmatter
 <pre>{{ frontmatter }}</pre>
+<script setup> import { useData } from 'vitepress' const { site, theme, page, frontmatter } = useData() </script>
+Results
+Theme Data
+<pre>{{ theme }}</pre>
+Page Data
+<pre>{{ page }}</pre>
+Page Frontmatter
+<pre>{{ frontmatter }}</pre>
+More
+Check out the documentation for the full list of runtime APIs.
 
 
 ---
@@ -178,6 +175,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'My Awesome Project',
   description: 'A VitePress Site',
+
   base: '/2025-2-mingzhao/',
   cleanUrls: true,
 
@@ -226,6 +224,7 @@ export default defineConfig({
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
   }
 })
+5.4 .github/workflows/deploy.yml (GitHub Pages Auto Deployment)
 name: Deploy VitePress site to Pages
 
 on:
@@ -249,7 +248,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # If lastUpdated is disabled, this can be omitted.
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
