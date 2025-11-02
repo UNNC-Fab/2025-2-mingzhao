@@ -3,7 +3,7 @@
 
 <!-- GPL 3.0 精要说明（Markdown + 少量内联 HTML 上色） -->
 
-<h1 style="color:#2b6cb0;">GPL 3.0 精要说明（面向论文写作的简洁版）</h1>
+<h1 style="color:#2b6cb0;">GPL 3.0 精要说明</h1>
 
 
 <h2 style="color:#38a169;">一、简述（Overview）</h2>
@@ -36,7 +36,7 @@
 - BSD（2-Clause）官方页：<https://opensource.org/licenses/BSD-2-Clause>  
 - Apache-2.0 官方页：<https://www.apache.org/licenses/LICENSE-2.0>
 
-<h2 style="color:#e53e3e;">四、论文式总结（Concise Conclusion）</h2>
+<h2 style="color:#e53e3e;">四、总结</h2>
 
 **结论：** GPL-3.0 通过**强 Copyleft、专利授予、反 Tivoization 与 DRM 约束**，在法律层面**最大化保障用户自由与社区可持续性**；其代价是对闭源整合与商用分发的**兼容性约束更强**。相对地，MIT、BSD 与 Apache-2.0 等**宽松许可**提供更高的**集成与商业采用弹性**（尤其 Apache-2.0 还具备清晰的专利条款），但**无法强制派生作品回流开源**。
 
@@ -48,7 +48,7 @@
 
 ---
 
-**参考与官网链接（可直接引用）**  
+**参考与官网链接**  
 - GPL-3.0 正文：<https://www.gnu.org/licenses/gpl-3.0.en.html>  
 - GPL 官方 FAQ：<https://www.gnu.org/licenses/gpl-faq.html>  
 - MIT：<https://opensource.org/licenses/MIT>  
