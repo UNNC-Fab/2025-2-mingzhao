@@ -1,10 +1,10 @@
 # GPL 3.0
+
+
 <!-- GPL 3.0 精要说明（Markdown + 少量内联 HTML 上色） -->
 
 <h1 style="color:#2b6cb0;">GPL 3.0 精要说明（面向论文写作的简洁版）</h1>
 
-> 版本：适合 SCI/技术论文的“短而准”阐述  
-> 关键词：copyleft、专利授权、反 Tivoization、DRM、兼容性
 
 <h2 style="color:#38a169;">一、简述（Overview）</h2>
 
