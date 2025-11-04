@@ -19,10 +19,9 @@ Be sure to include a **README file** in the repository, as this is where we can 
 ---
 
 ## **2. Member Invitation**
-
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104131901456.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132245762.png)
 You can **invite team members** to your repository.
-
-  
 After inviting, you can **view the list of invited members** in the repository settings.
 
 ---
