@@ -45,11 +45,12 @@ Once members are invited, go to **Settings** to configure project permissions an
 
 Use **Clone**, **Pull**, and **Push** commands to manage your code locally and synchronize with GitHub.
 
-  
-When uploading, remember to **enter the page version name** clearly.
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132823156.png)
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133039814.png)
 
   
 After confirming, **click to upload** your project.
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133200732.png)
 
   
 Then you can **view it on your GitHub webpage**.
