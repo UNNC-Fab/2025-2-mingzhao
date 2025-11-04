@@ -16,7 +16,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Daily homework', link: '/daily-homework/project-management' },
-      { text: 'Finalwork', link: '/finalwork/psychological-sand-table' },
+      { text: 'Finalwork', link: '/finalwork/psychological-sand-table' }
     ],
 
     search: { provider: 'local' },
@@ -27,8 +27,13 @@ export default defineConfig({
           text: 'Daily homework',
           items: [
             { text: 'Project Management', link: '/daily-homework/project-management' },
-            { text: 'Arduino', link: '/daily-homework/arduino' },
-            { text: 'Small homework in class', link: '/daily-homework/small-homework-in-class' }  // New section under Daily homework
+            { text: 'Arduino', link: '/daily-homework/arduino' }
+          ]
+        },
+        {
+          text: 'Project Management',  // This section now has a submenu
+          items: [
+            { text: 'Small homework in class', link: '/daily-homework/project-management/small-homework-in-class' }
           ]
         }
       ],
