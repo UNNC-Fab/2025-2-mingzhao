@@ -51,10 +51,10 @@ Use **Clone**, **Pull**, and **Push** commands to manage your code locally and s
   
 After confirming, **click to upload** your project.
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133200732.png)
-
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133409442.png)
   
 Then you can **view it on your GitHub webpage**.
-
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133445034.png)
 ---
 
 ## **5. Home Page Code**
