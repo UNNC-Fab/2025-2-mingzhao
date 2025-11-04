@@ -5,9 +5,8 @@
 ## **1.  Learn Open Source Hardware**
 
 **Arduino** is an open-source hardware platform widely used for **electronics prototyping**, **IoT projects**, and **embedded system education**.
-
-
 It provides an **easy-to-use programming environment** and supports various **microcontrollers** for creating interactive projects.
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133639111.png)
 
 ---
 
