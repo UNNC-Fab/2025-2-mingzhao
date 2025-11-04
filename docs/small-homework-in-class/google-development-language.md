@@ -8,6 +8,7 @@
 <h2 style="color:#38a169;">一、语言与生态（Google）</h2>
 
 - **Android 应用**：**Kotlin（首推）** 与 **Java**  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/70a1bcb813786a0d9b9ecbb64c287917.jpg)
   - 官方：<https://developer.android.com/kotlin>｜<https://developer.android.com>  
   - 构建：**Gradle**（Android Gradle Plugin），IDE：**Android Studio**（基于 IntelliJ）  
   - 编译链：OpenJDK + **D8/R8**（dex/压缩混淆）+ **LLVM/Clang**（NDK 原生 C/C++）
@@ -17,10 +18,12 @@
   - 编译：**Clang/LLVM**，打包通过 Gradle 集成
 
 - **后端/基础设施**：**Go（Golang）**、**Python**、**Java**、**C++**  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/4f235d7803a15f90535834c0e0c5ccbd.jpg)
   - Go：<https://go.dev/>（自带 toolchain，静态编译）  
   - 构建编排：**Bazel**（Google 内部 Blaze 的开源版） <https://bazel.build/>
 
 - **跨平台 UI**：**Dart + Flutter**  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/d85e05cfc83af7870020f71f72fa6388.jpg)
   - Flutter：<https://flutter.dev/>｜Dart：<https://dart.dev/>  
   - 编译：JIT（开发热重载）+ **AOT**（发布，生成原生代码），移动端经 **Skia** 渲染
 
