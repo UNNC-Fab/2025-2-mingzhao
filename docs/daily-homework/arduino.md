@@ -45,6 +45,9 @@ Below are its **main features and functions**:
 ---
 
 ## **3.  Case Study: Using Arduino Uno R4 WIFI**
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/5861c65b0fd3b9bac92701d2eb0466ee.jpg)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/7d1408ce2e783ff0860076f82812905c.jpg)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/8d17b8e70547fdf6207bec13aa0197b8.jpg)
 /*
   项目名称: 基于电位器控制舵机角度
   目的: 通过读取电位器的模拟值（0-1023），将其映射到舵机的角度范围（0-180°），并根据电位器的变化控制舵机的转动。
