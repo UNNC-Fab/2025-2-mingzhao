@@ -5,14 +5,12 @@
 ## **1. Create a Repository**
 
 To start, we need to **create a repository** on **GitHub** at [github.com](https://github.com).
-
-  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104130948549.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104131118958.png)
 Set the **repository name** first.
-
-  
 As we continue to create our repository, we need to set our **visibility** to **Public**, allowing Internet users to access it.
-
-  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104131212550.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104131542106.png)
 Be sure to include a **README file** in the repository, as this is where we can provide a comprehensive **project description**.
 
   
