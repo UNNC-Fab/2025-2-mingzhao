@@ -48,8 +48,9 @@ Below are its **main features and functions**:
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/5861c65b0fd3b9bac92701d2eb0466ee.jpg)
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/7d1408ce2e783ff0860076f82812905c.jpg)
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/8d17b8e70547fdf6207bec13aa0197b8.jpg)
+```cpp
 /*
-  项目名称: 基于电位器控制舵机角度
+  项目名称: 基于电位器控制舵机角度的 Arduino 项目
   目的: 通过读取电位器的模拟值（0-1023），将其映射到舵机的角度范围（0-180°），并根据电位器的变化控制舵机的转动。
   硬件:
     - 使用电位器控制舵机转动，电位器连接到 Arduino 的 A0 引脚。
@@ -58,31 +59,23 @@ Below are its **main features and functions**:
     - 读取电位器的值，将其映射到舵机角度范围。
     - 通过串口输出电位器的原始值和映射后的舵机角度。
     - 控制舵机角度，并通过串口监视器查看实时数据。
-  作者: [ximingzhao]
-  日期: [11.4]
+  作者: [你的名字]
+  日期: [当前日期]
 */
 
 #include <Servo.h>  // 引入舵机控制库，用于控制舵机的角度
 
-// 定义舵机连接的引脚
-#define PIN_SERVO 10  
-
-// 创建舵机对象，用于控制舵机
-Servo myservo;      
+#define PIN_SERVO 10  // 定义舵机连接的引脚
+Servo myservo;      // 创建舵机对象，用于控制舵机
 
 void setup() {
-  // 启动串口监视器，波特率115200，便于调试时查看数据
-  Serial.begin(115200);  
-  // 将舵机对象与指定的引脚连接
-  myservo.attach(PIN_SERVO);  
+  Serial.begin(115200);  // 启动串口监视器，波特率115200，便于调试时查看数据
+  myservo.attach(PIN_SERVO);  // 将舵机对象与指定的引脚连接
 }
 
 void loop() {
-  // 从 A0 引脚读取电位器的模拟值，范围是0到1023
-  int sensorValue = analogRead(A0);    
-  
-  // 将电位器的值映射到舵机的角度范围 0 到 180
-  int angle = map(sensorValue, 0, 1023, 0, 180);
+  int sensorValue = analogRead(A0);  // 从 A0 引脚读取电位器的模拟值（范围 0-1023）
+  int angle = map(sensorValue, 0, 1023, 0, 180);  // 将电位器的值映射到舵机的角度范围（0-180）
 
   // 打印电位器的原始值和映射后的舵机角度值到串口监视器
   Serial.print("原始值: ");
