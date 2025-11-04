@@ -27,16 +27,16 @@ After inviting, you can **view the list of invited members** in the repository s
 ---
 
 ## **3. GitHub Settings**
-
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132457766.png)
 Once members are invited, go to **Settings** to configure project permissions and collaboration options.
 
-  
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132503417.png)
  *Complete the setup.*
 
-  
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132512364.png)
  *Upload pictures here.*
 
-  
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132523147.png)
  *View and manage images here.*
 
 ---
