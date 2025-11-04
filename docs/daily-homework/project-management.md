@@ -31,6 +31,9 @@ After inviting, you can **view the list of invited members** in the repository s
 Once members are invited, go to **Settings** to configure project permissions and collaboration options.
 
   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132503417.png)
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104151759443.png)
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104152044271.png)
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104152111054.png)
  *Complete the setup.*
 
   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132512364.png)
@@ -50,11 +53,10 @@ Use **Clone**, **Pull**, and **Push** commands to manage your code locally and s
 
   
 After confirming, **click to upload** your project.
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133200732.png)
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133409442.png)
   
 Then you can **view it on your GitHub webpage**.
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133445034.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104152911772.png)
 ---
 
 ## **5. Home Page Code**
@@ -127,50 +129,8 @@ outline: false
 
 ---
 
-## **5.2 docs/api-examples.md (Sample page)**
 
-```md
----
-outline: deep
----
-
-# Runtime API Examples
-
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
-
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
-
-````md
-<script setup>
-import { useData } from 'vitepress'
-const { theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-<script setup> import { useData } from 'vitepress' const { site, theme, page, frontmatter } = useData() </script>
-Results
-Theme Data
-<pre>{{ theme }}</pre>
-Page Data
-<pre>{{ page }}</pre>
-Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-More
-Check out the documentation for the full list of runtime APIs.
-``` 
-
----
-
-## **5.3 docs/.vitepress/config.mts (Site Configuration)**
+## **5.2 docs/.vitepress/config.mts (Site Configuration)**
 
 ```md
 import { defineConfig } from 'vitepress'
@@ -232,7 +192,7 @@ export default defineConfig({
 
 ---
 
-## **5.4 .github/workflows/deploy.yml (GitHub Pages Auto Deployment)**
+## **5.3 .github/workflows/deploy.yml (GitHub Pages Auto Deployment)**
 
 ```md
 name: Deploy VitePress site to Pages
