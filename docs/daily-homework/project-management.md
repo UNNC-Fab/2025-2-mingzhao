@@ -32,7 +32,8 @@ Once members are invited, go to **Settings** to configure project permissions an
 
   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132503417.png)
   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104151759443.png)
-  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104152044271.png)
+ *Set the token*
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104153441440.png)
   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104152111054.png)
  *Complete the setup.*
 
