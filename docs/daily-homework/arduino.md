@@ -2,198 +2,209 @@
 
 ---
 
-## **1. 开源硬件生态介绍**
+## **1. Open-Source Hardware Ecosystem Introduction**
 
-在现代电子与智能系统学习中，**开源硬件（Open-Source Hardware）** 已成为创客教育、IoT开发和电子原型设计中最常见的基础工具。  
-所谓“开源”，指的是电路图、原理图、程序代码都对外开放，任何人都可以学习、修改、再创造。  
-目前最常被使用的几种开源硬件平台如下：
+In modern electronics and intelligent systems learning, **open-source hardware** has become the most commonly used basic tool in maker education, IoT development, and electronic prototyping.  
+The term "open-source" means that circuit diagrams, schematics, and program codes are all open to the public, allowing anyone to learn, modify, and recreate.  
+Here are some of the most commonly used open-source hardware platforms:
 
 ---
 
-### **Raspberry Pi（树莓派）**
+### **Raspberry Pi**
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108171501402.png)
+Raspberry Pi is a **micro single-board computer (SBC)**, small enough to fit in the palm of your hand but capable of running a complete Linux system.  
+It supports Python, C/C++, Java, and other programming languages and can be connected to a monitor, keyboard, and mouse for use.
 
-树莓派是一款**微型单板计算机（SBC）**，只有巴掌大小，却能运行完整的Linux系统。  
-它支持Python、C/C++、Java等编程语言，可连接显示器、键盘和鼠标使用。  
+- **Main Features:**  
+  - Equipped with an ARM processor, supports HDMI output, USB ports, and WiFi/Bluetooth communication.  
+  - Can interface with cameras, sensors, and other modules for complex functions like image recognition and voice control.  
+- **Common Uses:**  
+  - Smart home control center  
+  - Small AI inference server (can run TensorFlow Lite)  
+  - Embedded system experiments in teaching and research  
 
-- **主要特点：**  
-  - 搭载ARM处理器，支持HDMI输出、USB接口和WiFi/蓝牙通信。  
-  - 可外接摄像头、传感器等模块，实现图像识别、语音控制等复杂功能。  
-- **常见用途：**  
-  - 智能家居主控中心  
-  - 小型AI推理服务器（可运行TensorFlow Lite）  
-  - 教学与科研中的嵌入式系统实验  
-
-树莓派常被称为“**会编程的迷你电脑**”，在教育和科研中非常普及。
+Raspberry Pi is often referred to as a "**programmable mini-computer**" and is widely used in education and research.
 
 ---
 
 ### **LilyPad Arduino**
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108171545218.png)
+LilyPad is an Arduino board specially designed for **wearable electronics projects**.  
+Its circular shape has sewable connections, making it easy to sew into clothing.
 
-LilyPad 是 Arduino 系列中专为**可穿戴电子项目**设计的一种柔性主板。  
-它的外形是圆形的，带有可缝制的接点，能直接用导电线缝到衣物上。
+- **Main Features:**  
+  - Uses the ATmega328V chip, compatible with Arduino Uno.  
+  - Supports battery power and can connect to modules like LEDs and sensors.  
+  - All pins are designed with large holes for easy sewing.  
+- **Typical Applications:**  
+  - Smart glowing clothing  
+  - Motion capture in dance costumes  
+  - Artistic interactive installations  
 
-- **主要特点：**  
-  - 采用ATmega328V芯片，与Arduino Uno兼容。  
-  - 支持电池供电，可连接LED、传感器等模块。  
-  - 所有引脚设计为大圆孔，方便缝合。  
-- **典型应用：**  
-  - 智能发光衣服  
-  - 舞蹈服装中的动作捕捉  
-  - 艺术交互装置  
-
-LilyPad 的理念是“**让电子设计融入日常生活**”，特别适合艺术与设计类创作。
-
----
-
-### **ESP32 / ESP8266 系列**
-
-ESP 系列是由乐鑫科技（Espressif）推出的高性价比无线微控制器芯片。  
-相较于Arduino，它内置了WiFi和蓝牙模块，更适合做联网设备。
-
-- **主要特点：**  
-  - 支持Arduino IDE、MicroPython等多种开发环境。  
-  - 双核CPU，主频最高可达240MHz。  
-  - 内置无线模块，支持HTTP、MQTT通信。  
-- **典型应用：**  
-  - 智能家居设备（如智能插座、温湿度监控）  
-  - 物联网节点采集终端  
-  - 无线传感器网络  
-
-ESP32 已成为IoT项目中最常用的核心板之一。
+LilyPad’s philosophy is “**integrating electronic design into daily life**,” making it ideal for artistic and design-oriented creations.
 
 ---
 
-### **Micro:bit（BBC教育板）**
+### **ESP32 / ESP8266 Series**
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108171617721.png)
+The ESP series, developed by Espressif, is a high-performance, cost-effective wireless microcontroller chip.  
+Compared to Arduino, it comes with built-in WiFi and Bluetooth modules, making it more suitable for connected devices.
 
-Micro:bit 是由英国BBC为青少年编程教育推出的**入门级微控制器**。  
-它内置多种传感器和LED矩阵，适合初学者体验编程与交互。
+- **Main Features:**  
+  - Supports Arduino IDE, MicroPython, and other development environments.  
+  - Dual-core CPU with a maximum frequency of 240MHz.  
+  - Built-in wireless modules supporting HTTP, MQTT communication.  
+- **Typical Applications:**  
+  - Smart home devices (such as smart plugs, temperature and humidity monitoring)  
+  - IoT node data collection terminals  
+  - Wireless sensor networks  
 
-- **主要特点：**  
-  - 自带LED点阵、加速度计、磁力计、蓝牙模块。  
-  - 可通过网页图形化编程（MakeCode）或Python进行开发。  
-- **常见用途：**  
-  - 教学实验、互动游戏、智能小车控制。  
-
-它的口号是“**让每个孩子都能学会编程**”，非常适合课堂教学和创客初学。
+The ESP32 has become one of the most commonly used core boards in IoT projects.
 
 ---
 
+### **Micro:bit (BBC Educational Board)**
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108171646960.png)
+Micro:bit is an **entry-level microcontroller** developed by BBC for youth programming education.  
+It comes with multiple built-in sensors and an LED matrix, making it ideal for beginners to experience programming and interaction.
+
+- **Main Features:**  
+  - Built-in LED matrix, accelerometer, magnetometer, Bluetooth module.  
+  - Can be programmed using graphical programming (MakeCode) or Python.  
+- **Common Uses:**  
+  - Educational experiments, interactive games, smart car control.  
+
+Its slogan is “**Let every child learn to code**,” making it highly suitable for classroom teaching and beginner makers.
+
+---
 
 ## **2. Learn the Arduino IDE**
 
-**Arduino** 是一个基于开源硬件与软件的电子原型平台。  
-它让没有电子背景的学习者也能快速上手，通过图形化或简单的C语言程序控制传感器、马达、灯光等设备。  
+**Arduino** is an open-source hardware and software electronic prototyping platform.  
+It allows learners with no background in electronics to quickly get started and control sensors, motors, lights, and other devices with simple code or graphical programming.
 
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133639111.png)
 
-Arduino 的最大魅力在于“**所见即所得**”：  
-无论是做一个小夜灯、温度记录仪，还是一个自动浇花系统，只需几行代码就能实现。
+The greatest charm of Arduino lies in its “**what you see is what you get**” approach:  
+Whether you're building a small night light, a temperature logger, or an automatic plant-watering system, just a few lines of code can make it happen.
 
 ---
 
-### **Arduino IDE 界面概述**
+### **Arduino IDE Interface Overview**
 
-**Arduino IDE** 是编写、编译和上传代码到 Arduino 开发板的工具。它的界面简洁直观，主要分为四个部分：
+**Arduino IDE** is the tool used to write, compile, and upload code to the Arduino board. Its interface is simple and intuitive, mainly divided into four sections:
 
-- **菜单栏**：提供文件、编辑、程序、工具和帮助等菜单选项，帮助你进行文件管理、代码编辑、以及开发板设置等操作。  
-- **工具栏**：包含常用的功能按钮，如编译、上传、打开程序、保存程序和串口监视器等，方便快速操作。  
-- **代码编辑区**：用于编写程序代码，主要包括 `setup()` 和 `loop()` 两个部分，分别用于初始化设置和程序的循环控制。  
-- **状态区**：显示编译和上传的进度以及任何错误信息，帮助你快速调试程序。
+- **Menu Bar:** Provides file, edit, program, tools, and help menus for file management, code editing, and board settings.  
+- **Toolbar:** Contains commonly used buttons such as compile, upload, open program, save program, and serial monitor for quick operation.  
+- **Code Editing Area:** Used to write program code, mainly consisting of `setup()` and `loop()` sections for initialization and continuous control.  
+- **Status Bar:** Displays the progress of compilation and uploading, as well as any error messages to help debug the program.
+
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108155754859.png)
-这个界面设计简洁，旨在让开发者专注于编写代码和进行实验，而不需要关注复杂的设置和操作。
-Example: The environment built-in example program can be opened.
+
+This interface is designed to help developers focus on writing code and conducting experiments without worrying about complex settings and operations.  
+Example: The environment’s built-in example program can be opened.
+
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108155904386.png)
-Edit: Edit the code, copy and paste, comment, indent, size, find, etc. (in actual use, it is usually used with its corresponding shortcut key)
+
+Edit: Edit the code, copy and paste, comment, indent, adjust size, find, etc. (In actual use, it is usually done with corresponding shortcut keys.)
+
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108155947597.png)
-Project —> Load library —>Management library: You can search various support libraries in the installation network, select the library to be installed and click install to download and install online, which is very convenient.
+
+Project -> Load Library -> Library Manager: You can search for various supported libraries in the installation network, select the library to install, and click install to download and install online, which is very convenient.
+
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108160034367.png)
-Tools-> Port: Set the port required by the Arduino IDE download program, that is, the port through which the development board connects to the computer
+
+Tools -> Port: Set the port required by the Arduino IDE to download the program, which is the port through which the development board connects to the computer.
+
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108160111163.png)
+
 ---
 
 ## **3. About Arduino Uno R4 WIFI**
 
-**Arduino Uno R4 WIFI** 是 Arduino 系列中最新的一款开发板，增加了WiFi模块，使其在物联网应用中更加灵活。  
-它继承了Arduino Uno的设计理念，但在处理能力和无线通信上得到了显著提升。
+**Arduino Uno R4 WIFI** is the latest development board in the Arduino series, adding a WiFi module to make it more flexible for IoT applications.  
+It inherits the design philosophy of the Arduino Uno but significantly improves processing power and wireless communication.
 
-### 核心配置
+### Core Configuration
 
-- **主控芯片：** Renesas RA4M1（32位 ARM Cortex-M4）  
-  - Flash 存储：32KB  
-  - SRAM：16KB  
-  - EEPROM：4KB  
+- **Main Chip:** Renesas RA4M1 (32-bit ARM Cortex-M4)  
+  - Flash Memory: 32KB  
+  - SRAM: 16KB  
+  - EEPROM: 4KB  
 
-- **工作频率：** 48 MHz  
-- **工作电压：** 5V  
-- **输入电压范围：** 7V–12V（可通过 USB 或外部供电）
+- **Operating Frequency:** 48 MHz  
+- **Operating Voltage:** 5V  
+- **Input Voltage Range:** 7V–12V (via USB or external power)
 
-- **内置 WiFi：** 2.4GHz WiFi模块（适用于IoT应用）
-
----
-
-### 引脚分布
-
-- **数字引脚（D0–D13）：** 可用于开关信号输出或输入。  
-  其中 D0、D1 用于串口通信。  
-- **模拟引脚（A0–A5）：** 可读取0–5V的模拟信号，如温度、电位器等。  
-- **PWM 输出：** D3、D5、D6、D9、D10、D11 支持模拟调光、舵机控制等功能。  
+- **Built-in WiFi:** 2.4GHz WiFi module (suitable for IoT applications)
 
 ---
 
-### 通信与接口
+### Pin Distribution
 
-- **USB 接口：** 用于上传程序和与电脑通信。  
-- **串口通信（UART）：** 可连接蓝牙模块、GPS、串口屏等设备。  
-- **I2C / SPI 接口：** 可与传感器、显示屏、存储模块连接。  
-- **内置 WiFi：** 用于物联网通信，适合远程数据采集与控制。
-
----
-
-### 其他功能
-
-- 板载 **Reset 按钮** 可重新启动程序。  
-- 支持 **Arduino IDE** 开发环境，简单直观。  
-- 可扩展 **各类传感器模块与电机驱动板**。  
+- **Digital Pins (D0–D13):** Can be used for switching signal output or input.  
+  D0 and D1 are used for serial communication.  
+- **Analog Pins (A0–A5):** Can read analog signals from 0–5V, such as temperature or potentiometer values.  
+- **PWM Output:** D3, D5, D6, D9, D10, D11 support functions like dimming or servo control.
 
 ---
 
-## **3. Case Study: 使用 Arduino Uno R4 WIFI 控制舵机**
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/5861c65b0fd3b9bac92701d2eb0466ee.jpg)
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/7d1408ce2e783ff0860076f82812905c.jpg)
+### Communication and Interfaces
+
+- **USB Interface:** Used for uploading programs and communicating with the computer.  
+- **Serial Communication (UART):** Can connect to Bluetooth modules, GPS, serial screens, etc.  
+- **I2C / SPI Interfaces:** Can connect to sensors, displays, and storage modules.  
+- **Built-in WiFi:** Used for IoT communication, suitable for remote data collection and control.
+
+---
+
+### Other Features
+
+- Onboard **Reset Button** for restarting the program.  
+- Supports **Arduino IDE** development environment, simple and intuitive.  
+- Expandable with **various sensor modules and motor driver boards**.
+
+---
+
+## **3. Case Study: Using Arduino Uno R4 WIFI to Control a Servo**
+
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/5861c65b0fd3b9bac92701d2eb0466ee.jpg)  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/7d1408ce2e783ff0860076f82812905c.jpg)  
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/8d17b8e70547fdf6207bec13aa0197b8.jpg)
 
 ```cpp
 /*
-  项目名称: 电位器控制舵机角度
-  功能说明:
-    - 电位器连接A0引脚，舵机连接D10引脚。
-    - 通过电位器的转动控制舵机的角度。
-    - 在串口监视器中实时输出角度变化。
+  Project Name: Potentiometer Control of Servo Angle
+  Function Description:
+    - The potentiometer is connected to pin A0, and the servo is connected to pin D10.
+    - The rotation of the potentiometer controls the angle of the servo.
+    - The angle change is displayed in the serial monitor in real-time.
 */
 
 #include <Servo.h>  
 
 #define PIN_SERVO 10  
-Servo myservo;      
+Servo myservo;       
 
 void setup() {
-  Serial.begin(115200);       // 打开串口监视器
-  myservo.attach(PIN_SERVO);  // 连接舵机
+  Serial.begin(115200);       // Open the serial monitor
+  myservo.attach(PIN_SERVO);  // Connect the servo
 }
 
 void loop() {
-  int sensorValue = analogRead(A0);             // 读取电位器的模拟值
-  int angle = map(sensorValue, 0, 1023, 0, 180); // 映射到舵机角度范围
+  int sensorValue = analogRead(A0);             // Read the analog value of the potentiometer
+  int angle = map(sensorValue, 0, 1023, 0, 180); // Map to the servo angle range
 
-  Serial.print("电位器值: ");
+  Serial.print("Potentiometer value: ");
   Serial.print(sensorValue);
-  Serial.print("  ->  舵机角度: ");
+  Serial.print("  ->  Servo angle: ");
   Serial.println(angle);
 
-  myservo.write(angle); // 控制舵机
+  myservo.write(angle); // Control the servo
   delay(200);
 }
 ``` 
+
 ---
 
 # **Arduino Output**
@@ -274,6 +285,85 @@ void waterFlowEffect(bool forward) {
     delay(blinkTime);                       // Flicker duration
   }
 }
+``` 
 
+---
+
+## **Display control**
+
+In this project, I used **Arduino Uno**, **4x4 Keypad**, and a **7-segment display** to create a simple digital input system. The **4x4 keypad** is used to input digits (0-9), and the corresponding number is displayed on the **7-segment display**.
+
+### **Keypad and 7-Segment Display Simulation**
+
+In my project, the **4x4 keypad** allows users to press keys, and based on the key pressed, the **7-segment display** will show the corresponding number. The system responds to the key inputs and displays the number dynamically, with feedback shown through the serial monitor.
+
+This **diagram** demonstrates the **basic arrangement** of the keypad and the 7-segment display. It shows how the 4x4 keypad is connected to the Arduino and how the 7-segment display is connected to the corresponding pins.
+
+![Keypad and Display Setup](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108171816199.png)
+
+### **Code Display**
+
+Here is the complete code for the **Display control**:
+
+```cpp
+#include <Keypad.h>
+
+const byte ROWS = 4, COLS = 4;  // Define the size of the keypad
+char keys[ROWS][COLS] = {
+  {'1','2','3','A'},
+  {'4','5','6','B'},
+  {'7','8','9','C'},
+  {'*','0','#','D'}
+};
+
+byte rowPins[ROWS] = {13, 12, 11, 10};  // Row pins connected to Arduino
+byte colPins[COLS] = {9, 8, 7, 6};     // Column pins connected to Arduino
+
+Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
+
+// Define the pins for the 7-segment display (a to g)
+int segPins[7] = {5, 4, 3, 2, A5, A4, A3};
+
+// Number patterns for digits 0-9 (1 = ON)
+int angka[10][7] = {
+  {1,1,1,1,1,1,0}, // 0
+  {0,1,1,0,0,0,0}, // 1
+  {1,1,0,1,1,0,1}, // 2
+  {1,1,1,1,0,0,1}, // 3
+  {0,1,1,0,0,1,1}, // 4
+  {1,0,1,1,0,1,1}, // 5
+  {1,0,1,1,1,1,1}, // 6
+  {1,1,1,0,0,0,0}, // 7
+  {1,1,1,1,1,1,1}, // 8
+  {1,1,1,1,0,1,1}  // 9
+};
+
+void setup() {
+  // Set the segment pins as OUTPUT
+  for (int i = 0; i < 7; i++) {
+    pinMode(segPins[i], OUTPUT);
+  }
+  Serial.begin(9600);  // Initialize the serial communication
+}
+
+void loop() {
+  // Get the pressed key from the keypad
+  char key = keypad.getKey();
+  
+  // If a key is pressed and it is a digit (0-9), display the corresponding number
+  if (key && key >= '0' && key <= '9') {
+    int num = key - '0';  // Convert the character to an integer
+    tampilkanAngka(num);   // Display the number on the 7-segment display
+    Serial.print("Tombol: ");
+    Serial.println(key);   // Print the pressed key to the serial monitor
+  }
+}
+
+// Function to display the number on the 7-segment display
+void tampilkanAngka(int num) {
+  for (int i = 0; i < 7; i++) {
+    digitalWrite(segPins[i], angka[num][i] ? LOW : HIGH);  // LOW = ON (for common cathode display)
+  }
+}
 
 
