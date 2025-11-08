@@ -217,6 +217,7 @@ The **diagram** illustrates the **control principle** behind the water flow lamp
 Finally, the **diagram** showcases the **actual simulation** that I created. It demonstrates how the LEDs light up in sequence from left to right, and then reverse the flow from right to left. Additionally, the last LED flickers to enhance the dynamic visual effect, mimicking the behavior of flowing water.
 
 ![Simulation](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108164312764.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108-0902-33.3647075.mp4)
 
 ### **Code Display**
 
