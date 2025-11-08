@@ -2,7 +2,7 @@
 
 ---
 
-## **0. 开源硬件生态介绍**
+## **1. 开源硬件生态介绍**
 
 在现代电子与智能系统学习中，**开源硬件（Open-Source Hardware）** 已成为创客教育、IoT开发和电子原型设计中最常见的基础工具。  
 所谓“开源”，指的是电路图、原理图、程序代码都对外开放，任何人都可以学习、修改、再创造。  
@@ -10,8 +10,7 @@
 
 ---
 
-### 🧩 **Raspberry Pi（树莓派）**
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/202511081550_rpi.png)
+### **Raspberry Pi（树莓派）**
 
 树莓派是一款**微型单板计算机（SBC）**，只有巴掌大小，却能运行完整的Linux系统。  
 它支持Python、C/C++、Java等编程语言，可连接显示器、键盘和鼠标使用。  
@@ -28,8 +27,7 @@
 
 ---
 
-### 🧵 **LilyPad Arduino**
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/202511081551_lilypad.png)
+### **LilyPad Arduino**
 
 LilyPad 是 Arduino 系列中专为**可穿戴电子项目**设计的一种柔性主板。  
 它的外形是圆形的，带有可缝制的接点，能直接用导电线缝到衣物上。
@@ -47,8 +45,7 @@ LilyPad 的理念是“**让电子设计融入日常生活**”，特别适合�
 
 ---
 
-### 🔧 **ESP32 / ESP8266 系列**
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/202511081552_esp32.png)
+### **ESP32 / ESP8266 系列**
 
 ESP 系列是由乐鑫科技（Espressif）推出的高性价比无线微控制器芯片。  
 相较于Arduino，它内置了WiFi和蓝牙模块，更适合做联网设备。
@@ -66,8 +63,7 @@ ESP32 已成为IoT项目中最常用的核心板之一。
 
 ---
 
-### 💻 **Micro:bit（BBC教育板）**
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/202511081552_microbit.png)
+### **Micro:bit（BBC教育板）**
 
 Micro:bit 是由英国BBC为青少年编程教育推出的**入门级微控制器**。  
 它内置多种传感器和LED矩阵，适合初学者体验编程与交互。
@@ -82,15 +78,8 @@ Micro:bit 是由英国BBC为青少年编程教育推出的**入门级微控制�
 
 ---
 
-### 🔌 **Arduino（阿尔杜伊诺）**
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/202511081551_arduino.png)
 
-Arduino 是最经典的开源硬件平台，几乎所有电子入门教学都会从它开始。  
-凭借其简洁的编程环境和丰富的模块生态，它被广泛用于学习、实验与产品原型设计中。
-
----
-
-## **1. Learn Open Source Hardware**
+## **2. Learn Open Source Hardware**
 
 **Arduino** 是一个基于开源硬件与软件的电子原型平台。  
 它让没有电子背景的学习者也能快速上手，通过图形化或简单的C语言程序控制传感器、马达、灯光等设备。  
@@ -102,12 +91,12 @@ Arduino 的最大魅力在于“**所见即所得**”：
 
 ---
 
-## **2. About Arduino Uno R4 WIFI**
+## **3. About Arduino Uno R4 WIFI**
 
 **Arduino Uno R4 WIFI** 是 Arduino 系列中最新的一款开发板，增加了WiFi模块，使其在物联网应用中更加灵活。  
 它继承了Arduino Uno的设计理念，但在处理能力和无线通信上得到了显著提升。
 
-### ⚙️ 核心配置
+### 核心配置
 
 - **主控芯片：** Renesas RA4M1（32位 ARM Cortex-M4）  
   - Flash 存储：32KB  
