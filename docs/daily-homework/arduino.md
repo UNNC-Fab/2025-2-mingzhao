@@ -79,7 +79,7 @@ Micro:bit 是由英国BBC为青少年编程教育推出的**入门级微控制�
 ---
 
 
-## **2. Learn Open Source Hardware**
+## **2. Learn the Arduino IDE**
 
 **Arduino** 是一个基于开源硬件与软件的电子原型平台。  
 它让没有电子背景的学习者也能快速上手，通过图形化或简单的C语言程序控制传感器、马达、灯光等设备。  
@@ -89,6 +89,26 @@ Micro:bit 是由英国BBC为青少年编程教育推出的**入门级微控制�
 Arduino 的最大魅力在于“**所见即所得**”：  
 无论是做一个小夜灯、温度记录仪，还是一个自动浇花系统，只需几行代码就能实现。
 
+---
+
+### **Arduino IDE 界面概述**
+
+**Arduino IDE** 是编写、编译和上传代码到 Arduino 开发板的工具。它的界面简洁直观，主要分为四个部分：
+
+- **菜单栏**：提供文件、编辑、程序、工具和帮助等菜单选项，帮助你进行文件管理、代码编辑、以及开发板设置等操作。  
+- **工具栏**：包含常用的功能按钮，如编译、上传、打开程序、保存程序和串口监视器等，方便快速操作。  
+- **代码编辑区**：用于编写程序代码，主要包括 `setup()` 和 `loop()` 两个部分，分别用于初始化设置和程序的循环控制。  
+- **状态区**：显示编译和上传的进度以及任何错误信息，帮助你快速调试程序。
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108155754859.png)
+这个界面设计简洁，旨在让开发者专注于编写代码和进行实验，而不需要关注复杂的设置和操作。
+Example: The environment built-in example program can be opened.
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108155904386.png)
+Edit: Edit the code, copy and paste, comment, indent, size, find, etc. (in actual use, it is usually used with its corresponding shortcut key)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108155947597.png)
+Project —> Load library —>Management library: You can search various support libraries in the installation network, select the library to be installed and click install to download and install online, which is very convenient.
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108160034367.png)
+Tools-> Port: Set the port required by the Arduino IDE download program, that is, the port through which the development board connects to the computer
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108160111163.png)
 ---
 
 ## **3. About Arduino Uno R4 WIFI**
@@ -173,5 +193,86 @@ void loop() {
   myservo.write(angle); // 控制舵机
   delay(200);
 }
+``` 
+---
+
+# **Arduino Output**
+
+## **Water Flow Lamp Simulation**
+
+A **water flow lamp** is an effect where multiple LEDs are controlled to turn on and off in sequence, simulating the flow of water or light. This effect is commonly used in decorations and displays, especially in artistic installations or dynamic lighting effects, and can be easily implemented through programming.
+
+### **Water Flow Lamp Simulation**
+
+In my project, I used **Arduino Uno** and **9 LEDs** to implement the water flow effect. Specifically, the LEDs light up alternately from left to right and right to left, simulating the flow of water, and a flickering effect is added after each LED flows to enhance the dynamic feeling.
+
+This **diagram** demonstrates the **basic arrangement of LEDs**, showing how the LEDs are laid out in a sequence. The LEDs are turned on and off one by one to simulate a flowing effect, similar to how water moves in a stream.
+
+![Concept Diagram 1](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108164248961.png)
+
+The **diagram** illustrates the **control principle** behind the water flow lamp. It shows how the LEDs light up sequentially from left to right and then from right to left, simulating the flowing of water. This diagram emphasizes how the sequential lighting and timing of each LED are controlled to create the water flow effect.
+
+![Concept Diagram 2](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108164239036.png)
+
+Finally, the **diagram** showcases the **actual simulation** that I created. It demonstrates how the LEDs light up in sequence from left to right, and then reverse the flow from right to left. Additionally, the last LED flickers to enhance the dynamic visual effect, mimicking the behavior of flowing water.
+
+![Simulation](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108164312764.png)
+
+### **Code Display**
+
+Here is the complete code for the **Water Flow Lamp Simulation**:
+
+```cpp
+// Project: Water Flow Lamp Simulation
+// Author: ximingzhao
+
+// Define the 9 LED pins
+int leds[] = {2, 3, 4, 5, 6, 7, 8, 9, 10};  // 9 LED pins
+int numLeds = 9;  // Number of LEDs
+int delayTime = 300;  // Delay between LEDs, controls the flow speed
+int blinkTime = 100;  // Delay for the flickering effect, controls flickering frequency
+
+void setup() {
+  // Set all LED pins as output
+  for (int i = 0; i < numLeds; i++) {
+    pinMode(leds[i], OUTPUT);
+  }
+}
+
+void loop() {
+  // Water flow effect from left to right (LED lights up sequentially)
+  waterFlowEffect(true);
+
+  // Water flow effect from right to left (LED lights up sequentially)
+  waterFlowEffect(false);
+}
+
+// Water flow effect function
+void waterFlowEffect(bool forward) {
+  if (forward) {
+    // Turn on LEDs from left to right
+    for (int i = 0; i < numLeds; i++) {
+      digitalWrite(leds[i], HIGH);  // Turn on the current LED
+      delay(delayTime);              // Delay to control the flow speed
+      digitalWrite(leds[i], LOW);    // Turn off the current LED
+    }
+  } else {
+    // Turn on LEDs from right to left
+    for (int i = numLeds - 1; i >= 0; i--) {
+      digitalWrite(leds[i], HIGH);  // Turn on the current LED
+      delay(delayTime);              // Delay to control the flow speed
+      digitalWrite(leds[i], LOW);    // Turn off the current LED
+    }
+  }
+
+  // Add flickering effect (flicker the last LED a few times)
+  for (int i = 0; i < 3; i++) {  // Flicker three times
+    digitalWrite(leds[numLeds - 1], HIGH);  // Turn on the last LED
+    delay(blinkTime);                       // Flicker duration
+    digitalWrite(leds[numLeds - 1], LOW);   // Turn off the last LED
+    delay(blinkTime);                       // Flicker duration
+  }
+}
+
 
 
