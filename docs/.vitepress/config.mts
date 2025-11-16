@@ -24,14 +24,15 @@ export default defineConfig({
 
     sidebar: {
       '/daily-homework/': [
-        {
-          text: 'Daily homework',
-          items: [
-            { text: 'Project Management', link: '/daily-homework/project-management' },
-            { text: 'Arduino', link: '/daily-homework/arduino' }
-          ]
-        }
-      ],
+  {
+    text: 'Daily homework',
+    items: [
+      { text: 'Project Management', link: '/daily-homework/project-management' },
+      { text: 'Arduino', link: '/daily-homework/arduino' },
+      { text: 'CAD design', link: '/daily-homework/cad-design' } 
+    ]
+  }
+],
       '/finalwork/': [
         {
           text: 'Finalwork',
