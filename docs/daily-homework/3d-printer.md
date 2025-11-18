@@ -53,3 +53,30 @@ Considering your background in psychology and the integration of 3D printing, he
 ---
 
 This content should fit seamlessly into your **3D Printer** module, with a focus on new research and applications in both the broader 3D printing field and its potential integration with psychological sand tray therapy.
+
+
+## **2. 3D Printing Test Production**
+
+1. Import the robot model  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005901451.png)
+2. Set the color configuration  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005920782.png)
+3. Adjust colors using edge detection  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005950866.png)
+4. Finalize the production
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119010111351.png)
+
+
+### **Test boat production**
+
+1. Import the boat model  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/143a15500f4ca313f5076d1d0f47034f.png)
+2. Connect the H2DC machine  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/861827e8bfb0a983b119f34d47a14cba.png)
+3. Debug and adjust settings  
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/ae35ea6c290fa405ba9bc86d1e5e8c47.png)
+4. Finish printing
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/4337881f6aa509100ee9fa960569d541.jpg)
+
+
+
