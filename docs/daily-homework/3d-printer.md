@@ -1,3 +1,55 @@
 ---
 title: 3D Printer
 ---
+# **3D Printer**
+
+---
+
+## **1. Background and New Research/Applications Overview**
+
+### Background  
+3D printing (also known as additive manufacturing) is a manufacturing technology that creates three-dimensional objects by adding material layer by layer, unlike traditional subtractive manufacturing (cutting, drilling, etc.). It offers high design freedom, the ability to create complex structures, and personalized customization. ([schoolposterprinters.com](https://schoolposterprinters.com/3d-printing-in-2025-technology-applications-and-future-trends/?utm_source=chatgpt.com))  
+As of 2023, the global 3D printing market size reached approximately 20 billion USD, with an expected compound annual growth rate (CAGR) of 19‑24% over the next five to ten years. ([daydream.eu](https://www.daydream.eu/3d-printing-market-highlights-august-2025/?utm_source=chatgpt.com))  
+By 2025, 3D printing is transitioning from prototype manufacturing to large-scale production and customized manufacturing, with applications spanning medical, aerospace, architecture, fashion, and consumer goods industries. ([schoolposterprinters.com](https://schoolposterprinters.com/3d-printing-in-2025-technology-applications-and-future-trends/?utm_source=chatgpt.com))
+
+### New Research/Applications Highlights  
+Here are some recent new technologies, materials, or application trends worth noting:
+
+- **Electroactive polymer materials + photopolymer printing**: A research team from the University of Stuttgart and Heidelberg University has developed a resin "ink" for DLP (Digital Light Processing) printing, based on polymerized methacrylate with redox-active carbon-based heterocyclic groups, capable of switching electrochemical states. This opens new paths for creating electro-optic functional 3D printed structures, such as color-adjustable or conductive devices. ([voxelmatters.com](https://www.voxelmatters.com/researchers-develop-new-material-for-light-based-3d-printing/?utm_source=chatgpt.com))  
+- **Dissolvable/recyclable support structures**: Engineers from the Massachusetts Institute of Technology (MIT) developed a resin that, when UV-cured, forms a solid state, but when exposed to visible light, forms a dissolvable support structure. After printing, the support material can dissolve in common solvents and be recovered, greatly reducing waste and increasing material recycling efficiency. ([news.mit.edu](https://news.mit.edu/2025/new-3d-printing-method-enables-complex-designs-creates-less-waste-0603?utm_source=chatgpt.com))  
+- **Eco-friendly and biocompatible materials**: Recent reviews highlight the rapid development of degradable, biocompatible, and eco-friendly materials for 3D printing. Materials used in medical implants, biological scaffolds, and environmentally-friendly industrial parts are being extensively tested. ([pubs.rsc.org](https://pubs.rsc.org/en/content/articlehtml/2025/su/d4su00718b?utm_source=chatgpt.com))  
+- **New high-performance composite materials**: Notable materials in 2025 include titanium alloys, carbon fiber composites, high-temperature thermoplastics (such as PEEK, PEKK), recycled plastics, and graphene-enhanced composites, which provide high strength, lightweight properties, and enhanced functionality. ([zeal3dprinting.com.au](https://www.zeal3dprinting.com.au/top-5-emerging-3d-printing-materials-to-watch-in-2025/?utm_source=chatgpt.com))  
+- **Multimaterial / large-scale / digital manufacturing ecosystem**: The application scale of 3D printing is expanding, including not just small-batch customization, but also construction printing, structural part printing, industrial-scale manufacturing, and integration of digital manufacturing platforms. ([uptivemfg.com](https://uptivemfg.com/top-4-3d-printing-trends-to-watch-in-2025/?utm_source=chatgpt.com))  
+
+### 3D Printing Materials  
+3D printing materials are highly diverse, ranging from plastics to metals, ceramics, and biocompatible materials. Here are some of the common material types:
+
+- **Thermoplastics**: Some of the most common 3D printing materials, including PLA (polylactic acid), ABS (acrylonitrile butadiene styrene), PETG (polyethylene terephthalate glycol), widely used in prototyping and rapid prototyping.  
+- **Resins**: Used for SLA (stereolithography) and DLP (digital light processing) printers, resins offer higher precision and smoother surface finishes, commonly used in jewelry, dental, and high-precision industrial part printing.  
+- **Metals**: Including stainless steel, titanium alloys, and aluminum alloys, suitable for applications requiring high strength and temperature resistance, such as aerospace, automotive, and medical industries.  
+- **Ceramics**: Used for high-precision, high-temperature parts, commonly seen in laboratory applications and specialized fields.  
+- **Biocompatible materials**: Materials used in biological 3D printing, such as cell-based bioinks, widely applied in medical fields for printing artificial tissues or personalized implants.  
+- **Composite materials**: Carbon fiber reinforced plastics (CFRP), glass fiber reinforced plastics (GFRP), and other composite materials, offering higher strength and stiffness, commonly used in engineering and aerospace applications.
+
+### 3D Printing Machine Types  
+Depending on the printing technology and applications, 3D printers come in several types, primarily including:
+
+- **FDM (Fused Deposition Modeling)**: The most common type of 3D printing technology, where thermoplastic filament is heated and extruded layer by layer. It is commonly used for desktop, home, or small business applications.
+- **SLA (Stereolithography)**: Uses a laser to cure photosensitive resin, offering extremely high printing accuracy, suitable for jewelry, dental, and electronic industries.
+- **SLS (Selective Laser Sintering)**: Uses a laser to sinter powder material (like nylon or metal powder) layer by layer, commonly used in industrial parts manufacturing, aerospace, and automotive sectors.
+- **DLP (Digital Light Processing)**: Similar to SLA, but uses a digital projector to cure resin, faster and suitable for mass production of fine parts.
+- **MJF (Multi-Jet Fusion)**: A technology that uses multiple jets to fuse powdered material with binding agents, suitable for complex parts made from various materials, widely used in industrial and automotive industries.
+- **Binder Jetting**: Uses a liquid binder to bond powder materials layer by layer, suitable for metals, ceramics, and sand materials, often used for mass production and prototyping.
+
+### Applications in Psychological Sand Tray  
+Considering your background in psychology and the integration of 3D printing, here are some potential areas of application for 3D printing in the psychological sand tray:
+
+- **Customized sand tray figures**: 3D printing can be used to create custom sand tray figures representing different emotions, objects, or scenarios. This allows for a more personalized experience for individuals undergoing therapy, as figures can be tailored to meet specific therapeutic needs.
+- **Therapeutic tools**: Using 3D printing, therapists can create unique objects and props for sand tray therapy that reflect specific therapeutic themes, such as objects representing personal struggles or symbols of hope and healing.
+- **Prototyping psychological environments**: 3D printing can be used to create prototype environments and objects that simulate real-world scenarios, allowing individuals to interact with and reflect upon complex psychological situations in a controlled environment.
+- **Therapeutic spaces**: Beyond the sand tray itself, 3D printing can create interactive, immersive therapeutic spaces where patients can engage with 3D printed objects that represent different aspects of their emotional landscape, supporting deeper introspection.
+- **Integration with virtual therapy**: Combining 3D printing with virtual reality (VR) or augmented reality (AR), patients can explore physical and digital environments, helping them visualize and interact with their emotions and past experiences in innovative ways.
+
+---
+
+This content should fit seamlessly into your **3D Printer** module, with a focus on new research and applications in both the broader 3D printing field and its potential integration with psychological sand tray therapy.
