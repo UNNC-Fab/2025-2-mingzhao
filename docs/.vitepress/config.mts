@@ -23,13 +23,14 @@ export default defineConfig({
     search: { provider: 'local' },
 
     sidebar: {
-      '/daily-homework/': [
+     '/daily-homework/': [
   {
     text: 'Daily homework',
     items: [
       { text: 'Project Management', link: '/daily-homework/project-management' },
       { text: 'Arduino', link: '/daily-homework/arduino' },
-      { text: '3D Printer', link: '/daily-homework/3d-printer' } 
+      { text: 'CAD design', link: '/daily-homework/cad-design' }, 
+      { text: '3D Printer', link: '/daily-homework/3d-printer' }  
     ]
   }
 ],
