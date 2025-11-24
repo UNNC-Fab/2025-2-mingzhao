@@ -1,0 +1,79 @@
+/* 引入字体 */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+:root {
+    /* --- 核心背景色 (改为纯黑) --- */
+    --vp-c-bg: #050505;
+    --vp-c-bg-alt: #0b0d14;
+    --vp-c-bg-elv: #111;
+
+    /* --- 核心文字颜色 (改为亮色，确保能看清) --- */
+    --vp-c-text-1: #ffffff; /* 纯白主文字 */
+    --vp-c-text-2: #b0b0b0; /* 浅灰次要文字 */
+    --vp-c-text-3: #666;
+
+    /* --- 品牌色 (霓虹蓝) --- */
+    --vp-c-brand-1: #00f3ff;
+    --vp-c-brand-2: #00c2cc;
+    --vp-c-brand-3: #009ea6;
+
+    /* --- 边框颜色 --- */
+    --vp-c-border: rgba(0, 243, 255, 0.2);
+    --vp-c-divider: rgba(255, 255, 255, 0.1);
+}
+
+/* 强制深色模式下的覆盖 */
+.dark {
+    --vp-c-bg: #050505;
+    --vp-c-bg-alt: #0b0d14;
+    --vp-c-text-1: #ffffff;
+}
+
+/* --- 修复割裂感：侧边栏和顶栏样式 --- */
+.VPNav, .VPSidebar {
+    background-color: rgba(5, 5, 5, 0.9) !important;
+    border-right: 1px solid var(--vp-c-border) !important;
+    backdrop-filter: blur(10px);
+}
+
+.VPNavBar {
+    background-color: rgba(5, 5, 5, 0.9) !important;
+    border-bottom: 1px solid var(--vp-c-border) !important;
+}
+
+.VPContent {
+    background-color: var(--vp-c-bg);
+}
+
+/* --- 标题渐变色特效 --- */
+h1, h2, h3 {
+    background: -webkit-linear-gradient(45deg, #00f3ff, #bc13fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+/* --- 链接颜色 --- */
+a {
+    color: var(--vp-c-brand-1);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--vp-c-brand-2);
+    text-shadow: 0 0 5px var(--vp-c-brand-1);
+}
+
+/* --- 代码块样式 --- */
+.vp-doc pre {
+    border: 1px solid var(--vp-c-brand-3);
+    background-color: #0d1117 !important;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.05);
+}
+
+/* --- 表格样式 --- */
+table {
+    border-color: var(--vp-c-border) !important;
+}
+tr:nth-child(2n) {
+    background-color: rgba(0, 243, 255, 0.05) !important;
+}

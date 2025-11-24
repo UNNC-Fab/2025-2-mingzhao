@@ -2,16 +2,21 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'My Awesome Project',
-  description: 'A VitePress Site',
+  title: 'UNNC-FABLAB 2025', 
+  description: 'MingZhao Portfolio',
 
+  // 你的 GitHub Pages 路径
   base: '/2025-2-mingzhao/',
+  
+  // 🔥 关键修改：强制默认深色模式 (Dark Mode)
+  // 这会解决字看不清的问题
+  appearance: 'dark', 
 
   cleanUrls: true,
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    siteTitle: false,
+    siteTitle: 'UNNC-FAB 2025', // 我稍微打开了标题显示，方便辨识
 
     nav: [
       { text: 'Home', link: '/' },
@@ -23,17 +28,17 @@ export default defineConfig({
     search: { provider: 'local' },
 
     sidebar: {
-     '/daily-homework/': [
-  {
-    text: 'Daily homework',
-    items: [
-      { text: 'Project Management', link: '/daily-homework/project-management' },
-      { text: 'Arduino', link: '/daily-homework/arduino' },
-      { text: 'CAD design', link: '/daily-homework/cad-design' }, 
-      { text: '3D Printer', link: '/daily-homework/3d-printer' }  
-    ]
-  }
-],
+      '/daily-homework/': [
+        {
+          text: 'Daily homework',
+          items: [
+            { text: 'Project Management', link: '/daily-homework/project-management' },
+            { text: 'Arduino', link: '/daily-homework/arduino' },
+            { text: 'CAD design', link: '/daily-homework/cad-design' }, 
+            { text: '3D Printer', link: '/daily-homework/3d-printer' }  
+          ]
+        }
+      ],
 
       '/finalwork/': [
         {
@@ -54,6 +59,9 @@ export default defineConfig({
       ]
     },
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }]
+    socialLinks: [
+        // 我帮你改成了你自己的仓库地址
+        { icon: 'github', link: 'https://github.com/UNNC-Fab/2025-2-mingzhao' }
+    ]
   }
 })
