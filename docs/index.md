@@ -1,72 +1,391 @@
----
-layout: home
-hero:
-  name: My project
-  text: UNNC-Fab/2025-2-xi mingzhao
-sidebar: false
-aside: false
-outline: false
----
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNNC-FABLAB 2025 | MINGZHAO</title>
+    <!-- 引入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap');
 
-<style>
-/* make hero area fill viewport and center everything */
-.VPHomeHero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  height: 100vh;
-  padding: 0;
-}
+        :root {
+            --neon-blue: #00f3ff;
+            --neon-purple: #bc13fe;
+            --dark-bg: #050505;
+            --panel-bg: rgba(10, 15, 30, 0.7);
+        }
 
-/* slightly smaller hero title (compared to previous version) */
-.VPHomeHero .name {
-  font-size: 110px;           /* mobile size */
-  line-height: 1;
-  font-weight: 900;
-  margin-bottom: 50px;        /* spacing below title */
+        body {
+            background-color: var(--dark-bg);
+            color: #e0e0e0;
+            font-family: 'JetBrains Mono', monospace;
+            overflow-x: hidden;
+            margin: 0;
+        }
 
-  /* neon gradient */
-  background: linear-gradient(90deg,#4facfe,#00f2fe,#a78bfa,#f472b6,#f59e0b,#4facfe);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+        /* --- 背景动画 --- */
+        .grid-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background-image: 
+                linear-gradient(rgba(0, 243, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 243, 255, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+            perspective: 500px;
+            transform-style: preserve-3d;
+            z-index: -2;
+            animation: gridMove 20s linear infinite;
+        }
 
-  /* glow + animation */
-  text-shadow: 0 0 20px rgba(79,172,254,0.4),
-               0 0 40px rgba(244,114,182,0.25);
-  animation: glowShift 6s ease-in-out infinite;
-}
+        @keyframes gridMove {
+            0% { transform: translateY(0) rotateX(10deg); }
+            100% { transform: translateY(40px) rotateX(10deg); }
+        }
 
-@keyframes glowShift {
-  0%   { background-position:   0% 50%; text-shadow:0 0 20px rgba(79,172,254,0.4); }
-  50%  { background-position: 100% 50%; text-shadow:0 0 40px rgba(244,114,182,0.4); }
-  100% { background-position:   0% 50%; text-shadow:0 0 20px rgba(79,172,254,0.4); }
-}
+        .orbitron { font-family: 'Orbitron', sans-serif; }
 
-/* desktop: smaller than before, still impressive */
-@media (min-width: 960px) {
-  .VPHomeHero .name { font-size: 160px; }
-}
+        /* --- 霓虹文字 --- */
+        .neon-title {
+            text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+        }
 
-/* subtitle styling */
-.VPHomeHero .text {
-  font-size: 34px;            /* mobile */
-  line-height: 1.4;
-  font-weight: 500;
-  opacity: 0.95;
-  color: #d1d5db;
-  letter-spacing: 1px;
-}
-@media (min-width: 960px) {
-  .VPHomeHero .text { font-size: 46px; }
-}
+        /* --- 卡片特效 --- */
+        .tech-card {
+            background: var(--panel-bg);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+        }
 
-/* safety for reduced-motion users */
-@media (prefers-reduced-motion: reduce) {
-  .VPHomeHero .name { animation: none; }
-}
-</style>
+        /* --- 搜索框特效 --- */
+        .search-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .search-input:focus {
+            box-shadow: 0 0 15px rgba(188, 19, 254, 0.5);
+            border-color: var(--neon-purple);
+        }
 
+        /* --- AI Chat Widget --- */
+        #ai-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 350px;
+            height: 500px;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid var(--neon-blue);
+            border-radius: 10px;
+            display: none; /* 默认隐藏 */
+            flex-direction: column;
+            z-index: 100;
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.2);
+            backdrop-filter: blur(10px);
+            transform-origin: bottom right;
+            animation: popIn 0.3s ease-out;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .chat-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            font-size: 0.9em;
+        }
+
+        .chat-msg {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            max-width: 80%;
+        }
+
+        .bot-msg {
+            background: rgba(0, 243, 255, 0.1);
+            border-left: 2px solid var(--neon-blue);
+            color: #fff;
+            align-self: flex-start;
+        }
+
+        .user-msg {
+            background: rgba(188, 19, 254, 0.2);
+            border-right: 2px solid var(--neon-purple);
+            color: #fff;
+            align-self: flex-end;
+            margin-left: auto;
+        }
+
+        .chat-input-area {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 10px;
+            display: flex;
+        }
+
+        /* 闪烁光标 */
+        .cursor { animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* 滚动条样式 */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--neon-blue); }
+    </style>
+</head>
+<body>
+
+    <div class="grid-bg"></div>
+
+    <!-- 顶部导航 -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="text-xl md:text-2xl font-bold orbitron tracking-wider text-white">
+            UNNC<span class="text-cyan-400">.FABLAB</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <div class="hidden md:flex items-center gap-2 text-xs text-green-400 border border-green-500/30 px-3 py-1 rounded bg-green-500/10">
+                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                SYSTEM ONLINE
+            </div>
+            <!-- AI 唤醒按钮 -->
+            <button onclick="toggleAI()" class="flex items-center gap-2 bg-purple-600/20 hover:bg-purple-600/40 text-purple-400 border border-purple-500/50 px-4 py-2 rounded transition-all">
+                <i class="fas fa-robot"></i> <span class="hidden md:inline">AI ASSISTANT</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="relative z-10 pt-32 pb-20 px-4 md:px-10 max-w-6xl mx-auto">
+        
+        <!-- Hero 区域 -->
+        <div class="text-center mb-16">
+            <div class="inline-block text-cyan-400 mb-4 font-bold tracking-[0.3em] text-xs border-b border-cyan-400/50 pb-1">
+                MINGZHAO'S PORTFOLIO
+            </div>
+            <h1 class="text-5xl md:text-8xl font-black mb-6 orbitron leading-tight text-white neon-title">
+                UNNC-FABLAB<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-purple-500">2025</span>
+            </h1>
+            
+            <!-- 打字机效果 -->
+            <div class="h-8 font-mono text-gray-400 mb-10">
+                <span id="typewriter"></span><span class="cursor">_</span>
+            </div>
+
+            <!-- 搜索模块 -->
+            <div class="max-w-xl mx-auto search-container relative group">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                    <i class="fas fa-search text-gray-500 group-focus-within:text-cyan-400 transition-colors"></i>
+                </div>
+                <input type="text" id="site-search" 
+                    placeholder="Search modules... (e.g., 'Arduino', 'Sand Table')" 
+                    class="search-input w-full bg-black/50 text-white border border-gray-700 rounded-full py-4 pl-12 pr-4 focus:outline-none focus:border-cyan-400 transition-all placeholder-gray-600"
+                    onkeypress="handleSearch(event)">
+                <div class="absolute inset-y-0 right-2 flex items-center">
+                    <button onclick="executeSearch()" class="bg-cyan-500/20 hover:bg-cyan-400 text-cyan-400 hover:text-black px-4 py-1.5 rounded-full text-xs font-bold transition-all">
+                        ENTER
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 模块网格 -->
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-3 orbitron text-gray-300">
+            <i class="fas fa-layer-group text-purple-500"></i> ACTIVE MODULES
+            <div class="h-px bg-gray-800 flex-grow ml-4"></div>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Card 1: Daily Homework -->
+            <!-- 注意这里的路径已经设置为相对路径，用于在 Pages 内部跳转 -->
+            <a href="daily-homework/project-management" class="tech-card block p-8 rounded-xl group relative">
+                <div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity">
+                    <i class="fas fa-external-link-alt text-white"></i>
+                </div>
+                <div class="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-calendar-check text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2 orbitron">DAILY LOGS</h3>
+                <p class="text-gray-400 text-sm mb-4">Tracking daily progress: Project Management, CAD, Arduino & 3D Printing.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] bg-blue-900/30 text-blue-300 px-2 py-1 border border-blue-500/30 rounded">UPDATED</span>
+                </div>
+            </a>
+
+            <!-- Card 2: Final Work -->
+            <a href="finalwork/psychological-sand-table" class="tech-card block p-8 rounded-xl group relative">
+                <div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity">
+                    <i class="fas fa-external-link-alt text-white"></i>
+                </div>
+                <div class="w-14 h-14 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400 mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-brain text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2 orbitron">FINAL PROJECT</h3>
+                <p class="text-gray-400 text-sm mb-4">Psychological Sand Table (心理沙盘). Interaction design and fabrication.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] bg-purple-900/30 text-purple-300 px-2 py-1 border border-purple-500/30 rounded">MAIN WORK</span>
+                </div>
+            </a>
+
+            <!-- Card 3: Class Tasks -->
+            <a href="small-homework-in-class/" class="tech-card block p-8 rounded-xl group relative">
+                <div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity">
+                    <i class="fas fa-external-link-alt text-white"></i>
+                </div>
+                <div class="w-14 h-14 bg-green-500/10 rounded-lg flex items-center justify-center text-green-400 mb-6 border border-green-500/20 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-code-branch text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-2 orbitron">CLASS TASKS</h3>
+                <p class="text-gray-400 text-sm mb-4">Quick assignments: GPL 3.0 Analysis & Google Dev Language Research.</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="text-[10px] bg-green-900/30 text-green-300 px-2 py-1 border border-green-500/30 rounded">RESEARCH</span>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- 底部链接：Github & Contact -->
+        <div class="mt-12 flex justify-center gap-6">
+            <a href="https://github.com/UNNC-Fab/2025-2-mingzhao" target="_blank" class="text-gray-500 hover:text-white transition-colors flex items-center gap-2">
+                <i class="fab fa-github"></i> Repository
+            </a>
+            <span class="text-gray-700">|</span>
+            <a href="mailto:example@unnc.edu.cn" class="text-gray-500 hover:text-white transition-colors flex items-center gap-2">
+                <i class="fas fa-envelope"></i> Contact Me
+            </a>
+        </div>
+
+    </main>
+
+    <!-- AI Chat Widget (UI Only) -->
+    <div id="ai-widget">
+        <div class="bg-gray-900 p-3 border-b border-gray-700 flex justify-between items-center rounded-t-lg">
+            <div class="flex items-center gap-2 text-purple-400 font-bold orbitron">
+                <i class="fas fa-robot"></i> FAB-AI V1.0
+            </div>
+            <button onclick="toggleAI()" class="text-gray-400 hover:text-white"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chat-box">
+            <div class="chat-msg bot-msg">
+                Hello, MingZhao! I am your AI assistant for this project. <br>
+                Try asking me about: <br>
+                - "Arduino" <br>
+                - "Sand Table" <br>
+                - "GPL License"
+            </div>
+        </div>
+        <div class="chat-input-area bg-gray-900 rounded-b-lg">
+            <input type="text" id="ai-input" placeholder="Type a command..." class="w-full bg-transparent text-white focus:outline-none text-sm font-mono" onkeypress="handleAIInput(event)">
+            <button onclick="sendAIMessage()" class="text-cyan-400 hover:text-white ml-2"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // 1. 打字机特效
+        const textToType = "Digital Fabrication / Code / Interaction Design";
+        const typeWriterElement = document.getElementById('typewriter');
+        let i = 0;
+        function typeWriter() {
+            if (i < textToType.length) {
+                typeWriterElement.innerHTML += textToType.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        setTimeout(typeWriter, 800);
+
+        // 2. 搜索功能 (使用 Google Site Search)
+        function handleSearch(e) {
+            if (e.key === 'Enter') executeSearch();
+        }
+
+        function executeSearch() {
+            const query = document.getElementById('site-search').value;
+            if (!query) return;
+            // 限制在你的 GitHub Pages 范围内搜索
+            const site = 'unnc-fab.github.io/2025-2-mingzhao';
+            window.open(`https://www.google.com/search?q=site:${site}+${query}`, '_blank');
+        }
+
+        // 3. AI 聊天逻辑 (模拟)
+        function toggleAI() {
+            const widget = document.getElementById('ai-widget');
+            if (widget.style.display === 'flex') {
+                widget.style.display = 'none';
+            } else {
+                widget.style.display = 'flex';
+                document.getElementById('ai-input').focus();
+            }
+        }
+
+        function handleAIInput(e) {
+            if (e.key === 'Enter') sendAIMessage();
+        }
+
+        function sendAIMessage() {
+            const input = document.getElementById('ai-input');
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            // 添加用户消息
+            addMessage(msg, 'user');
+            input.value = '';
+
+            // 模拟 AI 回复延迟
+            const chatBox = document.getElementById('chat-box');
+            const loadingId = 'loading-' + Date.now();
+            chatBox.innerHTML += `<div class="chat-msg bot-msg" id="${loadingId}"><i class="fas fa-circle-notch fa-spin"></i> Processing...</div>`;
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            setTimeout(() => {
+                const loadingMsg = document.getElementById(loadingId);
+                loadingMsg.remove();
+                
+                // 简单的关键词匹配逻辑
+                let reply = "I'm sorry, I don't have access to that data yet.";
+                const lowerMsg = msg.toLowerCase();
+
+                if (lowerMsg.includes('hello') || lowerMsg.includes('hi')) {
+                    reply = "System active. Ready for input.";
+                } else if (lowerMsg.includes('arduino')) {
+                    reply = "Arduino details can be found in the <strong>Daily Logs</strong> module. <br><a href='daily-homework/arduino' class='text-cyan-400 underline'>Click here to navigate</a>.";
+                } else if (lowerMsg.includes('sand') || lowerMsg.includes('final')) {
+                    reply = "The Psychological Sand Table is your Final Project. <br><a href='finalwork/psychological-sand-table' class='text-cyan-400 underline'>View Project</a>.";
+                } else if (lowerMsg.includes('cad') || lowerMsg.includes('design')) {
+                    reply = "CAD Design documentation is available in your daily logs.";
+                } else if (lowerMsg.includes('help')) {
+                    reply = "Available modules: Daily Logs, Final Project, Class Tasks. Try searching for specific technologies.";
+                }
+
+                addMessage(reply, 'bot');
+            }, 1000);
+        }
+
+        function addMessage(text, sender) {
+            const chatBox = document.getElementById('chat-box');
+            const div = document.createElement('div');
+            div.className = `chat-msg ${sender === 'user' ? 'user-msg' : 'bot-msg'}`;
+            div.innerHTML = text;
+            chatBox.appendChild(div);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
