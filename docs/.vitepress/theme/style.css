@@ -1,79 +1,72 @@
-/* 引入字体 */
+/* 引入酷炫字体 */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 :root {
-    /* --- 核心背景色 (改为纯黑) --- */
-    --vp-c-bg: #050505;
-    --vp-c-bg-alt: #0b0d14;
-    --vp-c-bg-elv: #111;
+    /* --- 1. 背景必须是黑色 --- */
+    --vp-c-bg: #050505 !important;
+    --vp-c-bg-alt: #0b0d14 !important;
+    --vp-c-bg-elv: #111 !important;
 
-    /* --- 核心文字颜色 (改为亮色，确保能看清) --- */
-    --vp-c-text-1: #ffffff; /* 纯白主文字 */
-    --vp-c-text-2: #b0b0b0; /* 浅灰次要文字 */
-    --vp-c-text-3: #666;
+    /* --- 2. 全局文字变量 (兜底设置) --- */
+    --vp-c-text-1: #ffffff !important;
+    --vp-c-text-2: #e0e0e0 !important;
+    --vp-c-text-3: #a0a0a0 !important;
 
-    /* --- 品牌色 (霓虹蓝) --- */
-    --vp-c-brand-1: #00f3ff;
-    --vp-c-brand-2: #00c2cc;
-    --vp-c-brand-3: #009ea6;
-
-    /* --- 边框颜色 --- */
-    --vp-c-border: rgba(0, 243, 255, 0.2);
-    --vp-c-divider: rgba(255, 255, 255, 0.1);
+    /* --- 3. 霓虹品牌色 --- */
+    --vp-c-brand-1: #00f3ff !important;
+    --vp-c-brand-2: #bc13fe !important; /* 悬停变紫，更酷 */
+    
+    /* --- 4. 边框 --- */
+    --vp-c-border: rgba(0, 243, 255, 0.3) !important;
+    --vp-c-divider: rgba(255, 255, 255, 0.15) !important;
 }
 
-/* 强制深色模式下的覆盖 */
-.dark {
-    --vp-c-bg: #050505;
-    --vp-c-bg-alt: #0b0d14;
-    --vp-c-text-1: #ffffff;
+/* --- 🔥 核心修复区：针对正文内容的暴力覆盖 🔥 --- */
+
+/* 强制所有段落、列表、引用变成亮白色 */
+.vp-doc p, 
+.vp-doc li, 
+.vp-doc ul, 
+.vp-doc ol, 
+.vp-doc blockquote {
+    color: #f0f0f0 !important; /* 亮灰白，比纯白护眼且清晰 */
+    font-weight: 400;
 }
 
-/* --- 修复割裂感：侧边栏和顶栏样式 --- */
-.VPNav, .VPSidebar {
-    background-color: rgba(5, 5, 5, 0.9) !important;
-    border-right: 1px solid var(--vp-c-border) !important;
-    backdrop-filter: blur(10px);
+/* 让加粗的文字变成霓虹蓝，既清晰又帅气 */
+.vp-doc strong, 
+.vp-doc b {
+    color: #00f3ff !important;
+    font-weight: 700;
 }
 
-.VPNavBar {
-    background-color: rgba(5, 5, 5, 0.9) !important;
-    border-bottom: 1px solid var(--vp-c-border) !important;
-}
-
-.VPContent {
-    background-color: var(--vp-c-bg);
-}
-
-/* --- 标题渐变色特效 --- */
-h1, h2, h3 {
+/* 强制所有标题可见 */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
     background: -webkit-linear-gradient(45deg, #00f3ff, #bc13fe);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-weight: bold;
+}
+
+/* --- 布局样式 --- */
+html, body, #app {
+    background-color: #050505 !important;
+    color: #ffffff !important;
+}
+
+.VPNav, .VPSidebar, .VPNavBar {
+    background-color: rgba(5, 5, 5, 0.95) !important;
+    border-color: var(--vp-c-border) !important;
+    backdrop-filter: blur(10px);
 }
 
 /* --- 链接颜色 --- */
-a {
-    color: var(--vp-c-brand-1);
-    text-decoration: none;
-}
-a:hover {
-    color: var(--vp-c-brand-2);
-    text-shadow: 0 0 5px var(--vp-c-brand-1);
-}
+a { color: #00f3ff !important; text-decoration: none; }
+a:hover { color: #bc13fe !important; text-shadow: 0 0 8px #bc13fe; }
 
-/* --- 代码块样式 --- */
-.vp-doc pre {
-    border: 1px solid var(--vp-c-brand-3);
-    background-color: #0d1117 !important;
-    box-shadow: 0 0 10px rgba(0, 243, 255, 0.05);
-}
-
-/* --- 表格样式 --- */
-table {
-    border-color: var(--vp-c-border) !important;
-}
-tr:nth-child(2n) {
-    background-color: rgba(0, 243, 255, 0.05) !important;
+/* --- 代码块优化 --- */
+.vp-doc pre, .vp-doc code {
+    background-color: #0f131a !important;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    color: #e6edf3 !important;
 }
