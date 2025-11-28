@@ -29,16 +29,17 @@ export default defineConfig({
 
     sidebar: {
       '/daily-homework/': [
-        {
-          text: 'Daily homework',
-          items: [
-            { text: 'Project Management', link: '/daily-homework/project-management' },
-            { text: 'Arduino', link: '/daily-homework/arduino' },
-            { text: 'CAD design', link: '/daily-homework/cad-design' }, 
-            { text: '3D Printer', link: '/daily-homework/3d-printer' }  
-          ]
-        }
-      ],
+  {
+    text: 'Daily homework',
+    items: [
+      { text: 'Project Management', link: '/daily-homework/project-management' },
+      { text: 'Arduino', link: '/daily-homework/arduino' },
+      { text: 'CAD design', link: '/daily-homework/cad-design' }, 
+      { text: '3D Printer', link: '/daily-homework/3d-printer' },
+      { text: 'Laser Cutting', link: '/daily-homework/laser-cutting' } 
+    ]
+  }
+],
 
       '/finalwork/': [
         {
