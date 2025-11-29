@@ -78,6 +78,38 @@ Its slogan is “**Let every child learn to code**,” making it highly suitable
 
 ---
 
+## **1.2 Hardware Comparison: ESP32 vs LilyPad Arduino**
+
+### **Comparison: ESP32 vs LilyPad Arduino**
+
+| **Feature**              | **ESP32**                                | **LilyPad Arduino**                        |
+|--------------------------|------------------------------------------|--------------------------------------------|
+| **Main Purpose**          | High-performance, wireless IoT development | Wearable electronics projects              |
+| **Microcontroller**       | Dual-core CPU, up to 240MHz              | ATmega328V chip, compatible with Arduino Uno |
+| **Wireless Capabilities** | Built-in WiFi and Bluetooth              | No built-in wireless capabilities          |
+| **Power Source**          | 3.3V, USB or battery                     | Battery-powered (e.g., coin cell, AA)      |
+| **Programming Language**  | Arduino IDE, MicroPython, ESP-IDF        | Arduino IDE                               |
+| **Size**                  | Small, compact (approx. 25mm x 50mm)     | Circular design, sewable, approx. 45mm diameter |
+| **Pin Count**             | 34 GPIO pins, including analog and digital | 14 digital I/O pins                        |
+| **Typical Use Cases**     | IoT, smart home devices, wireless sensors | Wearable tech, smart clothing, interactive art |
+
+### **Where to Buy Genuine ESP32 and LilyPad Arduino**
+
+- **ESP32:**
+  - **Official Espressif Website**: Espressif provides official sales and links to authorized distributors. You can also find documentation and SDK resources here.  
+    - Website: [https://www.espressif.com](https://www.espressif.com)
+  - **Authorized Distributors**: Check official distributors like Digi-Key, Mouser, or SparkFun for genuine ESP32 modules.
+    - Example: [Digi-Key ESP32 Modules](https://www.digikey.com)
+
+- **LilyPad Arduino:**
+  - **Official Arduino Store**: You can buy genuine LilyPad boards directly from the Arduino store.  
+    - Website: [https://store.arduino.cc](https://store.arduino.cc)
+  - **Authorized Retailers**: SparkFun, Adafruit, and other trusted electronics suppliers offer authentic LilyPad products.
+    - Example: [SparkFun LilyPad Arduino](https://www.sparkfun.com)
+
+By purchasing from these official or authorized distributors, you ensure the quality and authenticity of the hardware for your projects.
+
+
 ## **2. Learn the Arduino IDE**
 
 **Arduino** is an open-source hardware and software electronic prototyping platform.  
