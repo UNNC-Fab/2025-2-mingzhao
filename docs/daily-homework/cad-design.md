@@ -35,7 +35,7 @@ Create link animations
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251116144715731.png)
 
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251116-0657-59.5408973.gif)
-<video controls src="20251129-0629-31.8201072.mp4" title="Title"></video>
+
 
 Parameter adjustment
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251116160350571.png)
