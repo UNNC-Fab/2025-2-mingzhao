@@ -55,7 +55,7 @@ The software used for laser cutting typically allows for setting power and speed
 
 - **Power Control**: Adjusting the laser power affects the cutting depth and heat concentration, and may also influence the material’s surface quality.
 - **Speed Control**: Changing the cutting speed can impact the cutting edge smoothness and overall time it takes to complete a task. Higher speeds may lead to rougher edges, while slower speeds may result in finer details.
-
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251129134105241.png)
 ### 3. Test Pattern Design:
 A typical test pattern includes a combination of different shapes (circles, squares, and lines) at various power and speed settings. The design should allow for a clear comparison of how the laser behaves under different conditions.
 
@@ -69,6 +69,11 @@ A typical test pattern includes a combination of different shapes (circles, squa
 - **Square 2**: High power, fast speed (Shallow cut with potential for rough edges)
 - **Square 3**: Low power, slow speed (Fine cut with minimal burn)
 - **Square 4**: Low power, fast speed (Shallow cut, less precision)
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/5d5bc68b66d85c8a3a0bad7f0f4805ef.jpg" width="45%" />
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/66e711ef0411b8d0df58cd36d0fbbf82.jpg" width="45%" />
+</div>
 
 ### 4. Evaluation Criteria:
 After performing the test, inspect the results based on the following criteria:
