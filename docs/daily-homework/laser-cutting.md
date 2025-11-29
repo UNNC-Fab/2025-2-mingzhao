@@ -23,7 +23,9 @@ Clean equipment and operating areas regularly, especially where waste and by-pro
 ### Emergency response and preparedness measures:
 Place clearly marked first aid kits and eye douches near the operation area and ensure that all operators know their location and how to use them.
 Develop and practice an emergency evacuation plan, including how to safely shut down equipment and leave the operation area.
+
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251128213227849.png)
+
 ## 2. Learn different kind of material which can be manufacture by laser cutter
 
 ### Metal materials:
@@ -42,3 +44,44 @@ Leather and fabric: Used in the manufacture of clothing, footwear, bags, etc., l
 ### Other materials:
 Glass and ceramics: Laser cutting machines can process glass and ceramics to a certain extent for making ornaments and crafts.
 Paper and fiberboard: Commonly used in the printing and packaging industries, laser cutters can cut and carve efficiently.
+
+## 3. Power and Speed Test
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/466d28792171cce4fb9dc6087b92dc2f.jpg)
+### 1. Purpose of Power and Speed Testing:
+Power and speed settings directly affect the quality and efficiency of the laser cutting process. By testing different power and speed combinations, you can find the optimal settings for various materials, ensuring precise cuts and reducing material wastage.
+
+### 2. Hierarchical Test Pattern Setup:
+The software used for laser cutting typically allows for setting power and speed parameters in a hierarchical structure. This means different areas of the test pattern can be assigned different settings for power and speed, allowing you to assess the effects of varying these parameters in different regions of a material.
+
+- **Power Control**: Adjusting the laser power affects the cutting depth and heat concentration, and may also influence the material’s surface quality.
+- **Speed Control**: Changing the cutting speed can impact the cutting edge smoothness and overall time it takes to complete a task. Higher speeds may lead to rougher edges, while slower speeds may result in finer details.
+
+### 3. Test Pattern Design:
+A typical test pattern includes a combination of different shapes (circles, squares, and lines) at various power and speed settings. The design should allow for a clear comparison of how the laser behaves under different conditions.
+
+<div style="display: flex; justify-content: space-between;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/0f84f80a690fd7a90085e982051b2e21.jpg" width="45%" />
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/976f72abb7d66e231cd2fd957ae32a70.jpg" width="45%" />
+</div>
+
+**Example Test Pattern:**
+- **Square 1**: High power, slow speed (Deep cut and fine edge)
+- **Square 2**: High power, fast speed (Shallow cut with potential for rough edges)
+- **Square 3**: Low power, slow speed (Fine cut with minimal burn)
+- **Square 4**: Low power, fast speed (Shallow cut, less precision)
+
+### 4. Evaluation Criteria:
+After performing the test, inspect the results based on the following criteria:
+- **Edge Quality**: Is the edge smooth, or does it have a rough texture?
+- **Cutting Depth**: Is the material cut through properly, or is there any residue left?
+- **Burn Marks**: Are there noticeable burn marks around the edges of the cut?
+- **Cutting Speed**: Was the speed efficient for the material type without compromising quality?
+
+### 5. Adjusting Power and Speed:
+- **Materials requiring high precision** (e.g., thin metal or delicate plastics) should use a lower speed and moderate to high power to ensure fine details without excessive burning.
+- **Thicker materials** (e.g., wood or acrylic) may require higher power and slower speeds to ensure complete cutting through the material.
+
+### 6. Record and Compare Results:
+Document the results of your test patterns for future reference, comparing different power and speed combinations to determine the optimal settings for specific materials. 
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/28a41c64760103a1d4e84786308a35d6.png)
+
