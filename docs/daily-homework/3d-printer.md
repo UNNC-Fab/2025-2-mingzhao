@@ -57,31 +57,62 @@ This content should fit seamlessly into your **3D Printer** module, with a focus
 
 ## **2. 3D Printing Test Production**
 
-1. Import the robot model  
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005901451.png)
-2. Set the color configuration  
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005920782.png)
-3. Adjust colors using edge detection  
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005950866.png)
-4. Finalize the production
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119010111351.png)
+### 1. Import the robot model  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005901451.png" width="45%" />
+</div>
 
+### 2. Set the color configuration  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005920782.png" width="45%" />
+</div>
 
-### **Test boat production**
+### 3. Adjust colors using edge detection  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005950866.png" width="45%" />
+</div>
 
-1. Import the boat model  
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/143a15500f4ca313f5076d1d0f47034f.png)
-2. Connect the H2DC machine  
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/861827e8bfb0a983b119f34d47a14cba.png)
-3. Debug and adjust settings  
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/ae35ea6c290fa405ba9bc86d1e5e8c47.png)
-4. Finish printing
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/4337881f6aa509100ee9fa960569d541.jpg)
+### 4. Finalize the production  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119010111351.png" width="45%" />
+</div>
 
+---
 
+## **Test Boat Production**
+
+### 1. Import the boat model  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/143a15500f4ca313f5076d1d0f47034f.png" width="45%" />
+</div>
+
+### 2. Connect the H2DC machine  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/861827e8bfb0a983b119f34d47a14cba.png" width="45%" />
+</div>
+
+### 3. Debug and adjust settings  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/ae35ea6c290fa405ba9bc86d1e5e8c47.png" width="45%" />
+</div>
+
+### 4. Finish printing  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/4337881f6aa509100ee9fa960569d541.jpg" width="45%" />
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/a064dc315b417c231433ed3a3fbaef17.jpg" width="45%" />
+</div>
+
+---
 
 ## **Keychain Production**
 
-Production Results
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/15fe60c06c53ed0923ea06925aac8bd2.png)
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/5e508aeeeab0f39973d29a9c845ec8d9.png)
+### Production Results  
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/15fe60c06c53ed0923ea06925aac8bd2.png" width="45%" />
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/5e508aeeeab0f39973d29a9c845ec8d9.png" width="45%" />
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 10px;">
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/2d64a25f89a339f5e8db8b1753264555.png" width="45%" />
+    <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/36337cf4e25ea7498acf38eaf5864185.jpg" width="45%" />
+</div>
