@@ -136,19 +136,19 @@ Whether you're building a small night light, a temperature logger, or an automat
 This interface is designed to help developers focus on writing code and conducting experiments without worrying about complex settings and operations.  
 Example: The environment’s built-in example program can be opened.
 
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108155904386.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251129135922304.png)
 
 Edit: Edit the code, copy and paste, comment, indent, adjust size, find, etc. (In actual use, it is usually done with corresponding shortcut keys.)
 
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108155947597.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251129135950538.png)
 
 Project -> Load Library -> Library Manager: You can search for various supported libraries in the installation network, select the library to install, and click install to download and install online, which is very convenient.
 
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108160034367.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251129140010098.png)
 
 Tools -> Port: Set the port required by the Arduino IDE to download the program, which is the port through which the development board connects to the computer.
 
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108160111163.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251129140031760.png)
 
 ---
 
