@@ -57,24 +57,28 @@ This content should fit seamlessly into your **3D Printer** module, with a focus
 
 ## **2. 3D Printing Test Production**
 
-### 1. Import the robot model  
+### 1. Import the robot model
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005901451.png" width="45%" />
+    <p style="width: 45%;">Here we import the robot model into the 3D printing software. This model will be the base for the test production. Ensure the file format is compatible with the printer.</p>
 </div>
 
 ### 2. Set the color configuration  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005920782.png" width="45%" />
+    <p style="width: 45%;">Next, configure the colors for the different parts of the robot. You can use the software settings to select the appropriate colors for each section.</p>
 </div>
 
 ### 3. Adjust colors using edge detection  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005950866.png" width="45%" />
+    <p style="width: 45%;">The edge detection tool helps adjust the colors precisely along the edges of the model, ensuring that color transitions are smooth and accurate.</p>
 </div>
 
 ### 4. Finalize the production  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119010111351.png" width="45%" />
+    <p style="width: 45%;">After all the settings are adjusted, the production is finalized and ready for 3D printing. This step involves confirming the configurations before sending the model to the printer.</p>
 </div>
 
 ---
@@ -84,22 +88,26 @@ This content should fit seamlessly into your **3D Printer** module, with a focus
 ### 1. Import the boat model  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/143a15500f4ca313f5076d1d0f47034f.png" width="45%" />
+    <p style="width: 45%;">The first step for the boat model is importing it into the 3D printing software. This step ensures that the correct model file is ready for modification and printing.</p>
 </div>
 
 ### 2. Connect the H2DC machine  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/861827e8bfb0a983b119f34d47a14cba.png" width="45%" />
+    <p style="width: 45%;">The next step is connecting the H2DC machine, ensuring that the printer is correctly linked to the software and ready to start printing.</p>
 </div>
 
 ### 3. Debug and adjust settings  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/ae35ea6c290fa405ba9bc86d1e5e8c47.png" width="45%" />
+    <p style="width: 45%;">After connecting the machine, the software settings are adjusted, and debugging is performed to ensure that the printer is properly calibrated for the task.</p>
 </div>
 
 ### 4. Finish printing  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/4337881f6aa509100ee9fa960569d541.jpg" width="45%" />
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/a064dc315b417c231433ed3a3fbaef17.jpg" width="45%" />
+    <p style="width: 45%;">Finally, the boat is printed and ready for inspection. This step includes the final review of the printed model before it is removed from the printing bed.</p>
 </div>
 
 ---
@@ -109,10 +117,20 @@ This content should fit seamlessly into your **3D Printer** module, with a focus
 ### Production Results  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/15fe60c06c53ed0923ea06925aac8bd2.png" width="45%" />
+    <p style="width: 45%;">Here is the result of the keychain production, with all details clearly printed and ready for post-processing.</p>
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/5e508aeeeab0f39973d29a9c845ec8d9.png" width="45%" />
+    <p style="width: 45%;">This image shows the keychain model after some adjustments to ensure a smooth finish. The design is simple but effective for small-scale production.</p>
 </div>
 
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/2d64a25f89a339f5e8db8b1753264555.png" width="45%" />
+    <p style="width: 45%;">The keychain is now complete and fully printed, ready for use or further decoration depending on the desired finish.</p>
+</div>
+
+<div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/36337cf4e25ea7498acf38eaf5864185.jpg" width="45%" />
+    <p style="width: 45%;">The final keychain, after finishing touches, ready for packaging and distribution. The smooth surface and neat design ensure a high-quality product.</p>
 </div>
