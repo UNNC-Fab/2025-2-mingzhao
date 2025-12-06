@@ -36,7 +36,8 @@ export default defineConfig({
             { text: 'Arduino', link: '/daily-homework/arduino' },
             { text: 'CAD design', link: '/daily-homework/cad-design' }, 
             { text: '3D Printer', link: '/daily-homework/3d-printer' },
-            { text: 'Laser Cutting', link: '/daily-homework/laser-cutting' } 
+            { text: 'Laser Cutting', link: '/daily-homework/laser-cutting' },
+            { text: 'Molding and Casting', link: '/daily-homework/molding-and-casting' }
           ]
         }
       ],
@@ -54,14 +55,12 @@ export default defineConfig({
           text: 'Small homework in class',
           items: [
             { text: 'GPL 3.0', link: '/small-homework-in-class/gpl-3-0' },
-            // 注意：下面这一行末尾必须加逗号
             { text: "Google's development language", link: '/small-homework-in-class/google-development-language' },
-            // 这是新加的一行
             { text: 'National and regional standards', link: '/small-homework-in-class/laser-standards' }
           ]
         }
       ]
-    }, // <--- 之前这里少了这个大括号和逗号，现在补上了！
+    },
 
     socialLinks: [
         // 我帮你改成了你自己的仓库地址
