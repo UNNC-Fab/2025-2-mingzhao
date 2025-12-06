@@ -56,12 +56,64 @@
 
 ### 3.1 Desktop Injection Molding Machine
 
-*(Example: Manual or Semi-auto Benchtop Machine)*
+*(Example: Ningbo Taizhu ABS AG15E1-H)*
 
-1. **Setup**: Turn on the heating element. Set the temperature based on material (e.g., **PP at 230°C**). Wait 15-20 mins for full melting.
-2. **Clamping**: Place the aluminum mold into the vise. **Tighten securely** to prevent flash (excess plastic leaking out).
-3. **Injection**: Pull the lever or activate the motor to force plastic into the mold. Hold pressure for 10 seconds to compensate for shrinkage.
-4. **Cooling**: Allow the mold to cool (air cooling). Unclamp and eject the part.
+The process of injection molding using **ABS material** involves several critical steps, including drying the material, setting the proper temperature and pressure, and ensuring accurate injection. Below are the detailed steps and process parameters based on experimentation.
+
+#### Step-by-Step Process:
+
+1. **Setup and Material Drying**:
+   - **Machine**: Ningbo Taizhu ABS AG15E1-H.
+   - **Material**: ABS.
+   - Before starting the molding process, it is essential to dry the ABS material to ensure good flow properties during injection. 
+   - **Drying Temperature**: Set the machine to **85°C**.
+   - **Drying Time**: Dry the material for **2.5 hours** to remove moisture and avoid defects in the final molded parts.
+
+   ![Material Drying Setup](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/9439e7bea6c3b6084519bbb19aa8b547.jpg)
+
+2. **Clamping**:
+   - Place the aluminum mold securely in the machine's mold holder (vise). **Ensure the mold is tightly clamped** to avoid any excess plastic leakage (flash) during the injection process.
+   
+   ![Clamping Process](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/68bc4f1aca48ea826bd610008b7b1125.jpg)
+
+3. **Injection Process**:
+   - **First Stage Temperature**: **180°C**.
+   - **Second Stage Temperature**: **220°C**.
+   - **Injection Speed**:
+     - First stage: **820**.
+     - Second stage: **815**.
+   - **Injection Time**: **6.5 seconds**.
+   - The injection speed needs to be carefully adjusted. If the speed is too slow, the molded part may have defects or incomplete shapes. Make sure the machine applies sufficient pressure and the injection speed is suitable to ensure the mold is fully filled.
+   
+   ![Injection Process](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/4dee269d65e05d0f345df8e199b78613.jpg)
+
+4. **Cooling**:
+   - After the injection, allow the mold to cool naturally (air cooling). This will help the material solidify and retain its shape before ejection.
+   - Once cooled, unclamp the mold and eject the finished part.
+   
+   ![Cooling Process](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/a268911669400a1e0f2d1eb797341c81.jpg)
+
+#### Key Considerations:
+- Ensure that the machine is tightly clamped throughout the process.
+- Adjust the injection speed to avoid defects, such as incomplete filling or surface blemishes.
+- Proper temperature control for both stages is critical for achieving the best molding results.
+
+   ![Final Part Ejection](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/71fa3ce08351efd9dad72c9c2d12107e.jpg)
+   ![Molded Part](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/2fc2f6d0c4e15dd3f6ba47708f6fb968.jpg)
+   ![Injection Molding Machine](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/31cbc5e9700cf4e2e7acdfb0697d225c.jpg)
+
+---
+
+#### Conclusion:
+After experimenting with different settings, the optimal parameters for ABS injection molding on the Ningbo Taizhu ABS AG15E1-H machine are:
+- **First Stage Temperature**: 180°C.
+- **Second Stage Temperature**: 220°C.
+- **Injection Speed**: First stage 820, second stage 815.
+- **Injection Time**: 6.5 seconds.
+
+These settings yield the best results in terms of part quality, with no defects or incomplete shapes.
+
+
 
 ---
 
