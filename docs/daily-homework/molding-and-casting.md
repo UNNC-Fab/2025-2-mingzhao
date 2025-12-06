@@ -73,8 +73,8 @@ The process of injection molding using **ABS material** involves several critica
 
 2. **Clamping**:
    - Place the aluminum mold securely in the machine's mold holder (vise). **Ensure the mold is tightly clamped** to avoid any excess plastic leakage (flash) during the injection process.
+   ![Injection Process](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/4dee269d65e05d0f345df8e199b78613.jpg)
    
-   ![Clamping Process](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/68bc4f1aca48ea826bd610008b7b1125.jpg)
 
 3. **Injection Process**:
    - **First Stage Temperature**: **180°C**.
@@ -84,14 +84,13 @@ The process of injection molding using **ABS material** involves several critica
      - Second stage: **815**.
    - **Injection Time**: **6.5 seconds**.
    - The injection speed needs to be carefully adjusted. If the speed is too slow, the molded part may have defects or incomplete shapes. Make sure the machine applies sufficient pressure and the injection speed is suitable to ensure the mold is fully filled.
+   [Clamping Process](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/68bc4f1aca48ea826bd610008b7b1125.jpg)
    
-   ![Injection Process](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/4dee269d65e05d0f345df8e199b78613.jpg)
 
 4. **Cooling**:
    - After the injection, allow the mold to cool naturally (air cooling). This will help the material solidify and retain its shape before ejection.
    - Once cooled, unclamp the mold and eject the finished part.
-   
-   ![Cooling Process](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/a268911669400a1e0f2d1eb797341c81.jpg)
+   ![Molded Part](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/2fc2f6d0c4e15dd3f6ba47708f6fb968.jpg)
 
 #### Key Considerations:
 - Ensure that the machine is tightly clamped throughout the process.
@@ -99,9 +98,8 @@ The process of injection molding using **ABS material** involves several critica
 - Proper temperature control for both stages is critical for achieving the best molding results.
 
    ![Final Part Ejection](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/71fa3ce08351efd9dad72c9c2d12107e.jpg)
-   ![Molded Part](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/2fc2f6d0c4e15dd3f6ba47708f6fb968.jpg)
-   ![Injection Molding Machine](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/31cbc5e9700cf4e2e7acdfb0697d225c.jpg)
-
+  
+   
 ---
 
 #### Conclusion:
@@ -113,14 +111,16 @@ After experimenting with different settings, the optimal parameters for ABS inje
 
 These settings yield the best results in terms of part quality, with no defects or incomplete shapes.
 
-
+![Injection Molding Machine](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/31cbc5e9700cf4e2e7acdfb0697d225c.jpg)
 
 ---
 
 ### 3.2 Silicone Molding & Casting
 
 1. **Master Pattern**: Secure your master model in a leak-proof mold box (made of LEGOs or acrylic).
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/a72045f17e344a0c3c8a69b4ed2b7331.jpg)
 2. **Mixing Silicone**: Mix Silicone Part A and Part B by weight (e.g., 1:1 ratio). Stir thoroughly to avoid uncured spots.
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/1b2b9ac34ed6f61ddd1ea0822304d813.jpg)
 3. **Degassing**: Place the mixture in a **Vacuum Chamber** to remove air bubbles. This ensures a smooth mold surface.
 4. **Pouring**: Pour the silicone from a high point into the lowest corner of the box. Let it flow over the model naturally.
 5. **Casting**: Once the mold cures, remove the master. Mix your PU Resin and pour it into the silicone mold. Wait for it to cure and demold.
