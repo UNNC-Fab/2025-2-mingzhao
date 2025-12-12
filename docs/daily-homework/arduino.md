@@ -198,48 +198,8 @@ It inherits the design philosophy of the Arduino Uno but significantly improves 
 
 ---
 
-## **3. Case Study: Using Arduino Uno R4 WIFI to Control a Servo**
 
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/5861c65b0fd3b9bac92701d2eb0466ee.jpg)  
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/7d1408ce2e783ff0860076f82812905c.jpg)  
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/8d17b8e70547fdf6207bec13aa0197b8.jpg)
-
-```cpp
-/*
-  Project Name: Potentiometer Control of Servo Angle
-  Function Description:
-    - The potentiometer is connected to pin A0, and the servo is connected to pin D10.
-    - The rotation of the potentiometer controls the angle of the servo.
-    - The angle change is displayed in the serial monitor in real-time.
-*/
-
-#include <Servo.h>  
-
-#define PIN_SERVO 10  
-Servo myservo;       
-
-void setup() {
-  Serial.begin(115200);       // Open the serial monitor
-  myservo.attach(PIN_SERVO);  // Connect the servo
-}
-
-void loop() {
-  int sensorValue = analogRead(A0);             // Read the analog value of the potentiometer
-  int angle = map(sensorValue, 0, 1023, 0, 180); // Map to the servo angle range
-
-  Serial.print("Potentiometer value: ");
-  Serial.print(sensorValue);
-  Serial.print("  ->  Servo angle: ");
-  Serial.println(angle);
-
-  myservo.write(angle); // Control the servo
-  delay(200);
-}
-``` 
-
----
-
-# **Arduino Output**
+# **Arduino Input and Output**
 
 ## **Water Flow Lamp Simulation**
 
