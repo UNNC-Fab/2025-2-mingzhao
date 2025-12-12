@@ -2,13 +2,12 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'UNNC-FABLAB 2025', 
+  title: 'UNNC-FAB 2025-2', 
   description: 'MingZhao Portfolio',
 
   // 你的 GitHub Pages 路径
   base: '/2025-2-mingzhao/',
   
-  // 🔥 关键修改：强制默认深色模式 (Dark Mode)
   // 这会解决字看不清的问题
   appearance: 'dark', 
 
@@ -16,7 +15,7 @@ export default defineConfig({
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    siteTitle: 'UNNC-FAB 2025', // 我稍微打开了标题显示，方便辨识
+    siteTitle: 'UNNC-FAB 2025-2', // 我稍微打开了标题显示，方便辨识
 
     nav: [
       { text: 'Home', link: '/' },
