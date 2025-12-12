@@ -1,6 +1,3 @@
----
-title: 3D Printer
----
 # **3D Printer**
 
 ---
@@ -52,12 +49,10 @@ Considering your background in psychology and the integration of 3D printing, he
 
 ---
 
-This content should fit seamlessly into your **3D Printer** module, with a focus on new research and applications in both the broader 3D printing field and its potential integration with psychological sand tray therapy.
-
-
 ## **2. 3D Printing Test Production**
 
-### 1. Import the robot model
+
+### 1. Import the robot model  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
     <img src="https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251119005901451.png" width="45%" />
     <p style="width: 45%;">Here we import the robot model into the 3D printing software. This model will be the base for the test production. Ensure the file format is compatible with the printer.</p>
@@ -84,6 +79,14 @@ This content should fit seamlessly into your **3D Printer** module, with a focus
 ---
 
 ## **Test Boat Production**
+
+### Why Test with a Small Boat First?  
+Testing with a small boat model is a common practice in 3D printing for several reasons:
+
+- **Ensuring Printer Calibration**: Testing with a small object allows you to calibrate the printer and ensure that it’s correctly set up for optimal performance, especially for new printers or new filament types.
+- **Material and Settings Testing**: It helps to check how the materials and print settings (such as temperature, speed, and layer height) perform before committing to larger, more complex prints.  
+- **Cost-Effective**: Using a small test model reduces the cost of material wastage and potential failures when printing more expensive or larger objects.  
+- **Quick Results**: Small boats can be printed relatively quickly, allowing you to assess the outcome without investing too much time. Any issues can be resolved faster, making the whole process more efficient.
 
 ### 1. Import the boat model  
 <div style="display: flex; justify-content: space-between; gap: 10px;">
