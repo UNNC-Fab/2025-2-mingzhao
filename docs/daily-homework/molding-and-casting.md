@@ -118,10 +118,19 @@ These settings yield the best results in terms of part quality, with no defects 
 ### 3.2 Silicone Molding & Casting
 
 1. **Master Pattern**: Secure your master model in a leak-proof mold box (made of LEGOs or acrylic).
+
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/a72045f17e344a0c3c8a69b4ed2b7331.jpg)
+
 2. **Mixing Silicone**: Mix Silicone Part A and Part B by weight (e.g., 1:1 ratio). Stir thoroughly to avoid uncured spots.
+
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/1b2b9ac34ed6f61ddd1ea0822304d813.jpg)
+
 3. **Degassing**: Place the mixture in a **Vacuum Chamber** to remove air bubbles. This ensures a smooth mold surface.
+
 4. **Pouring**: Pour the silicone from a high point into the lowest corner of the box. Let it flow over the model naturally.
+
 5. **Casting**: Once the mold cures, remove the master. Mix your PU Resin and pour it into the silicone mold. Wait for it to cure and demold.
+
+For more details, please visit [this link](https://unnc-fab.github.io/2025-2-simon/courses/Molding_Casting/Molding-Casting).
+
 

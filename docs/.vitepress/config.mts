@@ -5,17 +5,17 @@ export default defineConfig({
   title: 'UNNC-FAB 2025-2', 
   description: 'MingZhao Portfolio',
 
-  // 你的 GitHub Pages 路径
+  
   base: '/2025-2-mingzhao/',
   
-  // 这会解决字看不清的问题
+  
   appearance: 'dark', 
 
   cleanUrls: true,
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    siteTitle: 'UNNC-FAB 2025-2', // 我稍微打开了标题显示，方便辨识
+    siteTitle: 'UNNC-FAB 2025-2', 
 
     nav: [
       { text: 'Home', link: '/' },
@@ -33,6 +33,7 @@ export default defineConfig({
           items: [
             { text: 'Project Management', link: '/daily-homework/project-management' },
             { text: 'Arduino', link: '/daily-homework/arduino' },
+            { text: 'Electronics Design', link: '/daily-homework/electronics-design' },
             { text: 'CAD design', link: '/daily-homework/cad-design' }, 
             { text: '3D Printer', link: '/daily-homework/3d-printer' },
             { text: 'Laser Cutting', link: '/daily-homework/laser-cutting' },
@@ -63,7 +64,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-        // 我帮你改成了你自己的仓库地址
+        
         { icon: 'github', link: 'https://github.com/UNNC-Fab/2025-2-mingzhao' }
     ]
   }
