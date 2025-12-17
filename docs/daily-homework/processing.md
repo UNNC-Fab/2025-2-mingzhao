@@ -1,73 +1,73 @@
 # 1. Processing
 
-## 1.1 什么是Processing？
+## 1.1 What is Processing?
 
-Processing是一个开源的编程语言和集成开发环境（IDE），旨在通过视觉艺术的方式帮助学生、设计师、艺术家和创作者学习编程。它源自于Java，但提供了一些简化的语法和图形化工具，使得编程变得更直观和容易。Processing的核心目标是通过图形和互动的方式来呈现编程的结果，广泛应用于艺术创作、交互设计、动画以及视觉艺术的展示。
+Processing is an open-source programming language and integrated development environment (IDE) designed to help students, designers, artists, and creators learn programming through visual arts. It is based on Java but offers simplified syntax and graphical tools to make programming more intuitive and accessible. The core goal of Processing is to present the results of programming through graphics and interactivity, and it is widely used in art creation, interaction design, animation, and visual art display.
 
-Processing特别适合用来进行图形学、视觉设计和交互艺术的创作，其简单易学的特性让很多没有编程基础的人也能快速上手并实现创意。
+Processing is particularly well-suited for creating graphics, visual design, and interactive art. Its simplicity makes it easy for people with no programming background to quickly get started and bring their ideas to life.
 
-[Processing官网](https://processing.org/)
+[Processing Official Website](https://processing.org/)
 
-## 1.2 相关工具对比
+## 1.2 Tool Comparison
 
-| 特性        | Processing           | p5.js                 | TD (TouchDesigner)    | OpenFrameworks        | Cinder                |
-|-------------|----------------------|-----------------------|-----------------------|-----------------------|-----------------------|
-| 编程语言    | Java                 | JavaScript            | 可视化编程 (Node-based)| C++                   | C++                   |
-| 环境        | 独立的IDE            | Web浏览器 (HTML5)     | 专用软件              | 跨平台库              | 跨平台库              |
-| 图形支持    | 强大的图形库         | Web图形、Canvas       | 实时渲染和复杂效果    | 高性能图形和UI        | 强大的图形库         |
-| 交互支持    | 支持键盘和鼠标输入   | 支持鼠标、键盘、触摸  | 支持多种输入设备      | 支持多种输入设备      | 支持多种输入设备      |
-| 使用难度    | 中等                 | 简单                  | 高级/艺术家友好      | 高级/开发者友好       | 高级/开发者友好       |
-| 应用领域    | 艺术创作、交互设计   | Web艺术、互动动画     | 数字艺术、舞台设计    | 艺术、游戏、可视化    | 游戏、可视化          |
+| Feature      | Processing           | p5.js                 | TD (TouchDesigner)    | OpenFrameworks        | Cinder                |
+|--------------|----------------------|-----------------------|-----------------------|-----------------------|-----------------------|
+| Programming Language | Java               | JavaScript            | Visual programming (Node-based) | C++                   | C++                   |
+| Environment  | Standalone IDE        | Web Browser (HTML5)   | Dedicated Software    | Cross-platform library | Cross-platform library |
+| Graphics Support | Powerful graphics library | Web graphics, Canvas | Real-time rendering and complex effects | High-performance graphics and UI | Powerful graphics library |
+| Interaction Support | Keyboard and mouse input | Mouse, keyboard, touch | Multiple input devices | Multiple input devices | Multiple input devices |
+| Difficulty   | Moderate              | Easy                  | Advanced/Artist-friendly | Advanced/Developer-friendly | Advanced/Developer-friendly |
+| Application Areas | Art creation, interaction design | Web art, interactive animation | Digital art, stage design | Art, games, visualization | Games, visualization |
 
 ## 1.3 p5.js
 
-p5.js是Processing的JavaScript版本，旨在让更多的人能够在Web浏览器中创建图形、动画和互动应用。与Processing相比，p5.js使用JavaScript进行编程，这意味着它可以在Web环境中运行，利用HTML5 Canvas以及其他Web API来创建互动作品。
+p5.js is the JavaScript version of Processing, designed to enable more people to create graphics, animations, and interactive applications in the web browser. Compared to Processing, p5.js uses JavaScript, which allows it to run in a web environment and utilize HTML5 Canvas and other web APIs to create interactive works.
 
-### 1.3.1 p5.js的特点：
+### 1.3.1 Features of p5.js:
 
-1. **图形和动画**：p5.js提供了易于理解的图形编程工具，可以用来绘制简单的形状或复杂的动画。
-2. **交互性**：p5.js支持鼠标、键盘输入，可以轻松地添加交互元素，创建与用户的互动体验。
-3. **简洁的语法**：p5.js为初学者设计了简洁、易于理解的语法，使得即使没有编程经验的人也可以迅速开始创作。
-4. **丰富的社区支持**：p5.js有一个活跃的开发者和艺术家社区，用户可以分享代码、作品和教程，互相学习和启发。
+1. **Graphics and Animation**: p5.js provides easy-to-understand graphic programming tools for drawing simple shapes or creating complex animations.
+2. **Interactivity**: p5.js supports mouse and keyboard input, allowing for the addition of interactive elements and user interaction experiences.
+3. **Simple Syntax**: p5.js is designed with simple and easy-to-understand syntax, allowing even those with no programming experience to quickly start creating.
+4. **Rich Community Support**: p5.js has an active community of developers and artists who share code, works, and tutorials, fostering mutual learning and inspiration.
 
-[p5.js官网](https://p5js.org/)
+[p5.js Official Website](https://p5js.org/)
 
 ## 1.4 TouchDesigner (TD)
 
-TD（TouchDesigner）是一种用于实时互动视觉艺术创作的图形编程平台。它非常适合用于数字艺术、舞台设计、交互装置等方面，允许用户在不编写传统代码的情况下实现复杂的视觉效果和互动功能。TD通过可视化编程与节点（节点系统）结合的方式，使得创作者可以通过拖拽和连接不同的模块来实现想法。
+TD (TouchDesigner) is a graphical programming platform for real-time interactive visual art creation. It is ideal for digital art, stage design, and interactive installations, allowing users to implement complex visual effects and interactive functions without traditional coding. TD combines visual programming with node-based systems, enabling creators to implement ideas by dragging and connecting different modules.
 
-### 1.4.1 TD的特点：
+### 1.4.1 Features of TD:
 
-1. **实时性**：TD专为实时创作而设计，支持复杂的视觉效果、音频反应和互动实时处理。
-2. **节点化编程**：TD通过节点系统进行编程，用户无需编写大量的代码，可以通过拖拽和配置节点来实现交互和效果。
-3. **交互性强**：支持多种输入设备（如触摸屏、Kinect、传感器等），方便用户设计高度交互的视觉体验。
-4. **图形化界面**：界面直观，支持实时调试，适合设计师和艺术家使用。
+1. **Real-time**: TD is designed for real-time creation, supporting complex visual effects, audio response, and interactive real-time processing.
+2. **Node-based Programming**: TD uses a node system for programming, so users do not need to write large amounts of code. Interaction and effects can be implemented by configuring and connecting nodes.
+3. **Strong Interactivity**: Supports a variety of input devices (e.g., touchscreen, Kinect, sensors), making it easy to design highly interactive visual experiences.
+4. **Graphical Interface**: The interface is intuitive and supports real-time debugging, making it suitable for designers and artists.
 
-[TouchDesigner官网](https://derivative.ca/)
+[TouchDesigner Official Website](https://derivative.ca/)
 
 ## 1.5 OpenFrameworks
 
-OpenFrameworks是一个C++工具包，旨在为艺术家、设计师和开发者提供一个方便的环境，以便进行创意编码。它提供了强大的图形、视频、音频、传感器等功能，并且通过简化复杂的C++编程，使得开发者可以专注于创作。
+OpenFrameworks is a C++ toolkit designed to provide a convenient environment for artists, designers, and developers to engage in creative coding. It provides powerful features for graphics, video, audio, and sensors, and simplifies complex C++ programming to allow developers to focus on creation.
 
-### 1.5.1 OpenFrameworks的特点：
+### 1.5.1 Features of OpenFrameworks:
 
-1. **跨平台**：支持Windows、Mac、Linux、iOS和Android等多平台开发。
-2. **高性能**：C++本身的高性能使得OpenFrameworks非常适合需要高帧率和复杂计算的项目，如图形、动画和游戏。
-3. **灵活性**：OpenFrameworks为开发者提供了极高的灵活性，几乎可以实现任何想法。
-4. **强大的扩展库**：支持多种扩展库，使得用户可以进行视觉创作、音频处理、3D建模等。
+1. **Cross-platform**: Supports development on Windows, Mac, Linux, iOS, and Android.
+2. **High Performance**: The high performance of C++ makes OpenFrameworks perfect for projects that require high frame rates and complex computations, such as graphics, animations, and games.
+3. **Flexibility**: OpenFrameworks provides high flexibility for developers, allowing almost any idea to be realized.
+4. **Strong Extension Libraries**: Supports a variety of extension libraries for visual creation, audio processing, 3D modeling, and more.
 
-[OpenFrameworks官网](https://openframeworks.cc/)
+[OpenFrameworks Official Website](https://openframeworks.cc/)
 
 ## 1.6 Cinder
 
-Cinder是一个C++工具库，旨在为创意编程提供强大的支持。它适用于高性能、实时的视觉艺术创作，并且具有广泛的社区支持。Cinder适合开发者和设计师进行艺术创作，尤其适用于图形、音频和多媒体项目。
+Cinder is a C++ library designed to provide powerful support for creative programming. It is suitable for high-performance, real-time visual art creation and has strong community support. Cinder is ideal for developers and designers involved in artistic creation, particularly in graphics, audio, and multimedia projects.
 
-### 1.6.1 Cinder的特点：
+### 1.6.1 Features of Cinder:
 
-1. **高性能图形库**：Cinder提供了强大的图形渲染功能，适用于实时渲染。
-2. **跨平台支持**：支持Windows、MacOS和Linux。
-3. **图形和UI设计**：可以帮助开发者创建复杂的用户界面和交互系统。
-4. **强大的社区支持**：Cinder有着广泛的开发者和创作者社区，用户可以获得大量的教程、示例代码和插件。
+1. **High-performance Graphics Library**: Cinder offers powerful graphics rendering capabilities suitable for real-time rendering.
+2. **Cross-platform Support**: Supports Windows, MacOS, and Linux.
+3. **Graphics and UI Design**: Helps developers create complex user interfaces and interactive systems.
+4. **Strong Community Support**: Cinder has a large community of developers and creators who provide tutorials, example code, and plugins.
 
-[Cinder官网](https://libcinder.org/)
+[Cinder Official Website](https://libcinder.org/)
 
