@@ -163,7 +163,7 @@ Basic Usage Script (e.g., ai-test.js):
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY, // ⚠️ Never commit real keys to GitHub!
+  apiKey: process.env.OPENAI_API_KEY,
   dangerouslyAllowBrowser: true
 });
 
@@ -229,7 +229,7 @@ export default defineConfig({
     search: { provider: 'local' },
     sidebar: { /* Your Sidebar Items */ },
     socialLinks: [
-      { icon: 'github', link: '[https://github.com/UNNC-Fab/2025-2-mingzhao](https://github.com/UNNC-Fab/2025-2-mingzhao)' }
+      { icon: 'github', link: '' }
     ]
   }
 })
