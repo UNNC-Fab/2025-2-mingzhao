@@ -226,7 +226,7 @@ export default defineConfig({
     nav: [ /* Your Nav Items */ ],
     search: { provider: 'local' },
     sidebar: { /* Your Sidebar Items */ },
-    socialLinks: [{ icon: 'github', link: '[https://github.com/UNNC-Fab/2025-2-mingzhao](https://github.com/UNNC-Fab/2025-2-mingzhao)' }]
+    socialLinks: [{ icon: 'github',  }]
   }
 })
 
