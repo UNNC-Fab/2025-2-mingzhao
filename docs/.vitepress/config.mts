@@ -5,7 +5,7 @@ export default defineConfig({
   title: 'UNNC-FAB 2025-2', 
   description: 'MingZhao Portfolio',
 
-  
+
   base: '/2025-2-mingzhao/',
   
   
@@ -26,7 +26,7 @@ export default defineConfig({
 
     search: { provider: 'local' },
 
-   sidebar: {
+    sidebar: {
       '/daily-homework/': [
         {
           text: 'Daily homework',
@@ -38,7 +38,12 @@ export default defineConfig({
             { text: 'Laser Cutting', link: '/daily-homework/laser-cutting' },
             { text: 'Molding and Casting', link: '/daily-homework/molding-and-casting' },
             { text: 'Processing', link: '/daily-homework/processing' },
-            { text: 'Electronics Design', link: '/daily-homework/electronics-design' }
+            { text: 'Electronics Design', link: '/daily-homework/electronics-design' },
+            { text: 'Electronics Production', link: '/daily-homework/electronics-production' },
+            { text: 'Networking and Communications', link: '/daily-homework/networking-communications' },
+            { text: 'Computer Control Cutting', link: '/daily-homework/computer-control-cutting' },
+            { text: 'Final Project Debug', link: '/daily-homework/final-project-debug' },
+            { text: 'AI & BP', link: '/daily-homework/ai-bp' }
           ]
         }
       ],
@@ -64,7 +69,6 @@ export default defineConfig({
     },
 
     socialLinks: [
-        
         { icon: 'github', link: 'https://github.com/UNNC-Fab/2025-2-mingzhao' }
     ]
   }
