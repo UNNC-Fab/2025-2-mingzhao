@@ -66,16 +66,230 @@ Before creating a repository, we need to set up the local development environmen
 
 ### Git Installation
 
-Windows: Download Git for Windows. Install with default settings.
+- **Windows**: Download Git for Windows. Install with default settings.
+- **macOS**: Run `brew install git` in Terminal.
+- **Linux**: Run `sudo apt install git`.
 
-macOS: Run brew install git in Terminal.
-
-Linux: Run sudo apt install git.
-
-Crucial Configuration:
-Open terminal and run:
-
+**Crucial Configuration**: Open terminal and run the following commands to configure Git with your name and email:
+```bash
 git config --global user.name "Your Name"
 git config --global user.email "your_email@example.com"
+```
+
+### VS Code Setup
+
+1. **Download**: Install [Visual Studio Code](https://code.visualstudio.com/).
+2. **Extensions**: Install the following extensions:
+   - **Vue (Official)**: This extension provides syntax highlighting, snippets, and tooling for Vue.js development.
+   - **Prettier**: This extension ensures consistent code formatting across the project.
+
+### Project Directory Structure (Detailed)
+
+This is the complete file structure of our VitePress project in VS Code.
+
+```text
+2025-2-mingzhao/                # Root Project Directory (Project Name)
+├── .git/                       # Git Version Control System (Hidden Folder)
+├── .github/                    # GitHub Configuration
+│   └── workflows/              # Automation Scripts
+│       └── deploy.yml          # GitHub Actions CI/CD Script
+├── docs/                       # Source Code for Documentation
+│   ├── .vitepress/             # Core VitePress Configuration
+│   │   ├── cache/              # Cache Files (Auto-generated)
+│   │   ├── dist/               # Build Output (The actual website files)
+│   │   ├── theme/              # Custom Theme Settings
+│   │   │   ├── index.ts        # Theme Entry File
+│   │   │   └── style.css       # Custom CSS (Cyberpunk Style)
+│   │   └── config.mts          # Main Site Config (Nav, Sidebar, Search)
+│   ├── daily-homework/         # Folder: Daily Homework Modules
+│   │   ├── ai-bp.md
+│   │   ├── arduino.md
+│   │   ├── cad-design.md
+│   │   ├── computer-control-cutting.md
+│   │   ├── electronics-design.md
+│   │   ├── electronics-production.md
+│   │   ├── final-project-debug.md
+│   │   ├── laser-cutting.md
+│   │   ├── molding-and-casting.md
+│   │   ├── networking-communications.md
+│   │   ├── processing.md
+│   │   └── project-management.md
+│   ├── finalwork/              # Folder: Final Project
+│   │   └── psychological-sand-table.md
+│   ├── public/                 # Static Assets (Accessible from root)
+│   │   ├── dashboard.html      # Custom Landing Page (Cyberpunk Dashboard)
+│   │   └── [images...]         # Project Images
+│   ├── small-homework-in-class/# Folder: Class Assignments
+│   │   ├── google-development-language.md
+│   │   ├── gpl-3-0.md
+│   │   └── laser-standards.md
+│   └── index.md                # Home Page Redirector
+├── node_modules/               # Dependencies Libraries (Do NOT upload to GitHub)
+├── .gitignore                  # List of files to ignore (e.g., node_modules)
+├── package-lock.json           # Dependency Tree Lock File
+└── package.json                # Project Manifest & Scripts
+```
+## **5. Advanced Features**
+
+### 5.1 Search Bar Setup
+
+To enable the built-in local search in VitePress, ensure your `docs/.vitepress/config.mts` includes the following setting inside `themeConfig`:
+
+```ts
+export default defineConfig({
+  themeConfig: {
+    search: { provider: 'local' },
+    // ... other settings (nav, sidebar)
+  }
+})
+```
 
 
+### 5.2 AI Integration (OpenAI API)
+
+**Note**: Be careful not to expose your API Key in public repositories. Use environment variables for security.
+
+#### Installation:
+```bash
+npm install openai
+```
+
+Basic Usage Script (e.g., ai-test.js):
+```js
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY, // ⚠️ Never commit real keys to GitHub!
+  dangerouslyAllowBrowser: true
+});
+
+async function askAI(question) {
+  const completion = await openai.chat.completions.create({
+    messages: [{ role: "user", content: question }],
+    model: "gpt-3.5-turbo",
+  });
+  console.log(completion.choices[0].message.content);
+}
+```
+## **6. Project Code Reference**
+
+These are the critical configuration files for your project. You can refer to them if you need to restore settings.
+
+### 6.1 Home Page (docs/index.md)
+
+This file handles the redirect to your custom dashboard.
+```html
+---
+
+```
+layout: home
+hero:
+  name: My project
+  text: UNNC-Fab/2025-2-xi mingzhao
+sidebar: false
+aside: false
+outline: false
+---
+<script setup>
+import { onMounted } from 'vue'
+onMounted(() => {
+  // Redirect to the custom HTML dashboard in public folder
+  window.location.replace('dashboard.html')
+})
+</script>
+<style>
+/* Prevent white flash during redirect */
+html, body {
+    background-color: #050505;
+    color: #333;
+}
+</style>
+```
+
+### 6.2 Site Configuration (docs/.vitepress/config.mts)
+
+This file controls the navigation bar, sidebar, and site title.
+
+```ts
+import { defineConfig } from 'vitepress'
+
+export default defineConfig({
+  title: 'UNNC-FAB 2025-2',
+  description: 'MingZhao Portfolio',
+  base: '/2025-2-mingzhao/',
+  appearance: 'dark', 
+  cleanUrls: true,
+  themeConfig: {
+    siteTitle: 'UNNC-FAB 2025-2', 
+    nav: [ /* Your Nav Items */ ],
+    search: { provider: 'local' },
+    sidebar: { /* Your Sidebar Items */ },
+    socialLinks: [
+      { icon: 'github', link: '[https://github.com/UNNC-Fab/2025-2-mingzhao](https://github.com/UNNC-Fab/2025-2-mingzhao)' }
+    ]
+  }
+})
+```
+
+### 6.3 Auto Deployment (.github/workflows/deploy.yml)
+```
+This GitHub Actions script automatically builds and deploys your site when you push to the main branch.
+
+```yaml
+name: Deploy VitePress site to Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+          cache: npm
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build with VitePress
+        run: npm run docs:build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+```
