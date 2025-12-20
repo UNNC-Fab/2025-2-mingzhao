@@ -179,10 +179,7 @@ async function askAI(question) {
 
 These are the critical configuration files for your project. You can refer to them if you need to restore settings.
 
-### 6.1 Home Page (`docs/index.md`)
-
-```markdown
-
+### 6.1 Home Page (docs/index.md)
 This file handles the redirect to your custom dashboard.
 
 ```markdown
@@ -237,9 +234,9 @@ export default defineConfig({
 ```
 
 ### 6.3 Auto Deployment (.github/workflows/deploy.yml)
-```
 This GitHub Actions script automatically builds and deploys your site when you push to the main branch.
 
+```
 ```yaml
 name: Deploy VitePress site to Pages
 
