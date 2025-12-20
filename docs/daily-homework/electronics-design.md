@@ -1,4 +1,4 @@
-# 📘 PCB Design – Basic Knowledge and Tools
+# PCB Design – Basic Knowledge and Tools
 
 ### 1. What is a PCB (Printed Circuit Board)?
 

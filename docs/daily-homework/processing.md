@@ -1,4 +1,4 @@
-# 1. Processing
+# Processing
 
 ## 1.1 What is Processing?
 
