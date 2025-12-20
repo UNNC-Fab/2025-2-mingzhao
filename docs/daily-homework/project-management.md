@@ -1,3 +1,7 @@
+---
+title: Project Management
+layout: doc
+---
 # **Project Management**
 
 ---
