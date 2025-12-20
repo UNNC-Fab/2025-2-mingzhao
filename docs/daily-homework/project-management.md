@@ -213,9 +213,10 @@ html, body {
 ```
 
 ---
+
 ### 6.2 Site Configuration (docs/.vitepress/config.mts)
+
 ```typescript
-### 6.2 Site Configuration (`docs/.vitepress/config.mts`)
 
 This file controls the navigation bar, sidebar, and site title.
 
@@ -238,6 +239,8 @@ export default defineConfig({
     ]
   }
 })
+
+```
 ### 6.3 Auto Deployment (.github/workflows/deploy.yml)
 ```
 This GitHub Actions script automatically builds and deploys your site when you push to the main branch.
