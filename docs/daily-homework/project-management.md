@@ -178,8 +178,10 @@ async function askAI(question) {
 ## **6. Project Code Reference**
 
 These are the critical configuration files for your project. You can refer to them if you need to restore settings.
-```markdown
+
 ### 6.1 Home Page (`docs/index.md`)
+
+```markdown
 
 This file handles the redirect to your custom dashboard.
 
@@ -210,17 +212,10 @@ html, body {
 }
 </style>
 ```
-```
-
----
-
 ### 6.2 Site Configuration (docs/.vitepress/config.mts)
 
-```typescript
-
+```markdown
 This file controls the navigation bar, sidebar, and site title.
-
-```typescript
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -239,8 +234,8 @@ export default defineConfig({
     ]
   }
 })
-
 ```
+
 ### 6.3 Auto Deployment (.github/workflows/deploy.yml)
 ```
 This GitHub Actions script automatically builds and deploys your site when you push to the main branch.
