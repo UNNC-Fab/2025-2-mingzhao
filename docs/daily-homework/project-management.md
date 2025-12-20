@@ -178,14 +178,13 @@ async function askAI(question) {
 ## **6. Project Code Reference**
 
 These are the critical configuration files for your project. You can refer to them if you need to restore settings.
-
-### 6.1 Home Page (docs/index.md)
+```markdown
+### 6.1 Home Page (`docs/index.md`)
 
 This file handles the redirect to your custom dashboard.
-```html
----
 
-```
+```markdown
+---
 layout: home
 hero:
   name: My project
@@ -194,6 +193,7 @@ sidebar: false
 aside: false
 outline: false
 ---
+
 <script setup>
 import { onMounted } from 'vue'
 onMounted(() => {
@@ -201,6 +201,7 @@ onMounted(() => {
   window.location.replace('dashboard.html')
 })
 </script>
+
 <style>
 /* Prevent white flash during redirect */
 html, body {
@@ -209,12 +210,16 @@ html, body {
 }
 </style>
 ```
+```
 
+---
 ### 6.2 Site Configuration (docs/.vitepress/config.mts)
+```typescript
+### 6.2 Site Configuration (`docs/.vitepress/config.mts`)
 
 This file controls the navigation bar, sidebar, and site title.
 
-```ts
+```typescript
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -229,12 +234,10 @@ export default defineConfig({
     search: { provider: 'local' },
     sidebar: { /* Your Sidebar Items */ },
     socialLinks: [
-      { icon: 'github', link: '' }
+      { icon: 'github', link: 'https://github.com/UNNC-Fab/2025-2-mingzhao' }
     ]
   }
 })
-```
-
 ### 6.3 Auto Deployment (.github/workflows/deploy.yml)
 ```
 This GitHub Actions script automatically builds and deploys your site when you push to the main branch.
