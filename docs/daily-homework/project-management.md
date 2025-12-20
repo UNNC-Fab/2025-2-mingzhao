@@ -141,7 +141,6 @@ Configuration:
 
 export default defineConfig({
   themeConfig: {
-    // 👇 Enable local search provider
     search: { provider: 'local' },
     // ... other settings (nav, sidebar)
   }
@@ -209,6 +208,8 @@ html, body {
 
 
 ### 6.2 Site Configuration (docs/.vitepress/config.mts)
+
+6.2 Site Configuration (docs/.vitepress/config.mts)
 
 This file controls the navigation bar, sidebar, and site title.
 
