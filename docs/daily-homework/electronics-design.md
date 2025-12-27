@@ -61,24 +61,45 @@ PCB design relies heavily on EDA tools for schematic capture, layout design, ele
 
 ---
 
-## 🧠 PCB设计工作流程
+## 🧠 JLC EDA Workflow: Water Flow Light Project
 
-1. **电路图捕获**
-   - 绘制电路逻辑图。
-   - 为PCB分配元件封装。
+1. **Schematic Design**
+   
+   Based on the provided schematic, the Water Flow Light circuit consists of two main stages: the **Pulse Generator** and the **Decimal Counter**.
+   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/9b83f1235400eca716908dffc210afc3.png)
+   * **Core Chips**:
+     * **U1 (NE555)**: Configured in Astable Mode. It generates a continuous square wave signal.
+     * **U2 (CD4017)**: A 5-stage Johnson decade counter. It receives the clock signal from the NE555 and sequentially outputs High levels to pins Q0-Q9, lighting up the LEDs one by one.
 
-2. **PCB布局**
-   - 将元件放置到板框内。
-   - 路由导线，考虑电源/地面层、阻抗等。
+   * **Critical Components**:
+   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/e80164375565bf285ad849105a3dd2c1.png)
+     * **R1 (10kΩ)** & **R2 (Potentiometer)**: These resistors, along with Capacitor C1, determine the frequency of the pulse. 
+       * *Analysis*: Adjusting **R2** changes the charging/discharging time of C1, thereby controlling the **speed** of the water flow effect.
+     * **C1 (10μF)**: The timing capacitor. A larger value will slow down the flow; a smaller value will speed it up.
+     * **LEDs (D1-D10)**: 10x Red LEDs (5mm or 3mm).
+     * **Current Limiting Resistors**: Typically **470Ω - 1kΩ** placed in series with the LEDs to prevent burnout.
 
-3. **设计规则检查（DRC）**
-   - 验证间距、导线宽度、孔规则。
+   * **Wiring Logic**:
+   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/b3b706d9fd820b19cd1322bcddf01de3.png)
+     * **Clock Signal**: NE555 Pin 3 (Output) $\rightarrow$ CD4017 Pin 14 (CLK).
+     * **Reset Logic**: CD4017 Pin 15 (Reset) is grounded (to count continuously) or connected to Q10 (to reset after 10 steps).
 
-4. **仿真与分析**
-   - 使用工具如ngspice、信号完整性仿真器验证电路行为。
+2. **PCB Layout**
+   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/310468b652b7a34076b52d638d309e5c.png)
+   * **Convert to PCB**: Convert the schematic to PCB and define the board outline.
+   * **Placement**: Arrange LEDs in a line or circle (to simulate water flow), place chips in the center, and keep decoupling capacitors close to chip power pins.
+   * **Routing**: Use auto or manual routing. Widen power traces (e.g., 20-30mil) and keep signal traces default (e.g., 10mil).
 
-5. **生成生产文件**
-   - 导出Gerber、钻孔文件和BOM用于制造。
+3. **Design Rule Check (DRC)**
+   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251227153658687.png)
+   * Use the built-in DRC function in JLC EDA to check for **Short Circuits**, **Clearance Errors**, or **Unconnected Nets**.
+
+4. **3D Visualization**
+   * Click the 3D preview button to check for physical component interference and view the overall appearance of the Water Flow Light.
+   ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251227153807365.png)
+5. **Order PCB / Export Gerber**
+   * **One-Click Order**: Click "One-Click Order" to send data directly to the JLC factory for production.
+   * **Export Gerber**: Export Gerber files for local CNC milling or archiving.
 
 ---
 
