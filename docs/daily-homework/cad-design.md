@@ -41,7 +41,7 @@ Parameter adjustment
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251116160350571.png)
 
 Engineering drawing
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20260105155143285.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20260105155647735.png)
 
 ---
 
