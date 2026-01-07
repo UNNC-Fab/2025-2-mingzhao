@@ -189,6 +189,68 @@ async function askAI(question) {
   console.log(completion.choices[0].message.content);
 }
 ```
+
+### **5.3 Google Search Integration (Custom Component)**
+
+We implemented a custom search box in the navigation bar that allows users to search keywords directly on Google. This involves creating a Vue component and injecting it into the VitePress theme layout.
+
+#### **Step 1: Create Search Component**
+File path: `docs/.vitepress/components/GoogleSearch.vue`
+
+This component handles the user input and redirects to Google's search URL.
+
+
+```vue
+<script setup>
+import { ref } from 'vue'
+
+const query = ref('')
+
+function search() {
+  const text = query.value.trim()
+  if (!text) return
+  
+  // Construct Google Search URL
+  const googleUrl = '[https://www.google.com/search?q=](https://www.google.com/search?q=)' + encodeURIComponent(text)
+  window.open(googleUrl, '_blank')
+}
+</script>
+
+<template>
+  <div class="google-search-box">
+    <input 
+      type="text" 
+      v-model="query" 
+      @keyup.enter="search"
+      placeholder="Google All..." 
+      class="search-input"
+    />
+    <button @click="search" class="search-btn">GO</button>
+  </div>
+</template>
+
+<style scoped>
+/* CSS for the input box and button */
+.google-search-box { display: flex; align-items: center; margin-left: 20px; gap: 8px; }
+.search-input { 
+    border: 1px solid var(--vp-c-divider); 
+    border-radius: 4px; 
+    padding: 4px 8px; 
+    width: 150px; 
+    transition: width 0.3s;
+}
+.search-input:focus { width: 180px; border-color: var(--vp-c-brand-1); }
+.search-btn { 
+    background-color: var(--vp-c-brand-1); 
+    color: #000; 
+    padding: 4px 10px; 
+    border-radius: 4px; 
+    font-weight: bold; 
+}
+</style>
+
+
+```
 ## **6. Project Code Reference**
 
 These are the critical configuration files for your project. You can refer to them if you need to restore settings.
