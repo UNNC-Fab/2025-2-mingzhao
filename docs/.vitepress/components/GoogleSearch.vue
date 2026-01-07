@@ -4,14 +4,10 @@ import { ref } from 'vue'
 const query = ref('')
 
 function search() {
-  // 如果输入为空，则不执行
-  if (!query.value.trim()) return
   
-  // 🔥 核心修正：这里拼接了谷歌的搜索前缀
-  // 这样无论你输入什么，都会跳转到谷歌去搜索该内容，而不是在站内搜
-  const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(query.value)}`
-  
-  // 在新标签页打开搜索结果
+  const text = query.value.trim()
+  if (!text) return
+  const googleUrl = 'https://www.google.com/search?q=' + encodeURIComponent(text)
   window.open(googleUrl, '_blank')
 }
 </script>
@@ -22,11 +18,11 @@ function search() {
       type="text" 
       v-model="query" 
       @keyup.enter="search"
-      placeholder="Google Search..." 
+      placeholder="Google All..." 
       class="search-input"
     />
     <button @click="search" class="search-btn">
-      <i class="fa-solid fa-magnifying-glass"></i> GO
+      GO
     </button>
   </div>
 </template>
@@ -60,7 +56,7 @@ function search() {
   background-color: var(--vp-c-brand-1);
   color: #000;
   border: none;
-  padding: 4px 8px;
+  padding: 4px 10px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
