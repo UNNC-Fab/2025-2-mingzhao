@@ -125,7 +125,6 @@
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Cards (Same as before) -->
             <a href="daily-homework/project-management" class="tech-card block p-8 rounded-xl group relative">
                 <div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity"><i class="fas fa-external-link-alt text-white"></i></div>
                 <div class="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform"><i class="fas fa-calendar-check text-2xl"></i></div>
@@ -156,11 +155,11 @@
         </div>
     </main>
 
-    <!-- AI Chat Widget (V6.0 Custom Model Support) -->
+    <!-- AI Chat Widget (双模版：离线+DeepSeek) -->
     <div id="ai-widget">
         <div class="chat-header">
             <div class="flex items-center gap-2 text-purple-400 font-bold orbitron">
-                <i class="fas fa-robot"></i> FAB-AI <span class="text-xs bg-purple-900 px-1 rounded">ULTRA</span>
+                <i class="fas fa-robot"></i> FAB-AI <span id="status-badge" class="text-xs bg-green-900 px-1 rounded">LOCAL</span>
             </div>
             <div class="flex gap-3">
                 <button onclick="toggleSettings()" class="text-gray-400 hover:text-white" title="Settings"><i class="fas fa-cog"></i></button>
@@ -170,39 +169,27 @@
 
         <!-- Settings Panel -->
         <div id="settings-panel">
-            <h3 class="text-white font-bold mb-4">AI Configuration</h3>
+            <h3 class="text-white font-bold mb-4">AI Settings</h3>
             
-            <p class="text-gray-400 text-xs mb-2">API Key</p>
-            <input type="password" id="api-key-input" placeholder="Paste Key here..." class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-sm">
-            
-            <p class="text-gray-400 text-xs mb-2">Select Model (Or Type Custom)</p>
-            <div class="flex gap-2 mb-4">
-                <select id="api-model-select" class="w-1/2 bg-gray-800 text-white border border-gray-600 rounded p-2 text-sm" onchange="updateModelInput()">
-                    <option value="gemini-1.5-flash">1.5 Flash</option>
-                    <option value="gemini-1.5-pro">1.5 Pro</option>
-                    <option value="gemini-pro">Gemini Pro (1.0)</option>
-                    <option value="gemini-2.0-flash-exp">2.0 Flash (Exp)</option>
-                    <option value="custom">Custom...</option>
-                </select>
-                <!-- 👇 手动输入框，防止下拉菜单不够用 -->
-                <input type="text" id="api-model-custom" placeholder="e.g. gemini-1.0-pro" class="w-1/2 bg-gray-800 text-white border border-gray-600 rounded p-2 text-sm" value="gemini-1.5-flash">
-            </div>
+            <p class="text-gray-400 text-xs mb-2">Use DeepSeek API (Optional)</p>
+            <input type="password" id="api-key-input" placeholder="Paste DeepSeek API Key..." class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-sm">
             
             <div class="flex gap-2">
-                <button onclick="saveSettings()" class="flex-1 bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 rounded">Save & Connect</button>
-                <button onclick="resetSettings()" class="flex-1 bg-red-600 hover:bg-red-500 text-white font-bold py-2 rounded">Reset</button>
+                <button onclick="saveSettings()" class="flex-1 bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 rounded">Save & Online</button>
+                <button onclick="resetSettings()" class="flex-1 bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 rounded">Use Offline</button>
             </div>
-            <p class="text-gray-500 text-xs mt-4 text-center">Tired of errors? Try 'gemini-1.5-flash'.</p>
+            <p class="text-gray-500 text-xs mt-4 text-center">Leave blank to use the built-in Knowledge Base.</p>
         </div>
 
         <div class="chat-messages" id="chat-box">
             <div class="chat-msg bot-msg">
-                <strong>System Ready.</strong><br>
-                Click <i class="fas fa-cog"></i> to configure API.
+                <strong>Hello!</strong><br>
+                I am your FabLab Assistant.<br>
+                Ask me about Arduino, 3D Printing, Laser Cutting, or Project Management.
             </div>
         </div>
         <div class="chat-input-area">
-            <input type="text" id="ai-input" placeholder="Ask AI..." class="w-full bg-transparent text-white focus:outline-none text-sm font-mono" onkeypress="handleAIInput(event)">
+            <input type="text" id="ai-input" placeholder="Ask offline or online..." class="w-full bg-transparent text-white focus:outline-none text-sm font-mono" onkeypress="handleAIInput(event)">
             <button onclick="sendAIMessage()" class="text-cyan-400 hover:text-white"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
@@ -228,32 +215,29 @@
             window.open(`https://www.google.com/search?q=site:${site}+${query}`, '_blank');
         }
 
-        // --- AI Logic ---
+        // --- Dual-Mode AI Logic (双模 AI) ---
         let apiKey = localStorage.getItem('fab_ai_key') || '';
-        let apiModel = localStorage.getItem('fab_ai_model') || 'gemini-1.5-flash';
+        const apiBaseUrl = 'https://api.deepseek.com/v1'; // 默认 DeepSeek，无需配置
+        
+        // 内置知识库 (Offline Knowledge Base)
+        const kb = {
+            'arduino': "Arduino is an open-source electronics platform based on easy-to-use hardware and software. We use **Arduino Uno** and **ESP32** in our lab.",
+            'laser': "Laser cutting uses a high-power laser to cut materials. **Safety First**: Never leave the machine unattended! Common materials: Plywood, Acrylic.",
+            '3d print': "3D Printing is an additive manufacturing process. We use **FDM (Prusa)** for plastic parts and **SLA** for high-detail resin models.",
+            'safety': "Lab Safety Rules: 1. Wear safety glasses. 2. Tie back long hair. 3. Know where the emergency stop is. 4. No food or drink.",
+            'git': "Git is a version control system. Remember to `git pull` before you start and `git push` when you finish.",
+            'hello': "Hi there! I am ready to help you with your FabLab journey.",
+            'help': "Try keywords like: Arduino, Laser, 3D Print, Safety, or Project."
+        };
+
+        // 更新状态显示
+        const statusBadge = document.getElementById('status-badge');
+        if (apiKey) {
+            statusBadge.textContent = "ONLINE";
+            statusBadge.classList.replace('bg-green-900', 'bg-purple-900');
+        }
 
         document.getElementById('api-key-input').value = apiKey;
-        document.getElementById('api-model-custom').value = apiModel;
-        
-        // 尝试自动匹配下拉菜单
-        const select = document.getElementById('api-model-select');
-        let found = false;
-        for(let i=0; i<select.options.length; i++) {
-            if(select.options[i].value === apiModel) {
-                select.selectedIndex = i;
-                found = true;
-                break;
-            }
-        }
-        if(!found) select.value = 'custom';
-
-        function updateModelInput() {
-            const select = document.getElementById('api-model-select');
-            const input = document.getElementById('api-model-custom');
-            if(select.value !== 'custom') {
-                input.value = select.value;
-            }
-        }
 
         function toggleAI() {
             const widget = document.getElementById('ai-widget');
@@ -268,22 +252,13 @@
 
         function saveSettings() {
             apiKey = document.getElementById('api-key-input').value.trim();
-            apiModel = document.getElementById('api-model-custom').value.trim(); // 优先取输入框的值
-            
             localStorage.setItem('fab_ai_key', apiKey);
-            localStorage.setItem('fab_ai_model', apiModel);
-            
-            toggleSettings();
-            addMessage(`Settings saved. Model: ${apiModel}`, 'bot');
+            location.reload(); // 刷新以应用
         }
 
         function resetSettings() {
-            localStorage.clear();
-            document.getElementById('api-key-input').value = '';
-            document.getElementById('api-model-select').value = 'gemini-1.5-flash';
-            document.getElementById('api-model-custom').value = 'gemini-1.5-flash';
-            alert("Settings Reset. Please reload page.");
-            location.reload();
+            localStorage.removeItem('fab_ai_key');
+            location.reload(); // 刷新回退到离线模式
         }
 
         function handleAIInput(e) { if (e.key === 'Enter') sendAIMessage(); }
@@ -298,42 +273,57 @@
 
             const chatBox = document.getElementById('chat-box');
             const loadingId = 'loading-' + Date.now();
-            chatBox.innerHTML += `<div class="chat-msg bot-msg" id="${loadingId}"><i class="fas fa-circle-notch fa-spin"></i> Thinking...</div>`;
-            chatBox.scrollTop = chatBox.scrollHeight;
-
+            
+            // 模式判断
             if (!apiKey) {
-                document.getElementById(loadingId).remove();
-                addMessage("Offline: Please enter API Key in settings.", 'bot');
-                return;
-            }
+                // --- 模式 A: 离线模式 (Offline) ---
+                chatBox.innerHTML += `<div class="chat-msg bot-msg" id="${loadingId}">...</div>`;
+                setTimeout(() => {
+                    document.getElementById(loadingId).remove();
+                    // 简单的关键词匹配
+                    const lowerMsg = msg.toLowerCase();
+                    let reply = "I don't have an answer for that in my offline database. <br>Try keywords like **Arduino**, **Laser**, **Safety**.";
+                    
+                    for (const key in kb) {
+                        if (lowerMsg.includes(key)) {
+                            reply = kb[key];
+                            break;
+                        }
+                    }
+                    addMessage(marked.parse(reply), 'bot');
+                }, 500);
+            } else {
+                // --- 模式 B: 在线模式 (DeepSeek API) ---
+                chatBox.innerHTML += `<div class="chat-msg bot-msg" id="${loadingId}"><i class="fas fa-circle-notch fa-spin"></i> Connecting...</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
 
-            try {
-                // 🔥 强制使用 Google 原生接口，不走 OpenAI 兼容层
-                // 这样能避开 'v1main' 这种诡异的路由错误
-                const url = `https://generativelanguage.googleapis.com/v1beta/models/${apiModel}:generateContent?key=${apiKey}`;
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: msg }] }]
-                    })
-                });
+                try {
+                    const response = await fetch(apiBaseUrl + '/chat/completions', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${apiKey}`
+                        },
+                        body: JSON.stringify({
+                            model: "deepseek-chat",
+                            messages: [
+                                {role: "system", content: "You are a helpful FabLab assistant. Answer in English, keep it brief."},
+                                {role: "user", content: msg}
+                            ]
+                        })
+                    });
 
-                if (!response.ok) {
-                    const err = await response.json();
-                    throw new Error(`Google API ${response.status}: ${err.error?.message || 'Unknown error'}`);
+                    if (!response.ok) throw new Error('API Error');
+                    const data = await response.json();
+                    const reply = data.choices[0].message.content;
+                    
+                    document.getElementById(loadingId).remove();
+                    addMessage(marked.parse(reply), 'bot');
+
+                } catch (error) {
+                    document.getElementById(loadingId).remove();
+                    addMessage("Online Error. Switched to Offline mode for this message.", 'bot');
                 }
-                const data = await response.json();
-                
-                // Google 原生接口的返回结构
-                const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response text.";
-                
-                document.getElementById(loadingId).remove();
-                addMessage(marked.parse(reply), 'bot');
-
-            } catch (error) {
-                document.getElementById(loadingId).remove();
-                addMessage(`Error: ${error.message}<br><br><strong>Try:</strong> Open Settings -> Select 'Gemini 1.5 Flash' -> Save.`, 'bot');
             }
         }
 
