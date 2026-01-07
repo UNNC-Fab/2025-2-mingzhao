@@ -67,16 +67,35 @@ After inviting, you can **view the list of invited members** in the repository s
 
 Use **Clone**, **Pull**, and **Push** commands to manage your code locally and synchronize with GitHub.
 
-  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132823156.png)
-  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133039814.png)
+### **Step 1: Clone (First Time Only)**
 
-  
-After confirming, **click to upload** your project.
+Download the repository from GitHub to your local computer.
+
+* Click the green **Code** button on GitHub and copy the URL.
+
+* In GitHub Desktop (or terminal), select **Clone Repository**.
+
+### **Step 2: Push (Upload Changes)**
+
+After editing your files in VS Code, you need to upload them.
+
+1. **Commit**: Write a summary (e.g., "update docs") and click **Commit to main**.
+
+2. **Push**: Click **Push origin** to upload your changes to the GitHub server.
+
+*Click to upload (Push)*
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104133409442.png)
-  
-Then you can **view it on your GitHub webpage**.
+
+Then you can **view it on your GitHub webpage** (after GitHub Actions finishes building).
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104152911772.png)
----
+
+### **Step 3: Pull (Sync Updates)**
+
+If you (or a teammate) modified files on another computer or directly on the GitHub website, your local files will be outdated.
+
+* Click **Fetch origin** -> **Pull origin** to download the latest changes to your local computer.
+
+* *Tip: Always "Pull" before you start working to avoid conflicts.*
 
 ##  Prerequisites: Environment Setup
 
