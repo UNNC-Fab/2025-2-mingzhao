@@ -1,7 +1,18 @@
 # **Arduino**
 
 ---
-
+| Category | Name | Description | Official Link | 
+ | ----- | ----- | ----- | ----- | 
+| **Official** | **Arduino Home** | Main website for hardware, software, and docs. | [arduino.cc](https://www.arduino.cc/) | 
+| **Software** | **Arduino IDE** | The official coding environment. | [Download IDE](https://www.arduino.cc/en/software) | 
+| **Software** | **PlatformIO** | Advanced IDE extension for VS Code. | [platformio.org](https://platformio.org/) | 
+| **Software** | **Fritzing** | Circuit design software for beginners. | [fritzing.org](https://fritzing.org/) | 
+| **Software** | **Tinkercad** | Online circuit simulation (Great for testing). | [tinkercad.com](https://www.tinkercad.com/circuits) | 
+| **Hardware** | **Raspberry Pi** | Official site for Pi computers and Pico. | [raspberrypi.org](https://www.raspberrypi.org/) | 
+| **Hardware** | **Espressif** | Makers of ESP32 and ESP8266 chips. | [espressif.com](https://www.espressif.com/) | 
+| **Hardware** | **Micro:bit** | Educational coding foundation. | [microbit.org](https://microbit.org/) | 
+| **Hardware** | **SparkFun** | Original creators of LilyPad. | [sparkfun.com](https://www.sparkfun.com/) | 
+| **Docs** | **Arduino Reference** | Language syntax and library documentation. | [Language Ref](https://www.arduino.cc/reference/en/) |
 ## **1. Open-Source Hardware Ecosystem Introduction**
 
 In modern electronics and intelligent systems learning, **open-source hardware** has become the most commonly used basic tool in maker education, IoT development, and electronic prototyping.  
@@ -11,7 +22,7 @@ Here are some of the most commonly used open-source hardware platforms:
 ---
 
 ### **Raspberry Pi**
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108171501402.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20260107161425457.png)
 Raspberry Pi is a **micro single-board computer (SBC)**, small enough to fit in the palm of your hand but capable of running a complete Linux system.  
 It supports Python, C/C++, Java, and other programming languages and can be connected to a monitor, keyboard, and mouse for use.
 
@@ -95,17 +106,25 @@ Its slogan is “**Let every child learn to code**,” making it highly suitable
 
 ### **Where to Buy Genuine ESP32 and LilyPad Arduino**
 
-- **ESP32:**
-  - **Official Espressif Website**: Espressif provides official sales and links to authorized distributors. You can also find documentation and SDK resources here.  
-    - Website: [https://www.espressif.com](https://www.espressif.com)
-  - **Authorized Distributors**: Check official distributors like Digi-Key, Mouser, or SparkFun for genuine ESP32 modules.
-    - Example: [Digi-Key ESP32 Modules](https://www.digikey.com)
+* **ESP32:**
 
-- **LilyPad Arduino:**
-  - **Official Arduino Store**: You can buy genuine LilyPad boards directly from the Arduino store.  
-    - Website: [https://store.arduino.cc](https://store.arduino.cc)
-  - **Authorized Retailers**: SparkFun, Adafruit, and other trusted electronics suppliers offer authentic LilyPad products.
-    - Example: [SparkFun LilyPad Arduino](https://www.sparkfun.com)
+  * **Official Espressif Website**: Espressif provides official sales and links to authorized distributors. You can also find documentation and SDK resources here.
+
+    * Website: <https://www.espressif.com>
+
+  * **Authorized Distributors**: Check official channels like Espressif's own stores for genuine modules.
+
+    * Example: [Espressif (乐鑫)](https://www.espressif.com/zh-hans/contact-us/buy)
+
+* **LilyPad Arduino:**
+
+  * **Official Arduino Store**: You can buy genuine LilyPad boards directly from the Arduino store.
+
+    * Website: <https://store.arduino.cc>
+
+  * **Authorized Retailers**: SparkFun, Adafruit, and other trusted electronics suppliers offer authentic LilyPad products.
+
+    * Example: [SparkFun LilyPad Arduino](https://www.sparkfun.com)
 
 By purchasing from these official or authorized distributors, you ensure the quality and authenticity of the hardware for your projects.
 
