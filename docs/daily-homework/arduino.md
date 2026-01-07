@@ -238,7 +238,7 @@ The **diagram** illustrates the **control principle** behind the water flow lamp
 
 Finally, the **diagram** showcases the **actual simulation** that I created. It demonstrates how the LEDs light up in sequence from left to right, and then reverse the flow from right to left. Additionally, the last LED flickers to enhance the dynamic visual effect, mimicking the behavior of flowing water.
 
-![Simulation](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108164312764.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20260107164905267.png)
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108-0902-33.3647075.mp4)
 
 ### **Code Display**
@@ -246,55 +246,22 @@ Finally, the **diagram** showcases the **actual simulation** that I created. It 
 Here is the complete code for the **Water Flow Lamp Simulation**:
 
 ```cpp
-// Project: Water Flow Lamp Simulation
-// Author: ximingzhao
-
-// Define the 9 LED pins
-int leds[] = {2, 3, 4, 5, 6, 7, 8, 9, 10};  // 9 LED pins
-int numLeds = 9;  // Number of LEDs
-int delayTime = 300;  // Delay between LEDs, controls the flow speed
-int blinkTime = 100;  // Delay for the flickering effect, controls flickering frequency
+int lights[] = {13, 12, 11, 10, 9}; 
+int numLights = 5;
 
 void setup() {
-  // Set all LED pins as output
-  for (int i = 0; i < numLeds; i++) {
-    pinMode(leds[i], OUTPUT);
+  for(int i = 0; i < numLights; i++) {
+    pinMode(lights[i], OUTPUT);
   }
 }
 
 void loop() {
-  // Water flow effect from left to right (LED lights up sequentially)
-  waterFlowEffect(true);
-
-  // Water flow effect from right to left (LED lights up sequentially)
-  waterFlowEffect(false);
-}
-
-// Water flow effect function
-void waterFlowEffect(bool forward) {
-  if (forward) {
-    // Turn on LEDs from left to right
-    for (int i = 0; i < numLeds; i++) {
-      digitalWrite(leds[i], HIGH);  // Turn on the current LED
-      delay(delayTime);              // Delay to control the flow speed
-      digitalWrite(leds[i], LOW);    // Turn off the current LED
-    }
-  } else {
-    // Turn on LEDs from right to left
-    for (int i = numLeds - 1; i >= 0; i--) {
-      digitalWrite(leds[i], HIGH);  // Turn on the current LED
-      delay(delayTime);              // Delay to control the flow speed
-      digitalWrite(leds[i], LOW);    // Turn off the current LED
-    }
-  }
-
-  // Add flickering effect (flicker the last LED a few times)
-  for (int i = 0; i < 3; i++) {  // Flicker three times
-    digitalWrite(leds[numLeds - 1], HIGH);  // Turn on the last LED
-    delay(blinkTime);                       // Flicker duration
-    digitalWrite(leds[numLeds - 1], LOW);   // Turn off the last LED
-    delay(blinkTime);                       // Flicker duration
-  }
+  int randomIndex = random(numLights); 
+  digitalWrite(lights[randomIndex], HIGH); 
+  delay(1000); 
+  
+  digitalWrite(lights[randomIndex], LOW); 
+  delay(500); 
 }
 ``` 
 
