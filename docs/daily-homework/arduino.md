@@ -150,7 +150,7 @@ Whether you're building a small night light, a temperature logger, or an automat
 - **Code Editing Area:** Used to write program code, mainly consisting of `setup()` and `loop()` sections for initialization and continuous control.  
 - **Status Bar:** Displays the progress of compilation and uploading, as well as any error messages to help debug the program.
 
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251108155754859.png)
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20260107163722679.png)
 
 This interface is designed to help developers focus on writing code and conducting experiments without worrying about complex settings and operations.  
 Example: The environment’s built-in example program can be opened.
