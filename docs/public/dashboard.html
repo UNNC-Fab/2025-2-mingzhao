@@ -155,11 +155,11 @@
         </div>
     </main>
 
-    <!-- AI Chat Widget (支持 Gemini 2.0 / 3.0) -->
+    <!-- AI Chat Widget -->
     <div id="ai-widget">
         <div class="chat-header">
             <div class="flex items-center gap-2 text-purple-400 font-bold orbitron">
-                <i class="fas fa-robot"></i> FAB-AI <span class="text-xs bg-purple-900 px-1 rounded">ULTRA</span>
+                <i class="fas fa-robot"></i> FAB-AI <span class="text-xs bg-purple-900 px-1 rounded">FLASH</span>
             </div>
             <div class="flex gap-3">
                 <button onclick="toggleSettings()" class="text-gray-400 hover:text-white" title="Settings"><i class="fas fa-cog"></i></button>
@@ -171,15 +171,15 @@
         <div id="settings-panel">
             <h3 class="text-white font-bold mb-4">AI Configuration</h3>
             
-            <p class="text-gray-400 text-xs mb-2">API Key (Gemini / OpenAI)</p>
+            <p class="text-gray-400 text-xs mb-2">API Key (Gemini)</p>
             <input type="password" id="api-key-input" placeholder="Paste your API Key here..." class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-sm">
             
             <p class="text-gray-400 text-xs mb-2">Base URL</p>
             <input type="text" id="api-url-input" placeholder="https://generativelanguage.googleapis.com/v1beta/openai" class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-sm">
             
             <p class="text-gray-400 text-xs mb-2">Model Name</p>
-            <!-- 👇 核心修改：默认模型升级为 gemini-2.0-flash-exp -->
-            <input type="text" id="api-model-input" placeholder="gemini-2.0-flash-exp" class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-6 text-sm">
+            <!-- 👇 改回最稳定的 1.5-flash -->
+            <input type="text" id="api-model-input" placeholder="gemini-1.5-flash" class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-6 text-sm">
             
             <button onclick="saveSettings()" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 rounded">Save & Connect</button>
             <p class="text-gray-500 text-xs mt-4 text-center">Data stored locally in browser.</p>
@@ -188,11 +188,11 @@
         <div class="chat-messages" id="chat-box">
             <div class="chat-msg bot-msg">
                 <strong>System Ready.</strong><br>
-                Running on Gemini 2.0 Flash (Exp). Configure your API Key in settings.
+                Running on Gemini 1.5 Flash. Please verify your Key in settings.
             </div>
         </div>
         <div class="chat-input-area">
-            <input type="text" id="ai-input" placeholder="Ask Gemini..." class="w-full bg-transparent text-white focus:outline-none text-sm font-mono" onkeypress="handleAIInput(event)">
+            <input type="text" id="ai-input" placeholder="Ask AI..." class="w-full bg-transparent text-white focus:outline-none text-sm font-mono" onkeypress="handleAIInput(event)">
             <button onclick="sendAIMessage()" class="text-cyan-400 hover:text-white"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
@@ -221,8 +221,8 @@
         // --- AI Logic ---
         let apiKey = localStorage.getItem('fab_ai_key') || '';
         let apiBaseUrl = localStorage.getItem('fab_ai_url') || 'https://generativelanguage.googleapis.com/v1beta/openai';
-        // 👇 核心修改：默认模型升级为 gemini-2.0-flash-exp
-        let apiModel = localStorage.getItem('fab_ai_model') || 'gemini-2.0-flash-exp';
+        // 👇 核心修改：默认模型回退到 gemini-1.5-flash (稳定)
+        let apiModel = localStorage.getItem('fab_ai_model') || 'gemini-1.5-flash';
 
         document.getElementById('api-key-input').value = apiKey;
         document.getElementById('api-url-input').value = apiBaseUrl;
@@ -278,7 +278,7 @@
                         body: JSON.stringify({
                             model: apiModel,
                             messages: [
-                                {role: "system", content: "You are a helpful assistant for a FabLab student."},
+                                {role: "system", content: "You are a helpful assistant."},
                                 {role: "user", content: msg}
                             ]
                         })
@@ -286,7 +286,8 @@
                     
                     if (!response.ok) {
                         const err = await response.json();
-                        throw new Error(err.error?.message || 'API Error');
+                        // 显示详细错误信息
+                        throw new Error(JSON.stringify(err) || 'API Error');
                     }
                     const data = await response.json();
                     const reply = data.choices[0].message.content;
@@ -296,7 +297,8 @@
 
                 } catch (error) {
                     document.getElementById(loadingId).remove();
-                    addMessage(`Error: ${error.message}. Check Key/Model Name.`, 'bot');
+                    // 在聊天框显示具体报错
+                    addMessage(`Error: ${error.message}. <br>Please check your Key and Network.`, 'bot');
                 }
             } else {
                 setTimeout(() => {
