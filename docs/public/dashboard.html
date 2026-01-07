@@ -125,6 +125,7 @@
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Cards (Same as before) -->
             <a href="daily-homework/project-management" class="tech-card block p-8 rounded-xl group relative">
                 <div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity"><i class="fas fa-external-link-alt text-white"></i></div>
                 <div class="w-14 h-14 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400 mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform"><i class="fas fa-calendar-check text-2xl"></i></div>
@@ -155,11 +156,11 @@
         </div>
     </main>
 
-    <!-- AI Chat Widget (V4.0 Ultra Robust) -->
+    <!-- AI Chat Widget (V6.0 Custom Model Support) -->
     <div id="ai-widget">
         <div class="chat-header">
             <div class="flex items-center gap-2 text-purple-400 font-bold orbitron">
-                <i class="fas fa-robot"></i> FAB-AI <span class="text-xs bg-purple-900 px-1 rounded">GEMINI</span>
+                <i class="fas fa-robot"></i> FAB-AI <span class="text-xs bg-purple-900 px-1 rounded">ULTRA</span>
             </div>
             <div class="flex gap-3">
                 <button onclick="toggleSettings()" class="text-gray-400 hover:text-white" title="Settings"><i class="fas fa-cog"></i></button>
@@ -171,34 +172,37 @@
         <div id="settings-panel">
             <h3 class="text-white font-bold mb-4">AI Configuration</h3>
             
-            <p class="text-gray-400 text-xs mb-2">API Key (Starts with AIza...)</p>
-            <input type="password" id="api-key-input" placeholder="Paste Google API Key here..." class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-sm">
+            <p class="text-gray-400 text-xs mb-2">API Key</p>
+            <input type="password" id="api-key-input" placeholder="Paste Key here..." class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-sm">
             
-            <p class="text-gray-400 text-xs mb-2">Select Model</p>
-            <!-- 👇 新增了更具体的版本号，防止别名失效 -->
-            <select id="api-model-select" class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-6 text-sm">
-                <option value="gemini-1.5-flash">Gemini 1.5 Flash (Standard)</option>
-                <option value="gemini-1.5-flash-001">Gemini 1.5 Flash-001 (Specific)</option>
-                <option value="gemini-1.5-flash-002">Gemini 1.5 Flash-002 (Latest)</option>
-                <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
-                <option value="gemini-pro">Gemini Pro (Legacy 1.0)</option>
-            </select>
+            <p class="text-gray-400 text-xs mb-2">Select Model (Or Type Custom)</p>
+            <div class="flex gap-2 mb-4">
+                <select id="api-model-select" class="w-1/2 bg-gray-800 text-white border border-gray-600 rounded p-2 text-sm" onchange="updateModelInput()">
+                    <option value="gemini-1.5-flash">1.5 Flash</option>
+                    <option value="gemini-1.5-pro">1.5 Pro</option>
+                    <option value="gemini-pro">Gemini Pro (1.0)</option>
+                    <option value="gemini-2.0-flash-exp">2.0 Flash (Exp)</option>
+                    <option value="custom">Custom...</option>
+                </select>
+                <!-- 👇 手动输入框，防止下拉菜单不够用 -->
+                <input type="text" id="api-model-custom" placeholder="e.g. gemini-1.0-pro" class="w-1/2 bg-gray-800 text-white border border-gray-600 rounded p-2 text-sm" value="gemini-1.5-flash">
+            </div>
             
             <div class="flex gap-2">
                 <button onclick="saveSettings()" class="flex-1 bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 rounded">Save & Connect</button>
                 <button onclick="resetSettings()" class="flex-1 bg-red-600 hover:bg-red-500 text-white font-bold py-2 rounded">Reset</button>
             </div>
-            <p class="text-gray-500 text-xs mt-4 text-center">Tip: Try '-001' or '-002' if standard fails.</p>
+            <p class="text-gray-500 text-xs mt-4 text-center">Tired of errors? Try 'gemini-1.5-flash'.</p>
         </div>
 
         <div class="chat-messages" id="chat-box">
             <div class="chat-msg bot-msg">
                 <strong>System Ready.</strong><br>
-                Please enter your Google API Key in settings <i class="fas fa-cog"></i>.
+                Click <i class="fas fa-cog"></i> to configure API.
             </div>
         </div>
         <div class="chat-input-area">
-            <input type="text" id="ai-input" placeholder="Ask Gemini..." class="w-full bg-transparent text-white focus:outline-none text-sm font-mono" onkeypress="handleAIInput(event)">
+            <input type="text" id="ai-input" placeholder="Ask AI..." class="w-full bg-transparent text-white focus:outline-none text-sm font-mono" onkeypress="handleAIInput(event)">
             <button onclick="sendAIMessage()" class="text-cyan-400 hover:text-white"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
@@ -229,7 +233,27 @@
         let apiModel = localStorage.getItem('fab_ai_model') || 'gemini-1.5-flash';
 
         document.getElementById('api-key-input').value = apiKey;
-        document.getElementById('api-model-select').value = apiModel;
+        document.getElementById('api-model-custom').value = apiModel;
+        
+        // 尝试自动匹配下拉菜单
+        const select = document.getElementById('api-model-select');
+        let found = false;
+        for(let i=0; i<select.options.length; i++) {
+            if(select.options[i].value === apiModel) {
+                select.selectedIndex = i;
+                found = true;
+                break;
+            }
+        }
+        if(!found) select.value = 'custom';
+
+        function updateModelInput() {
+            const select = document.getElementById('api-model-select');
+            const input = document.getElementById('api-model-custom');
+            if(select.value !== 'custom') {
+                input.value = select.value;
+            }
+        }
 
         function toggleAI() {
             const widget = document.getElementById('ai-widget');
@@ -244,19 +268,20 @@
 
         function saveSettings() {
             apiKey = document.getElementById('api-key-input').value.trim();
-            apiModel = document.getElementById('api-model-select').value;
+            apiModel = document.getElementById('api-model-custom').value.trim(); // 优先取输入框的值
             
             localStorage.setItem('fab_ai_key', apiKey);
             localStorage.setItem('fab_ai_model', apiModel);
             
             toggleSettings();
-            addMessage(`Settings saved. Using model: ${apiModel}`, 'bot');
+            addMessage(`Settings saved. Model: ${apiModel}`, 'bot');
         }
 
         function resetSettings() {
             localStorage.clear();
             document.getElementById('api-key-input').value = '';
             document.getElementById('api-model-select').value = 'gemini-1.5-flash';
+            document.getElementById('api-model-custom').value = 'gemini-1.5-flash';
             alert("Settings Reset. Please reload page.");
             location.reload();
         }
@@ -283,7 +308,8 @@
             }
 
             try {
-                // 强制使用 Google 原生接口
+                // 🔥 强制使用 Google 原生接口，不走 OpenAI 兼容层
+                // 这样能避开 'v1main' 这种诡异的路由错误
                 const url = `https://generativelanguage.googleapis.com/v1beta/models/${apiModel}:generateContent?key=${apiKey}`;
                 const response = await fetch(url, {
                     method: 'POST',
@@ -298,14 +324,16 @@
                     throw new Error(`Google API ${response.status}: ${err.error?.message || 'Unknown error'}`);
                 }
                 const data = await response.json();
-                const reply = data.candidates[0].content.parts[0].text;
+                
+                // Google 原生接口的返回结构
+                const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "No response text.";
                 
                 document.getElementById(loadingId).remove();
                 addMessage(marked.parse(reply), 'bot');
 
             } catch (error) {
                 document.getElementById(loadingId).remove();
-                addMessage(`Error: ${error.message}. <br><strong>Tip:</strong> Try selecting 'Gemini 1.5 Flash-001' in settings.`, 'bot');
+                addMessage(`Error: ${error.message}<br><br><strong>Try:</strong> Open Settings -> Select 'Gemini 1.5 Flash' -> Save.`, 'bot');
             }
         }
 
