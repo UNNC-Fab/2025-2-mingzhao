@@ -251,6 +251,33 @@ function search() {
 
 
 ```
+### **Step 2: Register Component in Theme**
+File path: docs/.vitepress/theme/index.ts
+
+We use the nav-bar-content-after slot to inject our custom component into the navigation bar.
+
+```
+TypeScript
+
+// @ts-nocheck
+import DefaultTheme from 'vitepress/theme'
+import { h } from 'vue'
+import './style.css'
+import GoogleSearch from '../components/GoogleSearch.vue' // Import component
+
+export default {
+  extends: DefaultTheme,
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      // Inject search box after nav links
+      'nav-bar-content-after': () => h(GoogleSearch)
+    })
+  },
+  enhanceApp({ app }) {
+  }
+}
+```
+
 ## **6. Project Code Reference**
 
 These are the critical configuration files for your project. You can refer to them if you need to restore settings.
