@@ -4,13 +4,14 @@ import { ref } from 'vue'
 const query = ref('')
 
 function search() {
+  // 如果输入为空，则不执行
   if (!query.value.trim()) return
   
-  // 🔥 核心修改：直接使用输入的内容作为跳转链接
-  // const googleUrl =${encodeURIComponent(query.value)}`
-  const googleUrl = query.value
+  // 🔥 核心修正：这里拼接了谷歌的搜索前缀
+  // 这样无论你输入什么，都会跳转到谷歌去搜索该内容，而不是在站内搜
+  const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(query.value)}`
   
-  // 在新标签页打开
+  // 在新标签页打开搜索结果
   window.open(googleUrl, '_blank')
 }
 </script>
