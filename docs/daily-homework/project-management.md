@@ -348,7 +348,8 @@ CSS
 
 These are the critical configuration files for your project. You can refer to them if you need to restore settings.
 
-### 6.1 Home Page (docs/index.md)
+### **6.1 Home Page (`docs/index.md`)**
+
 This file handles the redirect to your custom dashboard.
 
 ```markdown
@@ -378,10 +379,12 @@ html, body {
 }
 </style>
 ```
-### 6.2 Site Configuration (docs/.vitepress/config.mts)
 
-```markdown
+### **6.2 Site Configuration (docs/.vitepress/config.mts)**
 This file controls the navigation bar, sidebar, and site title.
+```
+TypeScript
+
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
@@ -390,19 +393,68 @@ export default defineConfig({
   base: '/2025-2-mingzhao/',
   appearance: 'dark', 
   cleanUrls: true,
+
   themeConfig: {
     siteTitle: 'UNNC-FAB 2025-2', 
-    nav: [ /* Your Nav Items */ ],
+
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Daily homework', link: '/daily-homework/project-management' },
+      { text: 'Finalwork', link: '/finalwork/psychological-sand-table' },
+      { text: 'Small homework in class', link: '/small-homework-in-class/' }
+    ],
+
     search: { provider: 'local' },
-    sidebar: { /* Your Sidebar Items */ },
+
+    sidebar: {
+      '/daily-homework/': [
+        {
+          text: 'Daily homework',
+          items: [
+            { text: 'Project Management', link: '/daily-homework/project-management' },
+            { text: 'Arduino', link: '/daily-homework/arduino' },
+            { text: 'CAD design', link: '/daily-homework/cad-design' }, 
+            { text: '3D Printer', link: '/daily-homework/3d-printer' },
+            { text: 'Laser Cutting', link: '/daily-homework/laser-cutting' },
+            { text: 'Molding and Casting', link: '/daily-homework/molding-and-casting' },
+            { text: 'Processing', link: '/daily-homework/processing' },
+            { text: 'Electronics Design', link: '/daily-homework/electronics-design' },
+            { text: 'Electronics Production', link: '/daily-homework/electronics-production' },
+            { text: 'Networking and Communications', link: '/daily-homework/networking-communications' },
+            { text: 'Computer Control Cutting', link: '/daily-homework/computer-control-cutting' },
+            { text: 'Final Project Debug', link: '/daily-homework/final-project-debug' },
+            { text: 'AI & BP', link: '/daily-homework/ai-bp' }
+          ]
+        }
+      ],
+
+      '/finalwork/': [
+        {
+          text: 'Finalwork',
+          items: [
+            { text: 'Psychological sand table', link: '/finalwork/psychological-sand-table' }
+          ]
+        }
+      ],
+      '/small-homework-in-class/': [
+        {
+          text: 'Small homework in class',
+          items: [
+            { text: 'GPL 3.0', link: '/small-homework-in-class/gpl-3-0' },
+            { text: "Google's development language", link: '/small-homework-in-class/google-development-language' },
+            { text: 'National and regional standards', link: '/small-homework-in-class/laser-standards' }
+          ]
+        }
+      ]
+    },
+
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/UNNC-Fab/2025-2-mingzhao' }
+      { icon: 'github', link: '[https://github.com/UNNC-Fab/2025-2-mingzhao](https://github.com/UNNC-Fab/2025-2-mingzhao)' }
     ]
   }
 })
 ```
-
-### 6.3 Auto Deployment (.github/workflows/deploy.yml)
+### **6.3 Auto Deployment (.github/workflows/deploy.yml)**
 This GitHub Actions script automatically builds and deploys your site when you push to the main branch.
 
 ```
