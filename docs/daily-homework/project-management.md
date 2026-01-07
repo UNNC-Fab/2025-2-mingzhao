@@ -5,7 +5,17 @@ layout: doc
 # **Project Management**
 
 ---
-
+## **0. Essential Software & Tools (Download Links)**
+| Tool | Description | Download Link | 
+| :--- | :--- | :--- | 
+| **Git** | Version control system (Required) | [Download Git](https://git-scm.com/downloads) | 
+| **VS Code** | Code editor (Recommended) | [Download VS Code](https://code.visualstudio.com/) | 
+| **Node.js** | Runtime for VitePress (Required) | [Download Node.js (LTS)](https://nodejs.org/) | 
+| **GitHub Desktop**| GUI client for Git (Easier to use) | [Download GitHub Desktop](https://desktop.github.com/) | 
+| **PicGo** | Image uploader tool | [Download PicGo](https://github.com/Molunerfinn/PicGo/releases) | 
+| **VitePress** | The documentation framework we use | [Official Documentation](https://vitepress.dev/) | 
+| **Google Chrome** | Recommended Browser for Development | [Download Chrome](https://www.google.com/chrome/) | 
+| **Typora** | Standalone Markdown Editor (Optional) | [Download Typora](https://typora.io/) |
 ## **1. Create a Repository**
 
 To start, we need to **create a repository** on **GitHub** at [github.com](https://github.com).
