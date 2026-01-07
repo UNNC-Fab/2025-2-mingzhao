@@ -162,35 +162,7 @@ export default defineConfig({
 })
 ```
 
-
-### 5.2 AI Integration (OpenAI API)
-
-**Note**: Be careful not to expose your API Key in public repositories. Use environment variables for security.
-
-#### Installation:
-```bash
-npm install openai
-```
-
-Basic Usage Script (e.g., ai-test.js):
-```js
-import OpenAI from "openai";
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true
-});
-
-async function askAI(question) {
-  const completion = await openai.chat.completions.create({
-    messages: [{ role: "user", content: question }],
-    model: "gpt-3.5-turbo",
-  });
-  console.log(completion.choices[0].message.content);
-}
-```
-
-### **5.3 Google Search Integration (Custom Component)**
+### **5.2 Google Search Integration (Custom Component)**
 
 We implemented a custom search box in the navigation bar that allows users to search keywords directly on Google. This involves creating a Vue component and injecting it into the VitePress theme layout.
 
@@ -278,7 +250,7 @@ export default {
 }
 ```
 
-### **5.4 AI Assistant Integration (Dual-Mode Chatbot)**
+### **5.3 AI Assistant Integration (Dual-Mode Chatbot)**
 
 We integrated a smart AI chatbot directly into the landing page (`dashboard.html`). It is designed to work in two modes: **Online (API)** and **Offline (Local Knowledge Base)**, ensuring the site remains functional even without an internet connection or API key.
 
@@ -345,7 +317,7 @@ CSS
 }
 ```
 
-### **5.5 Custom Styling (Cyberpunk Theme)**
+### **5.4 Custom Styling (Cyberpunk Theme)**
 
 To fix visibility issues (e.g., black text on black background) and achieve a "Cyberpunk" look, we created a custom CSS file to override the default VitePress theme.
 
@@ -410,7 +382,7 @@ h1, h2, h3 {
 
 These are the critical configuration files for your project. You can refer to them if you need to restore settings.
 
-### **6.1 Home Page (docs/index.md)**
+### **6.1 Home Page**
 
 This file handles the redirect to your custom dashboard.
 
