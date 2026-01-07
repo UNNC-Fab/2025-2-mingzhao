@@ -155,11 +155,11 @@
         </div>
     </main>
 
-    <!-- AI Chat Widget (双模式智能版) -->
+    <!-- AI Chat Widget (V3.0 Stable) -->
     <div id="ai-widget">
         <div class="chat-header">
             <div class="flex items-center gap-2 text-purple-400 font-bold orbitron">
-                <i class="fas fa-robot"></i> FAB-AI <span class="text-xs bg-purple-900 px-1 rounded">ULTRA</span>
+                <i class="fas fa-robot"></i> FAB-AI <span class="text-xs bg-purple-900 px-1 rounded">GEMINI</span>
             </div>
             <div class="flex gap-3">
                 <button onclick="toggleSettings()" class="text-gray-400 hover:text-white" title="Settings"><i class="fas fa-cog"></i></button>
@@ -171,30 +171,32 @@
         <div id="settings-panel">
             <h3 class="text-white font-bold mb-4">AI Configuration</h3>
             
-            <p class="text-gray-400 text-xs mb-2">API Key (Gemini / DeepSeek)</p>
-            <input type="password" id="api-key-input" placeholder="Paste Key here..." class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-sm">
+            <p class="text-gray-400 text-xs mb-2">API Key (Starts with AIza...)</p>
+            <input type="password" id="api-key-input" placeholder="Paste your Google API Key here..." class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-sm">
             
-            <p class="text-gray-400 text-xs mb-2">Base URL (Skip if using Gemini)</p>
-            <input type="text" id="api-url-input" placeholder="https://api.deepseek.com/v1" class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-4 text-sm">
-            
-            <p class="text-gray-400 text-xs mb-2">Model Name</p>
-            <input type="text" id="api-model-input" placeholder="gemini-1.5-flash" class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-6 text-sm">
+            <p class="text-gray-400 text-xs mb-2">Select Model</p>
+            <!-- 👇 下拉菜单，防止输错 -->
+            <select id="api-model-select" class="w-full bg-gray-800 text-white border border-gray-600 rounded p-2 mb-6 text-sm">
+                <option value="gemini-1.5-flash">Gemini 1.5 Flash (Recommended)</option>
+                <option value="gemini-1.5-pro">Gemini 1.5 Pro (Smarter)</option>
+                <option value="gemini-2.0-flash-exp">Gemini 2.0 Flash (Experimental)</option>
+            </select>
             
             <div class="flex gap-2">
-                <button onclick="saveSettings()" class="flex-1 bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 rounded">Save</button>
+                <button onclick="saveSettings()" class="flex-1 bg-purple-600 hover:bg-purple-500 text-white font-bold py-2 rounded">Save & Connect</button>
                 <button onclick="resetSettings()" class="flex-1 bg-red-600 hover:bg-red-500 text-white font-bold py-2 rounded">Reset</button>
             </div>
-            <p class="text-gray-500 text-xs mt-4 text-center">Auto-detects 'AIza' keys for Google API.</p>
+            <p class="text-gray-500 text-xs mt-4 text-center">Data stored locally in browser.</p>
         </div>
 
         <div class="chat-messages" id="chat-box">
             <div class="chat-msg bot-msg">
                 <strong>System Ready.</strong><br>
-                Please configure your API Key in settings.
+                Please enter your Google API Key in settings <i class="fas fa-cog"></i>.
             </div>
         </div>
         <div class="chat-input-area">
-            <input type="text" id="ai-input" placeholder="Ask AI..." class="w-full bg-transparent text-white focus:outline-none text-sm font-mono" onkeypress="handleAIInput(event)">
+            <input type="text" id="ai-input" placeholder="Ask Gemini..." class="w-full bg-transparent text-white focus:outline-none text-sm font-mono" onkeypress="handleAIInput(event)">
             <button onclick="sendAIMessage()" class="text-cyan-400 hover:text-white"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
@@ -220,15 +222,12 @@
             window.open(`https://www.google.com/search?q=site:${site}+${query}`, '_blank');
         }
 
-        // --- 核心 AI 逻辑 (自动切换引擎) ---
+        // --- AI Logic ---
         let apiKey = localStorage.getItem('fab_ai_key') || '';
-        let apiBaseUrl = localStorage.getItem('fab_ai_url') || 'https://api.deepseek.com/v1';
         let apiModel = localStorage.getItem('fab_ai_model') || 'gemini-1.5-flash';
 
-        // 初始化输入框
         document.getElementById('api-key-input').value = apiKey;
-        document.getElementById('api-url-input').value = apiBaseUrl;
-        document.getElementById('api-model-input').value = apiModel;
+        document.getElementById('api-model-select').value = apiModel;
 
         function toggleAI() {
             const widget = document.getElementById('ai-widget');
@@ -243,21 +242,19 @@
 
         function saveSettings() {
             apiKey = document.getElementById('api-key-input').value.trim();
-            apiBaseUrl = document.getElementById('api-url-input').value.trim();
-            apiModel = document.getElementById('api-model-input').value.trim();
+            apiModel = document.getElementById('api-model-select').value;
             
             localStorage.setItem('fab_ai_key', apiKey);
-            localStorage.setItem('fab_ai_url', apiBaseUrl);
             localStorage.setItem('fab_ai_model', apiModel);
             
             toggleSettings();
-            addMessage("Settings saved. Brain connected!", 'bot');
+            addMessage(`Settings saved. Using model: ${apiModel}`, 'bot');
         }
 
         function resetSettings() {
             localStorage.clear();
             document.getElementById('api-key-input').value = '';
-            document.getElementById('api-model-input').value = 'gemini-1.5-flash';
+            document.getElementById('api-model-select').value = 'gemini-1.5-flash';
             alert("Settings Reset. Please reload page.");
             location.reload();
         }
@@ -284,53 +281,29 @@
             }
 
             try {
-                // 🔥 自动检测：如果 Key 是 AIza 开头，走谷歌原生通道
-                if (apiKey.startsWith('AIza')) {
-                    // Google Native Mode
-                    const url = `https://generativelanguage.googleapis.com/v1beta/models/${apiModel}:generateContent?key=${apiKey}`;
-                    const response = await fetch(url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            contents: [{ parts: [{ text: msg }] }]
-                        })
-                    });
+                // 强制使用 Google 原生接口
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/${apiModel}:generateContent?key=${apiKey}`;
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: msg }] }]
+                    })
+                });
 
-                    if (!response.ok) throw new Error(`Google API Error: ${response.status}`);
-                    const data = await response.json();
-                    const reply = data.candidates[0].content.parts[0].text;
-                    
-                    document.getElementById(loadingId).remove();
-                    addMessage(marked.parse(reply), 'bot');
-
-                } else {
-                    // DeepSeek / OpenAI Compatible Mode
-                    const response = await fetch(apiBaseUrl + '/chat/completions', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${apiKey}`
-                        },
-                        body: JSON.stringify({
-                            model: apiModel,
-                            messages: [
-                                {role: "system", content: "You are a helpful assistant."},
-                                {role: "user", content: msg}
-                            ]
-                        })
-                    });
-
-                    if (!response.ok) throw new Error(`API Error: ${response.status}`);
-                    const data = await response.json();
-                    const reply = data.choices[0].message.content;
-                    
-                    document.getElementById(loadingId).remove();
-                    addMessage(marked.parse(reply), 'bot');
+                if (!response.ok) {
+                    const err = await response.json();
+                    throw new Error(`Google API ${response.status}: ${err.error?.message || 'Unknown error'}`);
                 }
+                const data = await response.json();
+                const reply = data.candidates[0].content.parts[0].text;
+                
+                document.getElementById(loadingId).remove();
+                addMessage(marked.parse(reply), 'bot');
 
             } catch (error) {
                 document.getElementById(loadingId).remove();
-                addMessage(`Error: ${error.message}. Check Network/Key.`, 'bot');
+                addMessage(`Error: ${error.message}. <br>If 404, try switching model to '1.5 Flash'.`, 'bot');
             }
         }
 
