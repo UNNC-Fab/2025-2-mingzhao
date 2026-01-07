@@ -16,7 +16,29 @@ layout: doc
 | **VitePress** | The documentation framework we use | [Official Documentation](https://vitepress.dev/) | 
 | **Google Chrome** | Recommended Browser for Development | [Download Chrome](https://www.google.com/chrome/) | 
 | **Typora** | Standalone Markdown Editor (Optional) | [Download Typora](https://typora.io/) |
-## **1. Create a Repository**
+
+
+## **1. GitHub Settings**
+  *Create a new GitHub jasperxi0218/imageuploadservice*
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20260107140352362.png)
+Download the Picgo software
+![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20260107140829708.png)
+Once members are invited, go to **Settings** to configure project permissions and collaboration options.
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132457766.png)
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132503417.png)
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104151759443.png)
+ *Set the token*
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104153441440.png)
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104152111054.png)
+ *Complete the setup.*
+
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132512364.png)
+ *Upload pictures here.*
+
+  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132523147.png)
+ *View and manage images here.*
+
+## **2. Create a Repository**
 
 To start, we need to **create a repository** on **GitHub** at [github.com](https://github.com).
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104130948549.png)
@@ -32,31 +54,13 @@ Be sure to include a **README file** in the repository, as this is where we can 
 
 ---
 
-## **2. Member Invitation**
+## **3. Member Invitation**
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104131901456.png)
 ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132245762.png)
 You can **invite team members** to your repository.
 After inviting, you can **view the list of invited members** in the repository settings.
 
 ---
-
-## **3. GitHub Settings**
-![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132457766.png)
-Once members are invited, go to **Settings** to configure project permissions and collaboration options.
-
-  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132503417.png)
-  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104151759443.png)
- *Set the token*
-  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104153441440.png)
-  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104152111054.png)
- *Complete the setup.*
-
-  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132512364.png)
- *Upload pictures here.*
-
-  ![](https://raw.githubusercontent.com/jasperxi0218/imageuploadservice/main/img/20251104132523147.png)
- *View and manage images here.*
-
 ---
 
 ## **4. Upload Web Page**
