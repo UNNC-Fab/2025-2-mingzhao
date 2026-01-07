@@ -6,9 +6,7 @@ const query = ref('')
 function search() {
   if (!query.value.trim()) return
   
-  const siteUrl = 'unnc-fab.github.io/2025-2-mingzhao' 
-  
-  const googleUrl = `https://www.google.com/search?q=site:${siteUrl} ${encodeURIComponent(query.value)}`
+  const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(query.value)}`
  
   window.open(googleUrl, '_blank')
 }
