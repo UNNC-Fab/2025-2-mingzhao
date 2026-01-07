@@ -278,6 +278,72 @@ export default {
 }
 ```
 
+### **5.4 AI Assistant Integration (Dual-Mode Chatbot)**
+
+We integrated a smart AI chatbot directly into the landing page (`dashboard.html`). It is designed to work in two modes: **Online (API)** and **Offline (Local Knowledge Base)**, ensuring the site remains functional even without an internet connection or API key.
+
+#### **Implementation Strategy**
+
+* **File**: `docs/public/dashboard.html` (Embedded JavaScript)
+* **Security**: API Keys are stored in the user's browser **LocalStorage**, never on the server.
+* **API Support**: Compatible with OpenAI format APIs (e.g., DeepSeek, Gemini).
+
+#### **Core Logic (JavaScript)**
+
+The system checks for an API Key. If present, it calls the cloud model; otherwise, it falls back to a predefined local dictionary.
+
+```javascript
+// 1. Storage Management
+let apiKey = localStorage.getItem('fab_ai_key') || '';
+let apiModel = localStorage.getItem('fab_ai_model') || 'gemini-1.5-flash';
+
+// 2. Message Handling Logic
+async function sendAIMessage() {
+    // ... get user input ...
+
+    if (apiKey) {
+        // --- Mode A: Online (API) ---
+        // Sends request to LLM (DeepSeek / Gemini)
+        const response = await fetch(apiBaseUrl + '/chat/completions', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                model: apiModel,
+                messages: [{ role: "user", content: msg }]
+            })
+        });
+        // ... render markdown response ...
+    } else {
+        // --- Mode B: Offline (Local Knowledge Base) ---
+        // Keyword matching for instant replies
+        const kb = {
+            'arduino': "Arduino is an open-source electronics platform...",
+            'safety': "Lab Safety Rules: 1. Wear safety glasses...",
+            // ... more predefined answers
+        };
+        // ... find match and reply ...
+    }
+}
+
+```
+
+#### **UI Design**
+The chat widget uses fixed positioning to stay at the bottom-right corner, with a Glassmorphism effect created by CSS backdrop-filter.
+```
+CSS
+
+#ai-widget {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px;
+    background: rgba(0, 0, 0, 0.95); 
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+```
 ## **6. Project Code Reference**
 
 These are the critical configuration files for your project. You can refer to them if you need to restore settings.
