@@ -5,8 +5,12 @@ const query = ref('')
 
 function search() {
   if (!query.value.trim()) return
-  const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(query.value)}`
   
+  // 🔥 核心修改：直接使用输入的内容作为跳转链接
+  // const googleUrl =${encodeURIComponent(query.value)}`
+  const googleUrl = query.value
+  
+  // 在新标签页打开
   window.open(googleUrl, '_blank')
 }
 </script>
