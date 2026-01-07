@@ -344,11 +344,73 @@ CSS
     z-index: 100;
 }
 ```
+
+### **5.5 Custom Styling (Cyberpunk Theme)**
+
+To fix visibility issues (e.g., black text on black background) and achieve a "Cyberpunk" look, we created a custom CSS file to override the default VitePress theme.
+
+#### **Step 1: Create Theme Entry File**
+File path: `docs/.vitepress/theme/index.ts`
+
+This file tells VitePress to load our custom CSS.
+
+```typescript
+// @ts-nocheck
+import DefaultTheme from 'vitepress/theme'
+import './style.css' // Import custom styles
+
+export default {
+  extends: DefaultTheme,
+  enhanceApp({ app }) {
+  }
+}
+```
+### **Step 2: Define Custom Styles**
+File path: docs/.vitepress/theme/style.css
+
+We use CSS variables to force a dark background (#050505) and white text (#ffffff), ensuring readability while adding neon accents.
+```
+CSS
+
+/* Import Cyberpunk Font */
+@import url('[https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap)');
+
+:root {
+    /* --- Force Dark Background --- */
+    --vp-c-bg: #050505 !important;
+    --vp-c-bg-alt: #0b0d14 !important;
+
+    /* --- Force White Text for Visibility --- */
+    --vp-c-text-1: #ffffff !important; 
+    --vp-c-text-2: #e0e0e0 !important;
+
+    /* --- Neon Accent Colors --- */
+    --vp-c-brand-1: #00f3ff !important; /* Cyan */
+    --vp-c-brand-2: #00c2cc !important;
+    
+    /* --- Glowing Borders --- */
+    --vp-c-border: rgba(0, 243, 255, 0.3) !important;
+}
+
+/* Fix Paragraph & List Visibility */
+.vp-doc p, .vp-doc li {
+    color: #e0e0e0 !important;
+}
+
+/* Neon Title Effect */
+h1, h2, h3 {
+    background: -webkit-linear-gradient(45deg, #00f3ff, #bc13fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+```
+
 ## **6. Project Code Reference**
 
 These are the critical configuration files for your project. You can refer to them if you need to restore settings.
 
-### **6.1 Home Page (`docs/index.md`)**
+### **6.1 Home Page (docs/index.md)**
 
 This file handles the redirect to your custom dashboard.
 
