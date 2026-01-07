@@ -5,9 +5,8 @@ const query = ref('')
 
 function search() {
   if (!query.value.trim()) return
-  
   const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(query.value)}`
- 
+  
   window.open(googleUrl, '_blank')
 }
 </script>
@@ -31,8 +30,7 @@ function search() {
 .google-search-box {
   display: flex;
   align-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 20px;
   gap: 8px;
 }
 
@@ -43,13 +41,13 @@ function search() {
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 13px;
-  width: 140px;
+  width: 150px;
   transition: all 0.3s;
 }
 
 .search-input:focus {
   border-color: var(--vp-c-brand-1);
-  width: 180px; /* 聚焦时变长，动效 */
+  width: 180px;
   outline: none;
 }
 
@@ -57,7 +55,7 @@ function search() {
   background-color: var(--vp-c-brand-1);
   color: #000;
   border: none;
-  padding: 4px 10px;
+  padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: bold;
