@@ -5,9 +5,7 @@ export default defineConfig({
   title: 'UNNC-FAB 2025-2', 
   description: 'MingZhao Portfolio',
 
-
   base: '/2025-2-mingzhao/',
-  
   
   appearance: 'dark', 
 
@@ -20,7 +18,8 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Daily homework', link: '/daily-homework/project-management' },
-      { text: 'Finalwork', link: '/finalwork/psychological-sand-table' },
+      // 👇 这里的链接也从 psychological-sand-table 改为了 literature-research
+      { text: 'Finalwork', link: '/finalwork/literature-research' },
       { text: 'Small homework in class', link: '/small-homework-in-class/' }
     ],
 
@@ -39,11 +38,7 @@ export default defineConfig({
             { text: 'Molding and Casting', link: '/daily-homework/molding-and-casting' },
             { text: 'Processing', link: '/daily-homework/processing' },
             { text: 'Electronics Design', link: '/daily-homework/electronics-design' },
-            { text: 'Electronics Production', link: '/daily-homework/electronics-production' },
-            { text: 'Networking and Communications', link: '/daily-homework/networking-communications' },
-            { text: 'Computer Control Cutting', link: '/daily-homework/computer-control-cutting' },
-            { text: 'Final Project Debug', link: '/daily-homework/final-project-debug' },
-            { text: 'AI & BP', link: '/daily-homework/ai-bp' }
+            { text: 'Electronics Production', link: '/daily-homework/electronics-production' }
           ]
         }
       ],
@@ -52,7 +47,11 @@ export default defineConfig({
         {
           text: 'Finalwork',
           items: [
-            { text: 'Psychological sand table', link: '/finalwork/psychological-sand-table' }
+            { text: 'Literature Research', link: '/finalwork/literature-research' },
+            { text: 'Overview', link: '/finalwork/overview' },
+            { text: 'Structure', link: '/finalwork/structure' },
+            { text: 'Electronic Control & Algorithms', link: '/finalwork/electronics-algorithms' },
+            { text: 'Interaction', link: '/finalwork/interaction' }
           ]
         }
       ],
@@ -69,7 +68,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-        { icon: 'github', link: 'https://github.com/UNNC-Fab/2025-2-mingzhao' }
+      { icon: 'github', link: 'https://github.com/UNNC-Fab/2025-2-mingzhao' }
     ]
-  }
-})
+  } 
+}) 
