@@ -132,13 +132,16 @@
                 <p class="text-gray-400 text-sm mb-4">Tracking daily progress: Project Management, CAD, Arduino & 3D Printing.</p>
                 <div class="flex flex-wrap gap-2"><span class="text-[10px] bg-blue-900/30 text-blue-300 px-2 py-1 border border-blue-500/30 rounded">UPDATED</span></div>
             </a>
-            <a href="finalwork/psychological-sand-table" class="tech-card block p-8 rounded-xl group relative">
+            
+            <!-- 🔥 这里的链接已经从 psychological-sand-table 修正为 literature-research -->
+            <a href="finalwork/literature-research" class="tech-card block p-8 rounded-xl group relative">
                 <div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity"><i class="fas fa-external-link-alt text-white"></i></div>
                 <div class="w-14 h-14 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400 mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform"><i class="fas fa-brain text-2xl"></i></div>
                 <h3 class="text-2xl font-bold text-white mb-2 orbitron">FINAL PROJECT</h3>
                 <p class="text-gray-400 text-sm mb-4">Psychological Sand Table (心理沙盘). Interaction design and fabrication.</p>
                 <div class="flex flex-wrap gap-2"><span class="text-[10px] bg-purple-900/30 text-purple-300 px-2 py-1 border border-purple-500/30 rounded">MAIN WORK</span></div>
             </a>
+
             <a href="small-homework-in-class/" class="tech-card block p-8 rounded-xl group relative">
                 <div class="absolute top-0 right-0 p-3 opacity-20 group-hover:opacity-100 transition-opacity"><i class="fas fa-external-link-alt text-white"></i></div>
                 <div class="w-14 h-14 bg-green-500/10 rounded-lg flex items-center justify-center text-green-400 mb-6 border border-green-500/20 group-hover:scale-110 transition-transform"><i class="fas fa-code-branch text-2xl"></i></div>
@@ -202,7 +205,7 @@
             if (i < textToType.length) {
                 typeWriterElement.innerHTML += textToType.charAt(i);
                 i++;
-                setTimeout(typeWriter, 800);
+                setTimeout(typeWriter, 50);
             }
         }
         setTimeout(typeWriter, 800);
@@ -217,9 +220,8 @@
 
         // --- Dual-Mode AI Logic (双模 AI) ---
         let apiKey = localStorage.getItem('fab_ai_key') || '';
-        const apiBaseUrl = 'https://api.deepseek.com/v1'; // 默认 DeepSeek，无需配置
+        const apiBaseUrl = 'https://api.deepseek.com/v1'; 
         
-        // 内置知识库 (Offline Knowledge Base)
         const kb = {
             'arduino': "Arduino is an open-source electronics platform based on easy-to-use hardware and software. We use **Arduino Uno** and **ESP32** in our lab.",
             'laser': "Laser cutting uses a high-power laser to cut materials. **Safety First**: Never leave the machine unattended! Common materials: Plywood, Acrylic.",
@@ -230,7 +232,6 @@
             'help': "Try keywords like: Arduino, Laser, 3D Print, Safety, or Project."
         };
 
-        // 更新状态显示
         const statusBadge = document.getElementById('status-badge');
         if (apiKey) {
             statusBadge.textContent = "ONLINE";
@@ -253,12 +254,12 @@
         function saveSettings() {
             apiKey = document.getElementById('api-key-input').value.trim();
             localStorage.setItem('fab_ai_key', apiKey);
-            location.reload(); // 刷新以应用
+            location.reload(); 
         }
 
         function resetSettings() {
             localStorage.removeItem('fab_ai_key');
-            location.reload(); // 刷新回退到离线模式
+            location.reload(); 
         }
 
         function handleAIInput(e) { if (e.key === 'Enter') sendAIMessage(); }
@@ -274,16 +275,12 @@
             const chatBox = document.getElementById('chat-box');
             const loadingId = 'loading-' + Date.now();
             
-            // 模式判断
             if (!apiKey) {
-                // --- 模式 A: 离线模式 (Offline) ---
                 chatBox.innerHTML += `<div class="chat-msg bot-msg" id="${loadingId}">...</div>`;
                 setTimeout(() => {
                     document.getElementById(loadingId).remove();
-                    // 简单的关键词匹配
                     const lowerMsg = msg.toLowerCase();
                     let reply = "I don't have an answer for that in my offline database. <br>Try keywords like **Arduino**, **Laser**, **Safety**.";
-                    
                     for (const key in kb) {
                         if (lowerMsg.includes(key)) {
                             reply = kb[key];
@@ -293,7 +290,6 @@
                     addMessage(marked.parse(reply), 'bot');
                 }, 500);
             } else {
-                // --- 模式 B: 在线模式 (DeepSeek API) ---
                 chatBox.innerHTML += `<div class="chat-msg bot-msg" id="${loadingId}"><i class="fas fa-circle-notch fa-spin"></i> Connecting...</div>`;
                 chatBox.scrollTop = chatBox.scrollHeight;
 
